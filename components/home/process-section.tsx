@@ -1,0 +1,107 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Clock3 } from "lucide-react";
+import { SectionEyebrow } from "@/components/home/section-heading";
+import { processMini, steps } from "@/lib/home-content";
+
+const stepImages = [
+  {
+    src: "/process-section-one.jpg",
+    alt: "Book an appointment for your medical cannabis card",
+  },
+  {
+    src: "/process-section-two.jpg",
+    alt: "Online consultation with a licensed doctor",
+  },
+  {
+    src: "/process-section-three.jpg",
+    alt: "Get your medical marijuana card recommendation",
+  },
+  {
+    src: "/process-section-four.jpg",
+    alt: "Access medical cannabis from a licensed dispensary",
+  },
+] as const;
+
+export function ProcessSection() {
+  return (
+    <section id="our-process" className="bg-white px-5 py-16 md:px-10 md:py-24">
+      <div className="mx-auto max-w-[1240px]">
+        <div className="mb-12 max-w-2xl">
+          <SectionEyebrow>The Process</SectionEyebrow>
+          <h2 className="font-heading m-0 mb-4 text-3xl font-semibold text-brand md:text-4xl">
+            How to Get Your Medical Cannabis Card in Fresno?
+          </h2>
+          <p className="m-0 text-[15px] leading-relaxed text-muted-foreground">
+            Getting a medical cannabis card in Fresno is easy. Follow our quick
+            4-step process and access medical marijuana legally.
+          </p>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, index) => {
+            const image = stepImages[index];
+            return (
+              <article
+                key={step.n}
+                className="overflow-hidden rounded-[1.75rem] bg-brand text-primary-foreground shadow-[0_12px_40px_rgba(28,80,60,0.12)]"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/20 to-transparent" />
+                  <span className="absolute top-3 left-3 rounded-full bg-lime px-3 py-1 text-[11px] font-semibold tracking-[0.12em] text-brand uppercase">
+                    Step {step.n}
+                  </span>
+                </div>
+                <div className="relative p-5 pt-4">
+                  <h3 className="font-heading m-0 mb-2 text-xl font-semibold">
+                    {step.title}
+                  </h3>
+                  <p className="m-0 text-sm leading-relaxed text-white/75">
+                    {step.body}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 flex flex-col gap-6 rounded-[1.75rem] border border-lime/40 bg-[linear-gradient(135deg,#e6eee6_0%,#f3f6f2_100%)] px-6 py-8 md:flex-row md:items-center md:justify-between md:px-10">
+          <div>
+            <h3 className="font-heading m-0 mb-4 text-2xl font-semibold text-brand">
+              Complete Process in 15 Minutes
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {processMini.map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-brand ring-1 ring-border"
+                >
+                  <Clock3 className="size-3.5 text-lime" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <Link
+            href="#book"
+            className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold whitespace-nowrap text-primary-foreground no-underline transition hover:bg-brand-deep"
+          >
+            Start Your Consultation
+          </Link>
+        </div>
+
+        <p className="mt-6 text-center text-xs tracking-[0.04em] text-muted-foreground uppercase">
+          100% Money-Back If Not Approved • Budget-Friendly Cost • Flexible
+          Payment Modes
+        </p>
+      </div>
+    </section>
+  );
+}

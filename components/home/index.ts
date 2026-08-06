@@ -1,0 +1,11 @@
+export { HeroSection } from "@/components/home/hero-section";
+export { FeaturesSection } from "@/components/home/features-section";
+export { ProcessSection } from "@/components/home/process-section";
+export { TeamSection } from "@/components/home/team-section";
+export { ConditionsSection } from "@/components/home/conditions-section";
+export { BenefitsSection } from "@/components/home/benefits-section";
+export { CardChoicesSection } from "@/components/home/card-choices-section";
+export { PricingSection } from "@/components/home/pricing-section";
+export { RenewalSection } from "@/components/home/renewal-section";
+export { TestimonialsSection } from "@/components/home/testimonials-section";
+export { FaqSection } from "@/components/home/faq-section";
