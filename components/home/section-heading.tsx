@@ -9,7 +9,7 @@ export function SectionEyebrow({
     <p
       className={
         light
-          ? "mb-3 text-[11px] font-semibold tracking-[0.16em] text-lime uppercase"
+          ? "mb-3 text-[11px] font-semibold tracking-[0.16em] text-[#d8f0b8] uppercase"
           : "mb-3 text-[11px] font-semibold tracking-[0.16em] text-brand-soft uppercase"
       }
     >
@@ -43,7 +43,7 @@ export function SectionHeading({
         <p
           className={
             light
-              ? "m-0 text-[15px] leading-relaxed text-white/75"
+              ? "m-0 text-[15px] leading-relaxed text-white/90"
               : "m-0 text-[15px] leading-relaxed text-muted-foreground"
           }
         >

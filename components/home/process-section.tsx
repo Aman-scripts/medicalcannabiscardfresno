@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BookLink } from "@/components/book-link";
+import { BookingCta } from "@/components/booking-cta";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { processMini, steps } from "@/lib/home-content";
 
@@ -50,6 +50,8 @@ export function ProcessSection() {
                     src={image.src}
                     alt={image.alt}
                     fill
+                    loading="lazy"
+                    quality={65}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover"
                   />
@@ -62,7 +64,7 @@ export function ProcessSection() {
                   <h3 className="font-heading m-0 mb-2 text-xl font-semibold">
                     {step.title}
                   </h3>
-                  <p className="m-0 text-sm leading-relaxed text-white/75">
+                  <p className="m-0 text-sm leading-relaxed text-white/90">
                     {step.body}
                   </p>
                 </div>
@@ -76,9 +78,9 @@ export function ProcessSection() {
             <h3 className="font-heading m-0 text-2xl font-semibold text-brand">
               Complete Process in 15 Minutes
             </h3>
-            <BookLink className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold whitespace-nowrap text-primary-foreground no-underline transition hover:bg-brand-deep">
+            <BookingCta className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold whitespace-nowrap text-primary-foreground no-underline transition hover:bg-brand-deep">
               Start Your Consultation
-            </BookLink>
+            </BookingCta>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-0">

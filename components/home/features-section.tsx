@@ -6,7 +6,7 @@ import {
   ThumbsUp,
   UserRoundCheck,
 } from "lucide-react";
-import { BookLink } from "@/components/book-link";
+import { BookingCta } from "@/components/booking-cta";
 import { SectionEyebrow, SectionHeading } from "@/components/home/section-heading";
 import { features } from "@/lib/home-content";
 
@@ -45,7 +45,7 @@ export function FeaturesSection() {
                   <span className="flex size-12 items-center justify-center rounded-2xl bg-brand text-lime">
                     <Icon className="size-6" strokeWidth={1.75} />
                   </span>
-                  <span className="font-heading text-4xl font-semibold tracking-tight text-brand/65 md:text-5xl">
+                  <span className="font-heading text-4xl font-semibold tracking-tight text-brand-soft md:text-5xl">
                     {feature.n}
                   </span>
                 </div>
@@ -61,9 +61,9 @@ export function FeaturesSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <BookLink className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep">
+          <BookingCta className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep">
             GET MMJ CARD
-          </BookLink>
+          </BookingCta>
         </div>
       </div>
     </section>

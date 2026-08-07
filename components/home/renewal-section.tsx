@@ -1,4 +1,4 @@
-import { BookLink } from "@/components/book-link";
+import { BookingCta } from "@/components/booking-cta";
 import { CheckIcon } from "@/components/check-icon";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { renewalPoints } from "@/lib/home-content";
@@ -26,12 +26,12 @@ export function RenewalSection() {
         </div>
         <div className="flex flex-col items-center justify-center bg-brand p-10 text-center text-primary-foreground">
           <div className="font-heading text-6xl font-semibold text-lime">$55</div>
-          <p className="mt-3 mb-6 max-w-[18ch] text-sm text-white/75">
+          <p className="mt-3 mb-6 max-w-[18ch] text-sm text-white/90">
             Renew your 420 card in Fresno for just $55.
           </p>
-          <BookLink className="inline-flex rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-white">
+          <BookingCta className="inline-flex rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-white">
             Book an Appointment
-          </BookLink>
+          </BookingCta>
         </div>
       </div>
     </section>

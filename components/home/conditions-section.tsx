@@ -1,4 +1,4 @@
-import { BookLink } from "@/components/book-link";
+import { BookingCta } from "@/components/booking-cta";
 import { SectionEyebrow, SectionHeading } from "@/components/home/section-heading";
 import { conditions } from "@/lib/home-content";
 
@@ -33,7 +33,7 @@ export function ConditionsSection() {
             <div className="font-heading text-5xl font-semibold text-lime">
               12+
             </div>
-            <p className="mt-2 text-sm text-white/75">Qualifying Conditions</p>
+            <p className="mt-2 text-sm text-white/90">Qualifying Conditions</p>
           </div>
           <div className="flex flex-col justify-between gap-6 rounded-[2rem] border border-border bg-white p-8 shadow-[0_12px_40px_rgba(28,80,60,0.06)] md:flex-row md:items-center">
             <div>
@@ -45,13 +45,13 @@ export function ConditionsSection() {
                 MMIC.
               </p>
             </div>
-            <BookLink className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep">
+            <BookingCta className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep">
               Get Evaluate
-            </BookLink>
+            </BookingCta>
           </div>
           <div className="rounded-[2rem] bg-lime p-8 text-brand">
             <div className="font-heading text-5xl font-semibold">$55</div>
-            <p className="mt-2 text-sm text-brand/70">Starting Price</p>
+            <p className="mt-2 text-sm font-medium text-brand">Starting Price</p>
           </div>
         </div>
       </div>

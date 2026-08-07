@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Clock3, Mail, MapPin, Phone } from "lucide-react";
-import { BookLink } from "@/components/book-link";
+import { BookingCta } from "@/components/booking-cta";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -49,7 +49,7 @@ export default function ContactPage() {
   return (
     <>
       <SiteHeader />
-      <main className="overflow-x-hidden">
+      <main id="main-content" className="overflow-x-hidden">
         <section className="bg-grid border-b border-border px-4 py-10 sm:px-5 sm:py-14 md:px-10 md:py-20">
           <div className="mx-auto max-w-[1240px]">
             <SectionEyebrow>Get in Touch</SectionEyebrow>
@@ -128,9 +128,9 @@ export default function ContactPage() {
               <span className="hidden text-brand/30 sm:inline" aria-hidden>
                 ·
               </span>
-              <BookLink className="font-semibold text-brand underline underline-offset-2">
+              <BookingCta className="font-semibold text-brand underline underline-offset-2">
                 Get Started
-              </BookLink>
+              </BookingCta>
             </div>
           </div>
         </section>

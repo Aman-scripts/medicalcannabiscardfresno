@@ -74,7 +74,7 @@
   --secondary: #e6eee6;
   --secondary-foreground: #1c503c;
   --muted: #e6eee6;
-  --muted-foreground: #4d6558;
+  --muted-foreground: #3f5649;
   --accent: #e6eee6;
   --accent-foreground: #1c503c;
   --destructive: oklch(0.577 0.245 27.325);
@@ -189,10 +189,26 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .animate-marquee,
   .animate-rise,
   .animate-rise-delay,
   .animate-fade-in {
     animation: none;
   }
+}
+
+/* Visible focus for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Skip style/layout work for below-fold home sections until near viewport */
+#main-content > :not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
 }

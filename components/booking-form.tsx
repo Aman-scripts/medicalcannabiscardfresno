@@ -13,15 +13,15 @@ export function BookingForm({
 
   return (
     <div className="rounded-[2rem] border border-border bg-white p-6 shadow-[0_20px_60px_rgba(26,67,49,0.08)] md:p-8">
-      <div className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
+      <div className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-brand-soft uppercase">
         Book an Appointment
       </div>
-      <h3
+      <p
         id={titleId}
         className="font-heading m-0 mb-1 text-2xl font-semibold text-brand"
       >
         Plans starting at $55 only
-      </h3>
+      </p>
       <p className="mb-6 text-sm text-muted-foreground">
         HIPAA-compliant form · 100% money-back if not approved
       </p>

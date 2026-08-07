@@ -15,7 +15,7 @@ export function LegalLayout({
   return (
     <>
       <SiteHeader />
-      <main className="bg-white">
+      <main id="main-content" className="bg-white">
         <div className="mx-auto grid max-w-[1100px] gap-10 px-5 py-12 md:px-10 md:py-16 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
           <article className="min-w-0">
             <nav aria-label="Breadcrumb" className="mb-7">
@@ -23,7 +23,7 @@ export function LegalLayout({
                 <li>
                   <Link
                     href="/"
-                    className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-medium text-brand/70 no-underline transition hover:bg-white hover:text-brand"
+                    className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-white"
                   >
                     <Home className="size-3.5 shrink-0" strokeWidth={2} />
                     Home
@@ -69,7 +69,7 @@ export function LegalLayout({
                             "block border-l-2 py-2 pl-3 text-sm no-underline transition",
                             active
                               ? "border-brand font-semibold text-brand"
-                              : "border-transparent font-medium text-brand/75 underline-offset-2 hover:border-brand/40 hover:text-brand hover:underline",
+                              : "border-transparent font-medium text-brand underline-offset-2 hover:border-brand/40 hover:underline",
                           )}
                         >
                           {item.label}

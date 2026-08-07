@@ -24,7 +24,13 @@ export function BenefitsSection() {
                     : "rounded-[1.75rem] bg-sand p-6 text-brand ring-1 ring-border/60"
                 }
               >
-                <div className="font-heading text-4xl font-semibold tracking-tight text-lime md:text-5xl">
+                <div
+                  className={
+                    dark
+                      ? "font-heading text-4xl font-semibold tracking-tight text-lime md:text-5xl"
+                      : "font-heading text-4xl font-semibold tracking-tight text-brand md:text-5xl"
+                  }
+                >
                   0{index + 1}
                 </div>
                 <h3 className="font-heading mt-3 mb-2 text-xl font-semibold">
@@ -33,7 +39,7 @@ export function BenefitsSection() {
                 <p
                   className={
                     dark
-                      ? "m-0 text-sm leading-relaxed text-white/75"
+                      ? "m-0 text-sm leading-relaxed text-white/90"
                       : "m-0 text-sm leading-relaxed text-muted-foreground"
                   }
                 >
@@ -51,6 +57,9 @@ export function BenefitsSection() {
               alt="Helping patients manage their conditions"
               width={900}
               height={700}
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              quality={70}
+              loading="lazy"
               className="h-full min-h-[280px] w-full object-cover"
             />
             <div className="absolute bottom-5 left-5 rounded-2xl bg-white px-5 py-4 shadow-lg">

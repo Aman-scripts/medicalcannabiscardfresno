@@ -26,12 +26,13 @@ export function BrandMark({
         alt="Medical Cannabis Card Fresno"
         width={dims.width}
         height={dims.height}
+        sizes="180px"
+        quality={70}
         className={cn(
           dims.className,
           "object-contain object-left",
           onDark && "brightness-0 invert",
         )}
-        priority={size === "sm"}
       />
     </span>
   );

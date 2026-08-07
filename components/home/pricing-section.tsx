@@ -1,4 +1,4 @@
-import { BookLink } from "@/components/book-link";
+import { BookingCta } from "@/components/booking-cta";
 import { CheckIcon } from "@/components/check-icon";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { pricingPlans } from "@/lib/home-content";
@@ -33,7 +33,13 @@ export function PricingSection() {
                   Most Chosen
                 </span>
               ) : null}
-              <div className="text-[11px] font-semibold tracking-[0.12em] text-lime uppercase">
+              <div
+                className={
+                  plan.featured
+                    ? "text-[11px] font-semibold tracking-[0.12em] text-[#d8f0b8] uppercase"
+                    : "text-[11px] font-semibold tracking-[0.12em] text-brand-soft uppercase"
+                }
+              >
                 {plan.tag}
               </div>
               <h3 className="font-heading mt-3 mb-2 text-2xl font-semibold">
@@ -48,7 +54,7 @@ export function PricingSection() {
                     key={item}
                     className={
                       plan.featured
-                        ? "flex gap-2 text-sm text-white/80 md:text-[15px]"
+                        ? "flex gap-2 text-sm text-white/90 md:text-[15px]"
                         : "flex gap-2 text-sm text-muted-foreground md:text-[15px]"
                     }
                   >
@@ -63,7 +69,7 @@ export function PricingSection() {
                   </div>
                 ))}
               </div>
-              <BookLink
+              <BookingCta
                 className={
                   plan.featured
                     ? "mt-auto inline-flex items-center justify-center rounded-full bg-white py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-lime"
@@ -71,7 +77,7 @@ export function PricingSection() {
                 }
               >
                 Book an Appointment
-              </BookLink>
+              </BookingCta>
             </article>
           ))}
         </div>

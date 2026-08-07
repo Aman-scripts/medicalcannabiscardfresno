@@ -3,7 +3,7 @@ import { testimonials } from "@/lib/home-content";
 
 function StarRow() {
   return (
-    <div className="flex gap-1 text-[#f5b400]" aria-label="5 star rating">
+    <div className="flex gap-1 text-[#c48a00]" role="img" aria-label="5 star rating">
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
@@ -73,6 +73,7 @@ export function TestimonialsSection() {
                 <span
                   className="inline-flex size-8 items-center justify-center rounded-full bg-white ring-1 ring-border"
                   title="Google Review"
+                  role="img"
                   aria-label="Google Review"
                 >
                   <GoogleIcon className="size-4" />

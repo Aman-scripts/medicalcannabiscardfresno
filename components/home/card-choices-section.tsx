@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BookLink } from "@/components/book-link";
+import { BookingCta } from "@/components/booking-cta";
 import { SectionEyebrow, SectionHeading } from "@/components/home/section-heading";
 import { cardChoices } from "@/lib/home-content";
 
@@ -44,6 +44,8 @@ export function CardChoicesSection() {
                     src={image.src}
                     alt={image.alt}
                     fill
+                    loading="lazy"
+                    quality={65}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
@@ -70,15 +72,15 @@ export function CardChoicesSection() {
             <h3 className="font-heading m-0 mb-2 text-2xl font-semibold">
               Need Help Selecting the Right Product?
             </h3>
-            <p className="m-0 max-w-2xl text-sm leading-relaxed text-white/75">
+            <p className="m-0 max-w-2xl text-sm leading-relaxed text-white/90">
               If you are unsure which plan is most appropriate, our specialists
               can guide you through each option, outline the benefits, and assist
               you in selecting the best plan for your health needs
             </p>
           </div>
-          <BookLink className="inline-flex shrink-0 items-center justify-center rounded-full bg-lime px-6 py-3.5 text-sm font-semibold whitespace-nowrap text-brand no-underline transition hover:bg-white">
+          <BookingCta className="inline-flex shrink-0 items-center justify-center rounded-full bg-lime px-6 py-3.5 text-sm font-semibold whitespace-nowrap text-brand no-underline transition hover:bg-white">
             Connect with an Expert
-          </BookLink>
+          </BookingCta>
         </div>
       </div>
     </section>

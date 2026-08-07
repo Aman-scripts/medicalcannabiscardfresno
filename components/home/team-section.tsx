@@ -15,7 +15,7 @@ export function TeamSection() {
           <h2 className="font-heading m-0 mb-4 text-3xl font-semibold md:text-4xl">
             Your Trusted Team for Medical Cannabis Card in Fresno
           </h2>
-          <p className="mb-7 text-[15px] leading-relaxed text-white/75">
+          <p className="mb-7 text-[15px] leading-relaxed text-white/90">
             With 6+ years of experience, we ensure safe access, educate patients
             about their rights, and help improve overall quality of life. We
             connect you with licensed specialists who provide 420 evaluations in
@@ -35,10 +35,10 @@ export function TeamSection() {
             ))}
           </ul>
           <div className="rounded-[1.5rem] border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-            <div className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
+            <div className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-[#d8f0b8] uppercase">
               Important:
             </div>
-            <p className="m-0 text-sm leading-relaxed text-white/80">
+            <p className="m-0 text-sm leading-relaxed text-white/90">
               We adhere to the Compassionate Use Act (Proposition 215, 1996) and
               the California Health and Safety Code §11362.5. Licensed
               professionals provide recommendations based on qualifying
@@ -54,6 +54,9 @@ export function TeamSection() {
               alt="Your trusted medical cannabis card team in Fresno"
               width={1000}
               height={750}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={70}
+              loading="lazy"
               className="aspect-[4/3] w-full object-cover"
             />
           </div>

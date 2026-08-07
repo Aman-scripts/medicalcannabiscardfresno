@@ -33,6 +33,14 @@ const legalIcons: Record<string, LucideIcon> = {
   "/disclaimer": TriangleAlert,
 };
 
+function FooterHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mb-4 text-[11px] font-semibold tracking-[0.14em] text-[#d8f0b8] uppercase">
+      {children}
+    </p>
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className="overflow-x-hidden border-t border-border bg-brand px-4 pt-14 pb-8 text-primary-foreground sm:px-5 md:px-10 md:pt-16">
@@ -42,38 +50,36 @@ export function SiteFooter() {
             <div className="mb-4">
               <BrandMark size="md" onDark />
             </div>
-            <p className="m-0 max-w-[280px] text-sm leading-relaxed text-white/70">
+            <p className="m-0 max-w-[280px] text-sm leading-relaxed text-white/85">
               Licensed telehealth evaluations for medical cannabis
               recommendations in Fresno, California.
             </p>
           </div>
 
           <div>
-            <h6 className="mb-4 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
-              Quick Links
-            </h6>
+            <FooterHeading>Quick Links</FooterHeading>
             <div className="flex flex-col gap-2.5 text-sm">
               <Link
                 href="/#qualify-condition"
-                className="text-white/85 no-underline hover:text-white"
+                className="text-white/90 no-underline hover:text-white"
               >
                 Qualifying Conditions
               </Link>
               <Link
                 href="/#price"
-                className="text-white/85 no-underline hover:text-white"
+                className="text-white/90 no-underline hover:text-white"
               >
                 Pricing Plans
               </Link>
               <Link
                 href="/#faq"
-                className="text-white/85 no-underline hover:text-white"
+                className="text-white/90 no-underline hover:text-white"
               >
                 FAQs
               </Link>
               <Link
                 href="/contact"
-                className="text-white/85 no-underline hover:text-white"
+                className="text-white/90 no-underline hover:text-white"
               >
                 Contact Us
               </Link>
@@ -81,9 +87,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h6 className="mb-4 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
-              Legal, Compliance &amp; Editorial
-            </h6>
+            <FooterHeading>Legal, Compliance &amp; Editorial</FooterHeading>
             <div className="flex flex-col gap-3 text-sm">
               {legalNav.map((item) => {
                 const Icon = legalIcons[item.href];
@@ -91,11 +95,11 @@ export function SiteFooter() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex items-center gap-2.5 text-white/85 no-underline hover:text-white"
+                    className="flex items-center gap-2.5 text-white/90 no-underline hover:text-white"
                   >
                     {Icon ? (
                       <Icon
-                        className="size-5 shrink-0 text-lime"
+                        className="size-5 shrink-0 text-[#d8f0b8]"
                         strokeWidth={1.9}
                         aria-hidden
                       />
@@ -108,10 +112,8 @@ export function SiteFooter() {
           </div>
 
           <div className="min-w-0">
-            <h6 className="mb-4 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
-              Contact Information
-            </h6>
-            <div className="flex min-w-0 flex-col gap-2.5 text-sm text-white/85">
+            <FooterHeading>Contact Information</FooterHeading>
+            <div className="flex min-w-0 flex-col gap-2.5 text-sm text-white/90">
               <a href={PHONE_HREF} className="no-underline hover:text-white">
                 {PHONE_DISPLAY}
               </a>
@@ -122,16 +124,16 @@ export function SiteFooter() {
                 {EMAIL}
               </a>
               <span>{ADDRESS}</span>
-              <span className="whitespace-pre-line text-white/60">{HOURS}</span>
+              <span className="whitespace-pre-line text-white/80">{HOURS}</span>
             </div>
           </div>
         </div>
 
         <div className="flex flex-wrap justify-between gap-3 border-t border-white/15 pt-6">
-          <p className="m-0 text-xs text-white/55">
+          <p className="m-0 text-xs text-white/80">
             All Rights Reserved medicalcannabiscardfresno.com © 2026
           </p>
-          <p className="m-0 max-w-[520px] text-xs text-white/55">
+          <p className="m-0 max-w-[520px] text-xs text-white/80">
             This website does not sell medicine nor controlled substances. It is
             a network of doctors and nurse practitioners, not a pharmacy /
             dispensary.
