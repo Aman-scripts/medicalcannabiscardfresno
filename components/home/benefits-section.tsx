@@ -24,7 +24,7 @@ export function BenefitsSection() {
                     : "rounded-[1.75rem] bg-sand p-6 text-brand ring-1 ring-border/60"
                 }
               >
-                <div className="font-heading text-2xl font-semibold text-lime">
+                <div className="font-heading text-4xl font-semibold tracking-tight text-lime md:text-5xl">
                   0{index + 1}
                 </div>
                 <h3 className="font-heading mt-3 mb-2 text-xl font-semibold">

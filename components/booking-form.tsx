@@ -2,13 +2,24 @@
 
 import Link from "next/link";
 
-export function BookingForm() {
+export function BookingForm({
+  idPrefix = "booking",
+  titleId,
+}: {
+  idPrefix?: string;
+  titleId?: string;
+} = {}) {
+  const fieldId = (name: string) => `${idPrefix}-${name}`;
+
   return (
     <div className="rounded-[2rem] border border-border bg-white p-6 shadow-[0_20px_60px_rgba(26,67,49,0.08)] md:p-8">
       <div className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
         Book an Appointment
       </div>
-      <h3 className="font-heading m-0 mb-1 text-2xl font-semibold text-brand">
+      <h3
+        id={titleId}
+        className="font-heading m-0 mb-1 text-2xl font-semibold text-brand"
+      >
         Plans starting at $55 only
       </h3>
       <p className="mb-6 text-sm text-muted-foreground">
@@ -23,13 +34,13 @@ export function BookingForm() {
       >
         <div>
           <label
-            htmlFor="fullName"
+            htmlFor={fieldId("fullName")}
             className="mb-1.5 block text-sm font-semibold text-brand"
           >
             Full Name
           </label>
           <input
-            id="fullName"
+            id={fieldId("fullName")}
             name="fullName"
             placeholder="Jane Smith"
             required
@@ -40,13 +51,13 @@ export function BookingForm() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label
-              htmlFor="phone"
+              htmlFor={fieldId("phone")}
               className="mb-1.5 block text-sm font-semibold text-brand"
             >
               Phone
             </label>
             <input
-              id="phone"
+              id={fieldId("phone")}
               name="phone"
               type="tel"
               placeholder="(559) 000-0000"
@@ -56,13 +67,13 @@ export function BookingForm() {
           </div>
           <div>
             <label
-              htmlFor="email"
+              htmlFor={fieldId("email")}
               className="mb-1.5 block text-sm font-semibold text-brand"
             >
               Email
             </label>
             <input
-              id="email"
+              id={fieldId("email")}
               name="email"
               type="email"
               placeholder="jane@email.com"

@@ -42,10 +42,10 @@ export function FeaturesSection() {
                 className="rounded-[1.75rem] border border-white/80 bg-white p-7 shadow-[0_12px_40px_rgba(28,80,60,0.06)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_44px_rgba(28,80,60,0.1)]"
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="flex size-12 items-center justify-center rounded-2xl bg-brand/5 text-brand">
-                    <Icon className="size-6 text-lime" strokeWidth={1.5} />
+                  <span className="flex size-12 items-center justify-center rounded-2xl bg-brand text-lime">
+                    <Icon className="size-6" strokeWidth={1.75} />
                   </span>
-                  <span className="font-heading text-sm font-semibold text-brand/30">
+                  <span className="font-heading text-4xl font-semibold tracking-tight text-brand/65 md:text-5xl">
                     {feature.n}
                   </span>
                 </div>

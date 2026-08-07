@@ -21,11 +21,16 @@ export function TeamSection() {
             connect you with licensed specialists who provide 420 evaluations in
             Fresno.
           </p>
-          <ul className="mb-7 m-0 grid list-none gap-3 p-0 sm:grid-cols-2">
+          <ul className="mb-8 m-0 grid list-none gap-3 p-0 sm:grid-cols-2 sm:gap-3.5">
             {teamPoints.map((point) => (
-              <li key={point} className="flex items-start gap-2.5 text-sm">
-                <CheckIcon className="mt-0.5 shrink-0 text-lime" />
-                {point}
+              <li
+                key={point}
+                className="flex min-h-[4.5rem] items-start gap-3 rounded-2xl border border-white/12 bg-white/[0.07] px-4 py-3.5 text-[14px] leading-snug text-white/90 sm:text-[15px]"
+              >
+                <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-lime/20 ring-1 ring-lime/35">
+                  <CheckIcon className="size-3.5 text-lime" />
+                </span>
+                <span className="pt-0.5 font-medium">{point}</span>
               </li>
             ))}
           </ul>

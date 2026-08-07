@@ -35,9 +35,9 @@ const legalIcons: Record<string, LucideIcon> = {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-brand px-5 pt-16 pb-8 text-primary-foreground md:px-10">
+    <footer className="overflow-x-hidden border-t border-border bg-brand px-4 pt-14 pb-8 text-primary-foreground sm:px-5 md:px-10 md:pt-16">
       <div className="mx-auto max-w-[1240px]">
-        <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1.2fr_1.5fr]">
+        <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1.2fr_1.5fr] lg:gap-8">
           <div>
             <div className="mb-4">
               <BrandMark size="md" onDark />
@@ -107,17 +107,17 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h6 className="mb-4 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
               Contact Information
             </h6>
-            <div className="flex flex-col gap-2.5 text-sm text-white/85">
+            <div className="flex min-w-0 flex-col gap-2.5 text-sm text-white/85">
               <a href={PHONE_HREF} className="no-underline hover:text-white">
                 {PHONE_DISPLAY}
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="whitespace-nowrap no-underline hover:text-white"
+                className="break-all no-underline hover:text-white"
               >
                 {EMAIL}
               </a>
