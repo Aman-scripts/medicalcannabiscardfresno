@@ -44,43 +44,42 @@ export function BookingForm({
             name="fullName"
             placeholder="Jane Smith"
             required
-            className="box-border min-h-11 w-full rounded-2xl border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
+            className="box-border min-h-11 w-full rounded-none border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
           />
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label
-              htmlFor={fieldId("phone")}
-              className="mb-1.5 block text-sm font-semibold text-brand"
-            >
-              Phone
-            </label>
-            <input
-              id={fieldId("phone")}
-              name="phone"
-              type="tel"
-              placeholder="(559) 000-0000"
-              required
-              className="box-border min-h-11 w-full rounded-2xl border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor={fieldId("email")}
-              className="mb-1.5 block text-sm font-semibold text-brand"
-            >
-              Email
-            </label>
-            <input
-              id={fieldId("email")}
-              name="email"
-              type="email"
-              placeholder="jane@email.com"
-              required
-              className="box-border min-h-11 w-full rounded-2xl border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
-            />
-          </div>
+        <div>
+          <label
+            htmlFor={fieldId("phone")}
+            className="mb-1.5 block text-sm font-semibold text-brand"
+          >
+            Phone
+          </label>
+          <input
+            id={fieldId("phone")}
+            name="phone"
+            type="tel"
+            placeholder="(559) 000-0000"
+            required
+            className="box-border min-h-11 w-full rounded-none border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor={fieldId("email")}
+            className="mb-1.5 block text-sm font-semibold text-brand"
+          >
+            Email
+          </label>
+          <input
+            id={fieldId("email")}
+            name="email"
+            type="email"
+            placeholder="jane@email.com"
+            required
+            className="box-border min-h-11 w-full rounded-none border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
+          />
         </div>
 
         <label className="flex items-start gap-3 text-sm leading-snug text-brand">
