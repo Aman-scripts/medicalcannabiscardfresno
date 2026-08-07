@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   BadgeDollarSign,
   GraduationCap,
@@ -7,6 +6,7 @@ import {
   ThumbsUp,
   UserRoundCheck,
 } from "lucide-react";
+import { BookLink } from "@/components/book-link";
 import { SectionEyebrow, SectionHeading } from "@/components/home/section-heading";
 import { features } from "@/lib/home-content";
 
@@ -61,12 +61,9 @@ export function FeaturesSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link
-            href="#book"
-            className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep"
-          >
+          <BookLink className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep">
             GET MMJ CARD
-          </Link>
+          </BookLink>
         </div>
       </div>
     </section>

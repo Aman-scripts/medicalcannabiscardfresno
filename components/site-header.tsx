@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { BookLink } from "@/components/book-link";
 import { BrandMark } from "@/components/brand-mark";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/home-content";
 import { cn } from "@/lib/utils";
@@ -18,13 +19,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 animate-fade-in border-b border-border/80 bg-[color-mix(in_srgb,var(--cream)_92%,transparent)] backdrop-blur-md">
       <div className="mx-auto flex max-w-[1240px] items-center gap-4 px-5 py-3.5 lg:px-10 lg:py-4">
-        <Link
-          href="/#top"
+        <BookLink
           className="mr-auto shrink-0 no-underline transition hover:opacity-90"
           onClick={() => setOpen(false)}
         >
           <BrandMark size="sm" />
-        </Link>
+        </BookLink>
 
         <nav className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
@@ -45,12 +45,9 @@ export function SiteHeader() {
           >
             {PHONE_DISPLAY}
           </a>
-          <Link
-            href="/#book"
-            className="inline-flex items-center rounded-full bg-brand px-6 py-2.5 text-base font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep"
-          >
+          <BookLink className="inline-flex items-center rounded-full bg-brand px-6 py-2.5 text-base font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep">
             Get Started
-          </Link>
+          </BookLink>
         </div>
 
         <button
@@ -99,13 +96,12 @@ export function SiteHeader() {
             <a href={PHONE_HREF} className="text-base font-semibold text-brand">
               {PHONE_DISPLAY}
             </a>
-            <Link
-              href="/#book"
+            <BookLink
               className="mt-1 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-base font-semibold text-primary-foreground no-underline"
               onClick={() => setOpen(false)}
             >
               Get Started
-            </Link>
+            </BookLink>
           </nav>
         </div>
       ) : null}

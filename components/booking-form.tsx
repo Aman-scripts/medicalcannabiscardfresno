@@ -4,10 +4,7 @@ import Link from "next/link";
 
 export function BookingForm() {
   return (
-    <div
-      id="book"
-      className="rounded-[2rem] border border-border bg-white p-6 shadow-[0_20px_60px_rgba(26,67,49,0.08)] md:p-8"
-    >
+    <div className="rounded-[2rem] border border-border bg-white p-6 shadow-[0_20px_60px_rgba(26,67,49,0.08)] md:p-8">
       <div className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
         Book an Appointment
       </div>

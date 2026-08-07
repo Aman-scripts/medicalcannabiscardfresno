@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Clock3, Mail, MapPin, Phone } from "lucide-react";
+import { BookLink } from "@/components/book-link";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -125,12 +125,9 @@ export default function ContactPage() {
             </div>
             <p className="mt-4 text-center text-sm text-muted-foreground">
               {ADDRESS} ·{" "}
-              <Link
-                href="/#book"
-                className="font-semibold text-brand underline underline-offset-2"
-              >
+              <BookLink className="font-semibold text-brand underline underline-offset-2">
                 Get Started
-              </Link>
+              </BookLink>
             </p>
           </div>
         </section>

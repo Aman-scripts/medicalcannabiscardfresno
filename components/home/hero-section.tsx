@@ -7,7 +7,7 @@ import { PHONE_HREF, trustList } from "@/lib/home-content";
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="book" className="relative overflow-hidden">
       <Image
         src="/hero-section.jpg"
         alt=""

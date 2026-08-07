@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BookLink } from "@/components/book-link";
 import { CheckIcon } from "@/components/check-icon";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { pricingPlans } from "@/lib/home-content";
@@ -63,8 +63,7 @@ export function PricingSection() {
                   </div>
                 ))}
               </div>
-              <Link
-                href="#book"
+              <BookLink
                 className={
                   plan.featured
                     ? "mt-auto inline-flex items-center justify-center rounded-full bg-white py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-lime"
@@ -72,7 +71,7 @@ export function PricingSection() {
                 }
               >
                 Book an Appointment
-              </Link>
+              </BookLink>
             </article>
           ))}
         </div>

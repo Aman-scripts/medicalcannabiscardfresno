@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { BookLink } from "@/components/book-link";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { processMini, steps } from "@/lib/home-content";
 
@@ -76,12 +76,9 @@ export function ProcessSection() {
             <h3 className="font-heading m-0 text-2xl font-semibold text-brand">
               Complete Process in 15 Minutes
             </h3>
-            <Link
-              href="#book"
-              className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold whitespace-nowrap text-primary-foreground no-underline transition hover:bg-brand-deep"
-            >
+            <BookLink className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold whitespace-nowrap text-primary-foreground no-underline transition hover:bg-brand-deep">
               Start Your Consultation
-            </Link>
+            </BookLink>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-0">

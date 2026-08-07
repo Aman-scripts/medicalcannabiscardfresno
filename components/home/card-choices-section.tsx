@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { BookLink } from "@/components/book-link";
 import { SectionEyebrow, SectionHeading } from "@/components/home/section-heading";
 import { cardChoices } from "@/lib/home-content";
 
@@ -48,7 +48,7 @@ export function CardChoicesSection() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand/55 via-transparent to-transparent" />
-                  <span className="absolute bottom-4 left-5 font-heading text-3xl font-semibold text-lime">
+                  <span className="absolute bottom-3 left-5 font-heading text-5xl font-semibold tracking-tight text-lime md:text-6xl">
                     0{index + 1}
                   </span>
                 </div>
@@ -76,12 +76,9 @@ export function CardChoicesSection() {
               you in selecting the best plan for your health needs
             </p>
           </div>
-          <Link
-            href="#book"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-lime px-6 py-3.5 text-sm font-semibold whitespace-nowrap text-brand no-underline transition hover:bg-white"
-          >
+          <BookLink className="inline-flex shrink-0 items-center justify-center rounded-full bg-lime px-6 py-3.5 text-sm font-semibold whitespace-nowrap text-brand no-underline transition hover:bg-white">
             Connect with an Expert
-          </Link>
+          </BookLink>
         </div>
       </div>
     </section>

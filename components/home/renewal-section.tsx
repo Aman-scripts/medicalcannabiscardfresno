@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BookLink } from "@/components/book-link";
 import { CheckIcon } from "@/components/check-icon";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { renewalPoints } from "@/lib/home-content";
@@ -29,12 +29,9 @@ export function RenewalSection() {
           <p className="mt-3 mb-6 max-w-[18ch] text-sm text-white/75">
             Renew your 420 card in Fresno for just $55.
           </p>
-          <Link
-            href="#book"
-            className="inline-flex rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-white"
-          >
+          <BookLink className="inline-flex rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-white">
             Book an Appointment
-          </Link>
+          </BookLink>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BookLink } from "@/components/book-link";
 import { SectionEyebrow, SectionHeading } from "@/components/home/section-heading";
 import { conditions } from "@/lib/home-content";
 
@@ -45,12 +45,9 @@ export function ConditionsSection() {
                 MMIC.
               </p>
             </div>
-            <Link
-              href="#book"
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep"
-            >
+            <BookLink className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground no-underline transition hover:bg-brand-deep">
               Get Evaluate
-            </Link>
+            </BookLink>
           </div>
           <div className="rounded-[2rem] bg-lime p-8 text-brand">
             <div className="font-heading text-5xl font-semibold">$55</div>
