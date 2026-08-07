@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Clock3 } from "lucide-react";
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { processMini, steps } from "@/lib/home-content";
 
@@ -72,32 +71,41 @@ export function ProcessSection() {
           })}
         </div>
 
-        <div className="mt-8 flex flex-col gap-6 rounded-[1.75rem] border border-lime/40 bg-[linear-gradient(135deg,#e6eee6_0%,#f3f6f2_100%)] px-6 py-8 md:flex-row md:items-center md:justify-between md:px-10">
-          <div>
-            <h3 className="font-heading m-0 mb-4 text-2xl font-semibold text-brand">
+        <div className="mt-8 rounded-[1.75rem] bg-sand px-6 py-8 md:px-10 md:py-9">
+          <div className="mb-7 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <h3 className="font-heading m-0 text-2xl font-semibold text-brand">
               Complete Process in 15 Minutes
             </h3>
-            <div className="flex flex-wrap gap-3">
-              {processMini.map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-brand ring-1 ring-border"
-                >
-                  <Clock3 className="size-3.5 text-lime" />
-                  {item}
-                </span>
-              ))}
-            </div>
+            <Link
+              href="#book"
+              className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold whitespace-nowrap text-primary-foreground no-underline transition hover:bg-brand-deep"
+            >
+              Start Your Consultation
+            </Link>
           </div>
-          <Link
-            href="#book"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold whitespace-nowrap text-primary-foreground no-underline transition hover:bg-brand-deep"
-          >
-            Start Your Consultation
-          </Link>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-0">
+            {processMini.map((item, index) => (
+              <div
+                key={item.label}
+                className={
+                  index > 0
+                    ? "sm:border-l sm:border-brand/15 sm:pl-8 sm:ml-8"
+                    : ""
+                }
+              >
+                <div className="font-heading text-3xl font-semibold text-brand md:text-4xl">
+                  {item.time}
+                </div>
+                <div className="mt-1 text-sm text-muted-foreground">
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <p className="mt-6 text-center text-xs tracking-[0.04em] text-muted-foreground uppercase">
+        <p className="mt-5 text-center text-xs tracking-[0.04em] text-muted-foreground uppercase">
           100% Money-Back If Not Approved • Budget-Friendly Cost • Flexible
           Payment Modes
         </p>

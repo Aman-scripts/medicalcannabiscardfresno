@@ -1,4 +1,16 @@
 import Link from "next/link";
+import {
+  Accessibility,
+  CheckCheck,
+  EyeOff,
+  HandCoins,
+  Package,
+  PenLine,
+  ShieldCheck,
+  TriangleAlert,
+  Video,
+  type LucideIcon,
+} from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import {
   ADDRESS,
@@ -7,12 +19,25 @@ import {
   PHONE_DISPLAY,
   PHONE_HREF,
 } from "@/lib/home-content";
+import { legalNav } from "@/lib/legal-content";
+
+const legalIcons: Record<string, LucideIcon> = {
+  "/privacy": EyeOff,
+  "/hipaa-compliance": ShieldCheck,
+  "/consent-for-telehealth": Video,
+  "/terms": CheckCheck,
+  "/refund-policy": HandCoins,
+  "/shipment-policy": Package,
+  "/accessibility-statement": Accessibility,
+  "/editorial-policy": PenLine,
+  "/disclaimer": TriangleAlert,
+};
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-brand px-5 pt-16 pb-8 text-primary-foreground md:px-10">
       <div className="mx-auto max-w-[1240px]">
-        <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1.2fr_1.5fr]">
           <div>
             <div className="mb-4">
               <BrandMark size="md" onDark />
@@ -28,41 +53,57 @@ export function SiteFooter() {
               Quick Links
             </h6>
             <div className="flex flex-col gap-2.5 text-sm">
-              <Link href="/#qualify-condition" className="text-white/85 no-underline hover:text-white">
+              <Link
+                href="/#qualify-condition"
+                className="text-white/85 no-underline hover:text-white"
+              >
                 Qualifying Conditions
               </Link>
-              <Link href="/#price" className="text-white/85 no-underline hover:text-white">
+              <Link
+                href="/#price"
+                className="text-white/85 no-underline hover:text-white"
+              >
                 Pricing Plans
               </Link>
-              <Link href="/#faq" className="text-white/85 no-underline hover:text-white">
+              <Link
+                href="/#faq"
+                className="text-white/85 no-underline hover:text-white"
+              >
                 FAQs
               </Link>
-              <Link href="/shipment-policy" className="text-white/85 no-underline hover:text-white">
-                Shipment Policy
-              </Link>
-              <Link href="/disclaimer" className="text-white/85 no-underline hover:text-white">
-                Disclaimer
+              <Link
+                href="/contact"
+                className="text-white/85 no-underline hover:text-white"
+              >
+                Contact Us
               </Link>
             </div>
           </div>
 
           <div>
             <h6 className="mb-4 text-[11px] font-semibold tracking-[0.14em] text-lime uppercase">
-              Legal
+              Legal, Compliance &amp; Editorial
             </h6>
-            <div className="flex flex-col gap-2.5 text-sm">
-              <Link href="/terms" className="text-white/85 no-underline hover:text-white">
-                Terms of Use
-              </Link>
-              <Link href="/privacy" className="text-white/85 no-underline hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link href="/refund-policy" className="text-white/85 no-underline hover:text-white">
-                Refund Policy
-              </Link>
-              <Link href="/contact" className="text-white/85 no-underline hover:text-white">
-                Contact Us
-              </Link>
+            <div className="flex flex-col gap-3 text-sm">
+              {legalNav.map((item) => {
+                const Icon = legalIcons[item.href];
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="flex items-center gap-2.5 text-white/85 no-underline hover:text-white"
+                  >
+                    {Icon ? (
+                      <Icon
+                        className="size-4 shrink-0 text-lime"
+                        strokeWidth={1.75}
+                        aria-hidden
+                      />
+                    ) : null}
+                    <span>{item.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -76,7 +117,7 @@ export function SiteFooter() {
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="break-all no-underline hover:text-white"
+                className="whitespace-nowrap no-underline hover:text-white"
               >
                 {EMAIL}
               </a>

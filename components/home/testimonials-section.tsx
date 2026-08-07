@@ -3,14 +3,15 @@ import { testimonials } from "@/lib/home-content";
 
 function StarRow() {
   return (
-    <div className="flex gap-0.5 text-lime" aria-label="5 star rating">
+    <div className="flex gap-1 text-[#f5b400]" aria-label="5 star rating">
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
-          width="14"
-          height="14"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="currentColor"
+          className="size-5"
           aria-hidden
         >
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z" />

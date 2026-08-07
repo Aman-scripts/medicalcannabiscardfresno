@@ -61,9 +61,9 @@ export const steps = [
 ] as const;
 
 export const processMini = [
-  "Appointment form (2-3 minutes)",
-  "Video consultation (5-10 minutes)",
-  "Quick Medical Cannabis Recommendations",
+  { time: "2–3 min", label: "Appointment form" },
+  { time: "5–10 min", label: "Video consultation" },
+  { time: "Instant", label: "Medical cannabis recommendation" },
 ] as const;
 
 export const teamPoints = [

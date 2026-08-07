@@ -1,18 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
-
-const plans = [
-  { id: "basic", label: "Basic $55" },
-  { id: "gold", label: "Gold $99" },
-  { id: "platinum", label: "Platinum $199" },
-] as const;
 
 export function BookingForm() {
-  const [plan, setPlan] = useState<(typeof plans)[number]["id"]>("basic");
-
   return (
     <div
       id="book"
@@ -37,7 +27,7 @@ export function BookingForm() {
         <div>
           <label
             htmlFor="fullName"
-            className="mb-1.5 block text-xs font-medium text-muted-foreground"
+            className="mb-1.5 block text-sm font-semibold text-brand"
           >
             Full Name
           </label>
@@ -46,7 +36,7 @@ export function BookingForm() {
             name="fullName"
             placeholder="Jane Smith"
             required
-            className="box-border min-h-11 w-full rounded-2xl border border-border bg-cream px-3.5 text-sm outline-none focus:border-brand"
+            className="box-border min-h-11 w-full rounded-2xl border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
           />
         </div>
 
@@ -54,7 +44,7 @@ export function BookingForm() {
           <div>
             <label
               htmlFor="phone"
-              className="mb-1.5 block text-xs font-medium text-muted-foreground"
+              className="mb-1.5 block text-sm font-semibold text-brand"
             >
               Phone
             </label>
@@ -64,13 +54,13 @@ export function BookingForm() {
               type="tel"
               placeholder="(559) 000-0000"
               required
-              className="box-border min-h-11 w-full rounded-2xl border border-border bg-cream px-3.5 text-sm outline-none focus:border-brand"
+              className="box-border min-h-11 w-full rounded-2xl border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
             />
           </div>
           <div>
             <label
               htmlFor="email"
-              className="mb-1.5 block text-xs font-medium text-muted-foreground"
+              className="mb-1.5 block text-sm font-semibold text-brand"
             >
               Email
             </label>
@@ -80,47 +70,33 @@ export function BookingForm() {
               type="email"
               placeholder="jane@email.com"
               required
-              className="box-border min-h-11 w-full rounded-2xl border border-border bg-cream px-3.5 text-sm outline-none focus:border-brand"
+              className="box-border min-h-11 w-full rounded-2xl border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand"
             />
           </div>
         </div>
 
-        <div>
-          <span className="mb-2 block text-xs font-medium text-muted-foreground">
-            Preferred plan
-          </span>
-          <div className="inline-flex overflow-hidden rounded-full border border-border bg-cream p-1">
-            {plans.map((p) => (
-              <button
-                key={p.id}
-                type="button"
-                onClick={() => setPlan(p.id)}
-                className={cn(
-                  "rounded-full px-3.5 py-2 text-[13px] font-medium transition",
-                  plan === p.id
-                    ? "bg-brand text-primary-foreground"
-                    : "text-brand hover:bg-white",
-                )}
-              >
-                {p.label}
-              </button>
-            ))}
-          </div>
-          <input type="hidden" name="plan" value={plan} />
-        </div>
-
-        <label className="flex items-start gap-2 text-xs text-muted-foreground">
-          <input type="checkbox" required className="mt-0.5 accent-brand" />
+        <label className="flex items-start gap-3 text-sm leading-snug text-brand">
+          <input
+            type="checkbox"
+            required
+            className="mt-0.5 size-4 shrink-0 rounded border-2 border-brand accent-brand"
+          />
           <span>
             I accept the{" "}
-            <Link href="/terms" className="underline">
+            <Link
+              href="/terms"
+              className="font-semibold text-brand underline underline-offset-2 hover:text-brand-soft"
+            >
               Terms and Conditions*
             </Link>
           </span>
         </label>
 
-        <label className="flex items-start gap-2 text-xs text-muted-foreground">
-          <input type="checkbox" className="mt-0.5 accent-brand" />
+        <label className="flex items-start gap-3 text-sm leading-snug text-brand">
+          <input
+            type="checkbox"
+            className="mt-0.5 size-4 shrink-0 rounded border-2 border-brand accent-brand"
+          />
           <span>
             I agree to receive emails with educational content, exclusive
             offers, partnership discounts, and marketing updates
