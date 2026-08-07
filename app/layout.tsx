@@ -28,6 +28,25 @@ export const metadata: Metadata = {
   title: "Get a Medical Marijuana Card Fresno | Apply Online Today",
   description:
     "Get your medical cannabis card in Fresno online. Licensed doctors, same-day approvals, plans starting at $55. HIPAA-compliant telehealth evaluations.",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "48x48" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      {
+        url: "/favicon/favicon-96x96.png",
+        sizes: "96x96",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+  manifest: "/favicon/site.webmanifest",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
