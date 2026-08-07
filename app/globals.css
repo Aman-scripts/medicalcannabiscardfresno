@@ -208,7 +208,7 @@
 }
 
 /* Skip style/layout work for below-fold home sections until near viewport */
-#main-content > :not(:first-child) {
+#main-content[data-cv="home"] > :not(:first-child) {
   content-visibility: auto;
   contain-intrinsic-size: auto 720px;
 }

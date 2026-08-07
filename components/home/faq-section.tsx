@@ -21,9 +21,14 @@ export function FaqSection() {
               key={item.q}
               className="group rounded-[1.25rem] border border-border bg-white px-5 py-4 open:shadow-[0_10px_30px_rgba(28,80,60,0.06)]"
             >
-              <summary className="font-heading flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-semibold text-brand md:text-base">
-                {item.q}
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-sand text-brand ring-1 ring-border transition group-open:rotate-45 group-open:bg-lime">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-brand">
+                <h3 className="font-heading m-0 text-[15px] font-semibold md:text-base">
+                  {item.q}
+                </h3>
+                <span
+                  className="flex size-8 shrink-0 items-center justify-center rounded-full bg-sand text-brand ring-1 ring-border transition group-open:rotate-45 group-open:bg-lime"
+                  aria-hidden
+                >
                   +
                 </span>
               </summary>

@@ -22,15 +22,15 @@ import {
 import { legalNav } from "@/lib/legal-content";
 
 const legalIcons: Record<string, LucideIcon> = {
-  "/privacy": EyeOff,
-  "/hipaa-compliance": ShieldCheck,
-  "/consent-for-telehealth": Video,
-  "/terms": CheckCheck,
-  "/refund-policy": HandCoins,
-  "/shipment-policy": Package,
-  "/accessibility-statement": Accessibility,
-  "/editorial-policy": PenLine,
-  "/disclaimer": TriangleAlert,
+  "/privacy/": EyeOff,
+  "/hipaa-compliance/": ShieldCheck,
+  "/consent-for-telehealth/": Video,
+  "/terms/": CheckCheck,
+  "/refund-policy/": HandCoins,
+  "/shipment-policy/": Package,
+  "/accessibility-statement/": Accessibility,
+  "/editorial-policy/": PenLine,
+  "/disclaimer/": TriangleAlert,
 };
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
@@ -78,7 +78,7 @@ export function SiteFooter() {
                 FAQs
               </Link>
               <Link
-                href="/contact"
+                href="/contact/"
                 className="text-white/90 no-underline hover:text-white"
               >
                 Contact Us

@@ -1,19 +1,55 @@
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
+import { JsonLd } from "@/components/seo/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { legalNav, type LegalPage } from "@/lib/legal-content";
+import {
+  breadcrumbSchema,
+  type PageSeo,
+  webPageSchema,
+  withTrailingSlash,
+} from "@/lib/seo";
 import { cn } from "@/lib/utils";
+
+function formatDate(iso?: string) {
+  if (!iso) return null;
+  return new Date(iso).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
 
 export function LegalLayout({
   page,
+  seo,
   children,
 }: {
   page: LegalPage;
+  seo?: PageSeo;
   children: React.ReactNode;
 }) {
+  const currentPath = withTrailingSlash(page.href);
+  const publishedLabel = formatDate(seo?.published);
+  const modifiedLabel = formatDate(seo?.modified ?? undefined);
+
   return (
     <>
+      {seo ? (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              webPageSchema(seo),
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: page.title, path: currentPath },
+              ]),
+            ],
+          }}
+        />
+      ) : null}
       <SiteHeader />
       <main id="main-content" className="bg-white">
         <div className="mx-auto grid max-w-[1100px] gap-10 px-5 py-12 md:px-10 md:py-16 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
@@ -25,7 +61,11 @@ export function LegalLayout({
                     href="/"
                     className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-white"
                   >
-                    <Home className="size-3.5 shrink-0" strokeWidth={2} />
+                    <Home
+                      className="size-3.5 shrink-0"
+                      strokeWidth={2}
+                      aria-hidden
+                    />
                     Home
                   </Link>
                 </li>
@@ -33,7 +73,10 @@ export function LegalLayout({
                   <ChevronRight className="size-3.5" strokeWidth={2} />
                 </li>
                 <li>
-                  <span className="inline-flex items-center rounded-full bg-brand px-2.5 py-1 text-[13px] font-semibold text-white">
+                  <span
+                    aria-current="page"
+                    className="inline-flex items-center rounded-full bg-brand px-2.5 py-1 text-[13px] font-semibold text-white"
+                  >
                     {page.title}
                   </span>
                 </li>
@@ -43,11 +86,25 @@ export function LegalLayout({
             <h1 className="font-heading m-0 text-4xl font-semibold tracking-tight text-brand md:text-5xl">
               {page.title}
             </h1>
-            {page.lastUpdated ? (
-              <p className="mt-3 mb-0 text-sm text-muted-foreground italic">
-                Last updated: {page.lastUpdated}
-              </p>
-            ) : null}
+
+            <div className="mt-3 flex flex-col gap-1 text-sm text-muted-foreground">
+              {seo?.published && publishedLabel ? (
+                <p className="m-0">
+                  <span className="sr-only">Date published: </span>
+                  Published{" "}
+                  <time dateTime={seo.published}>{publishedLabel}</time>
+                </p>
+              ) : null}
+              {seo?.modified && modifiedLabel ? (
+                <p className="m-0">
+                  <span className="sr-only">Date modified: </span>
+                  Last updated{" "}
+                  <time dateTime={seo.modified}>{modifiedLabel}</time>
+                </p>
+              ) : page.lastUpdated ? (
+                <p className="m-0 italic">Last updated: {page.lastUpdated}</p>
+              ) : null}
+            </div>
 
             <div className="legal-prose mt-10">{children}</div>
           </article>
@@ -60,11 +117,13 @@ export function LegalLayout({
               <nav aria-label="Legal pages">
                 <ul className="m-0 flex list-none flex-col gap-1 p-0">
                   {legalNav.map((item) => {
-                    const active = item.href === page.href;
+                    const href = withTrailingSlash(item.href);
+                    const active = href === currentPath;
                     return (
-                      <li key={item.href}>
+                      <li key={href}>
                         <Link
-                          href={item.href}
+                          href={href}
+                          aria-current={active ? "page" : undefined}
                           className={cn(
                             "block border-l-2 py-2 pl-3 text-sm no-underline transition",
                             active
@@ -92,9 +151,17 @@ export function LegalSections({ page }: { page: LegalPage }) {
   return (
     <div className="flex flex-col gap-8">
       {page.sections.map((section, index) => (
-        <section key={`${section.heading ?? "intro"}-${index}`}>
+        <section
+          key={`${section.heading ?? "intro"}-${index}`}
+          aria-labelledby={
+            section.heading ? `legal-section-${index}` : undefined
+          }
+        >
           {section.heading ? (
-            <h2 className="font-heading m-0 mb-3 text-xl font-semibold text-brand md:text-2xl">
+            <h2
+              id={`legal-section-${index}`}
+              className="font-heading m-0 mb-3 text-xl font-semibold text-brand md:text-2xl"
+            >
               {section.heading}
             </h2>
           ) : null}

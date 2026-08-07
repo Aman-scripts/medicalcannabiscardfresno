@@ -1,15 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { LegalLayout, LegalSections } from "@/components/legal/legal-layout";
 import { disclaimer } from "@/lib/legal-content";
+import { buildMetadata, pages } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: `${disclaimer.title} | Medical Cannabis Card Fresno`,
-  description: disclaimer.description,
-};
+export const metadata: Metadata = buildMetadata(pages.disclaimer);
 
-export default function DisclaimerPage() {
+export default function Page() {
   return (
-    <LegalLayout page={disclaimer}>
+    <LegalLayout page={disclaimer} seo={pages.disclaimer}>
       <LegalSections page={disclaimer} />
     </LegalLayout>
   );

@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import { BookingEnhancer } from "@/components/booking-enhancer";
 import { BookingModalRoot } from "@/components/booking-modal-root";
 import { DeferHydrate } from "@/components/defer-hydrate";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { SITE_NAME, SITE_URL, pages } from "@/lib/seo";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -25,9 +26,18 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Get a Medical Marijuana Card Fresno | Apply Online Today",
-  description:
-    "Get your medical cannabis card in Fresno online. Licensed doctors, same-day approvals, plans starting at $55. HIPAA-compliant telehealth evaluations.",
+  metadataBase: new URL(`${SITE_URL}/`),
+  title: pages.home.title,
+  description: pages.home.description,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "48x48" },
@@ -47,6 +57,13 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicon/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1c503c",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Clock3, Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight, Clock3, Home, Mail, MapPin, Phone } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
 import { SectionEyebrow } from "@/components/home/section-heading";
+import { JsonLd } from "@/components/seo/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -11,12 +13,15 @@ import {
   PHONE_DISPLAY,
   PHONE_HREF,
 } from "@/lib/home-content";
+import {
+  breadcrumbSchema,
+  buildMetadata,
+  localBusinessSchema,
+  pages,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact us | Get Medical Marijuana Card in Fresno",
-  description:
-    "Feel free to connect with us! We’re available 24×7. Call +1-559-234-4795 or email contact@medicalcannabiscardfresno.com.",
-};
+export const metadata: Metadata = buildMetadata(pages.contact);
 
 const contactCards = [
   {
@@ -25,18 +30,21 @@ const contactCards = [
     href: PHONE_HREF,
     icon: Phone,
     detail: PHONE_DISPLAY,
+    ariaLabel: `Call ${PHONE_DISPLAY}`,
   },
   {
     label: "Email :",
     value: EMAIL,
     href: `mailto:${EMAIL}`,
     icon: Mail,
+    ariaLabel: `Email ${EMAIL}`,
   },
   {
     label: "Address :",
     value: ADDRESS,
     href: "https://maps.google.com/?q=1510+C+St+Fresno+CA+93706",
     icon: MapPin,
+    ariaLabel: `Open map for ${ADDRESS}`,
   },
   {
     label: "Hours :",
@@ -48,10 +56,47 @@ const contactCards = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            localBusinessSchema(),
+            webPageSchema(pages.contact),
+            breadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Contact", path: "/contact/" },
+            ]),
+          ],
+        }}
+      />
       <SiteHeader />
       <main id="main-content" className="overflow-x-hidden">
         <section className="bg-grid border-b border-border px-4 py-10 sm:px-5 sm:py-14 md:px-10 md:py-20">
           <div className="mx-auto max-w-[1240px]">
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="m-0 inline-flex list-none flex-wrap items-center gap-1 rounded-full border border-border bg-white/80 px-2.5 py-1.5 text-sm">
+                <li>
+                  <Link
+                    href="/"
+                    className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-cream"
+                  >
+                    <Home className="size-3.5 shrink-0" strokeWidth={2} aria-hidden />
+                    Home
+                  </Link>
+                </li>
+                <li aria-hidden className="flex items-center text-brand/35">
+                  <ChevronRight className="size-3.5" strokeWidth={2} />
+                </li>
+                <li>
+                  <span
+                    aria-current="page"
+                    className="inline-flex items-center rounded-full bg-brand px-2.5 py-1 text-[13px] font-semibold text-white"
+                  >
+                    Contact
+                  </span>
+                </li>
+              </ol>
+            </nav>
             <SectionEyebrow>Get in Touch</SectionEyebrow>
             <h1 className="font-heading m-0 mb-3 text-3xl font-semibold tracking-tight text-brand sm:mb-4 sm:text-4xl md:text-5xl">
               Contact Us!
@@ -59,17 +104,40 @@ export default function ContactPage() {
             <p className="m-0 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-base md:text-lg">
               Feel Free To Connect With Us! (24×7 Available At Your Service)
             </p>
+            <p className="mt-3 mb-0 text-sm text-muted-foreground">
+              <time dateTime={pages.contact.published}>
+                Published{" "}
+                {pages.contact.published
+                  ? new Date(pages.contact.published).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })
+                  : ""}
+              </time>
+              {" · "}
+              <time dateTime={pages.contact.modified}>
+                Updated{" "}
+                {pages.contact.modified
+                  ? new Date(pages.contact.modified).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })
+                  : ""}
+              </time>
+            </p>
           </div>
         </section>
 
-        <section className="bg-cream px-4 py-10 sm:px-5 sm:py-14 md:px-10 md:py-20">
+        <section className="bg-cream px-4 py-10 sm:px-5 sm:py-14 md:px-10 md:py-20" aria-label="Contact details">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-4 md:grid-cols-2">
             {contactCards.map((card) => {
               const Icon = card.icon;
               const content = (
                 <>
                   <span className="mb-4 flex size-11 items-center justify-center rounded-2xl bg-brand text-lime sm:size-12">
-                    <Icon className="size-5" strokeWidth={1.75} />
+                    <Icon className="size-5" strokeWidth={1.75} aria-hidden />
                   </span>
                   <div className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-brand-soft uppercase">
                     {card.label}
@@ -92,6 +160,7 @@ export default function ContactPage() {
                 <a
                   key={card.label}
                   href={card.href}
+                  aria-label={"ariaLabel" in card ? card.ariaLabel : undefined}
                   target={card.href.startsWith("http") ? "_blank" : undefined}
                   rel={
                     card.href.startsWith("http")
@@ -111,8 +180,11 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="bg-white px-4 pb-12 sm:px-5 sm:pb-16 md:px-10 md:pb-24">
+        <section className="bg-white px-4 pb-12 sm:px-5 sm:pb-16 md:px-10 md:pb-24" aria-label="Clinic location map">
           <div className="mx-auto max-w-[1240px]">
+            <h2 className="font-heading m-0 mb-4 text-2xl font-semibold text-brand">
+              Our Fresno Location
+            </h2>
             <div className="overflow-hidden rounded-[1.5rem] border border-border sm:rounded-[2rem]">
               <iframe
                 title="Medical Cannabis Card Fresno location map"

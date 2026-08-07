@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/home-content";
 const desktopNavLinks = [
   { href: "/#price", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/contact", label: "Contact us" },
+  { href: "/contact/", label: "Contact us" },
 ];
 
 export function SiteHeader() {
@@ -21,7 +21,7 @@ export function SiteHeader() {
           <BrandMark size="sm" />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
           {desktopNavLinks.map((link) => (
             <Link
               key={link.href}

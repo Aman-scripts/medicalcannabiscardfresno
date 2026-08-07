@@ -1,15 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { LegalLayout, LegalSections } from "@/components/legal/legal-layout";
 import { refundPolicy } from "@/lib/legal-content";
+import { buildMetadata, pages } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: `${refundPolicy.title} | Medical Cannabis Card Fresno`,
-  description: refundPolicy.description,
-};
+export const metadata: Metadata = buildMetadata(pages.refund);
 
-export default function RefundPolicyPage() {
+export default function Page() {
   return (
-    <LegalLayout page={refundPolicy}>
+    <LegalLayout page={refundPolicy} seo={pages.refund}>
       <LegalSections page={refundPolicy} />
     </LegalLayout>
   );

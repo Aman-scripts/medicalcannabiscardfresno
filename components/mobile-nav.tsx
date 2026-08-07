@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#price", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/contact", label: "Contact us" },
+  { href: "/contact/", label: "Contact us" },
 ];
 
 export function MobileNav() {
