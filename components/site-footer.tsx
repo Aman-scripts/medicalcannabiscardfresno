@@ -95,8 +95,8 @@ export function SiteFooter() {
                   >
                     {Icon ? (
                       <Icon
-                        className="size-4 shrink-0 text-lime"
-                        strokeWidth={1.75}
+                        className="size-5 shrink-0 text-lime"
+                        strokeWidth={1.9}
                         aria-hidden
                       />
                     ) : null}
