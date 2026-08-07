@@ -55,7 +55,7 @@ export function TeamSection() {
               width={1000}
               height={750}
               sizes="(max-width: 1024px) 100vw, 50vw"
-              quality={70}
+              quality={90}
               loading="lazy"
               className="aspect-[4/3] w-full object-cover"
             />

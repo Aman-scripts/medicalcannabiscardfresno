@@ -16,8 +16,18 @@ export function BrandMark({
 }: BrandMarkProps) {
   const dims =
     size === "sm"
-      ? { width: 280, height: 63, className: "h-12 w-auto sm:h-14 md:h-16" }
-      : { width: 260, height: 58, className: "h-12 w-auto md:h-14" };
+      ? {
+          width: 560,
+          height: 126,
+          sizes: "(max-width: 640px) 220px, 280px",
+          className: "h-12 w-auto sm:h-14 md:h-16",
+        }
+      : {
+          width: 520,
+          height: 116,
+          sizes: "(max-width: 768px) 220px, 260px",
+          className: "h-12 w-auto md:h-14",
+        };
 
   return (
     <span className={cn("inline-flex items-center", className)}>
@@ -26,8 +36,8 @@ export function BrandMark({
         alt="Medical Cannabis Card Fresno"
         width={dims.width}
         height={dims.height}
-        sizes="180px"
-        quality={70}
+        sizes={dims.sizes}
+        quality={95}
         className={cn(
           dims.className,
           "object-contain object-left",

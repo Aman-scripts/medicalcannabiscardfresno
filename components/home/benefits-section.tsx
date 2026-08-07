@@ -58,7 +58,7 @@ export function BenefitsSection() {
               width={900}
               height={700}
               sizes="(max-width: 1024px) 100vw, 45vw"
-              quality={70}
+              quality={90}
               loading="lazy"
               className="h-full min-h-[280px] w-full object-cover"
             />

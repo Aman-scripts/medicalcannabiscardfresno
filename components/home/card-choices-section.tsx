@@ -45,7 +45,7 @@ export function CardChoicesSection() {
                     alt={image.alt}
                     fill
                     loading="lazy"
-                    quality={65}
+                    quality={90}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />

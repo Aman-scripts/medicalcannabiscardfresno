@@ -51,7 +51,7 @@ export function ProcessSection() {
                     alt={image.alt}
                     fill
                     loading="lazy"
-                    quality={65}
+                    quality={90}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover"
                   />
