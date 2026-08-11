@@ -1,5 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
+import {
+  GoogleAnalytics,
+  GoogleTagManager,
+} from "@next/third-parties/google";
 import { BookingEnhancer } from "@/components/booking-enhancer";
 import { BookingModalRoot } from "@/components/booking-modal-root";
 import { DeferHydrate } from "@/components/defer-hydrate";
@@ -7,6 +11,10 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { SITE_NAME, SITE_URL, pages } from "@/lib/seo";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+
+const GTM_ID = "GTM-5MP4Q35";
+const GA4_ID = "G-K5NT0CZNML";
+const GSC_VERIFICATION = "VIBfR7NqPiaH10C4G2wVyljaem3ijOpLQpZCHkGjof0";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -57,6 +65,9 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicon/site.webmanifest",
+  verification: {
+    google: GSC_VERIFICATION,
+  },
 };
 
 export const viewport: Viewport = {
@@ -79,6 +90,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <GoogleTagManager gtmId={GTM_ID} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[200] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
@@ -91,6 +103,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <BookingModalRoot />
         </DeferHydrate>
         {children}
+        <GoogleAnalytics gaId={GA4_ID} />
       </body>
     </html>
   );
