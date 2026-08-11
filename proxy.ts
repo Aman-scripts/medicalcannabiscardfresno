@@ -6,7 +6,7 @@ function isGonePath(pathname: string) {
   return GONE_PATHS.has(pathname) || GONE_PATHS.has(exact);
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   if (!isGonePath(request.nextUrl.pathname)) {
     return NextResponse.next();
   }
