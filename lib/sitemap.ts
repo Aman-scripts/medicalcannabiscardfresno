@@ -13,6 +13,7 @@ function sitemapMeta(path: string): Pick<SitemapRow, "changefreq" | "priority"> 
   if (
     path === "/about-us/" ||
     path === "/contact/" ||
+    path === "/legal/" ||
     path === "/medical-marijuana-doctors/"
   ) {
     return { changefreq: "monthly", priority: "0.8" };

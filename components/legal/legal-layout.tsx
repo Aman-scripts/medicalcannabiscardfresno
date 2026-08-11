@@ -48,6 +48,9 @@ export function LegalLayout({
               webPageSchema(seo),
               breadcrumbSchema([
                 { name: "Home", path: "/" },
+                ...(showLegalNav
+                  ? [{ name: "Legal Policies", path: "/legal/" }]
+                  : []),
                 { name: page.title, path: currentPath },
               ]),
             ],
@@ -78,6 +81,21 @@ export function LegalLayout({
                     Home
                   </Link>
                 </li>
+                {showLegalNav ? (
+                  <>
+                    <li aria-hidden className="flex items-center text-brand/35">
+                      <ChevronRight className="size-3.5" strokeWidth={2} />
+                    </li>
+                    <li>
+                      <Link
+                        href="/legal/"
+                        className="inline-flex items-center rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-white"
+                      >
+                        Legal Policies
+                      </Link>
+                    </li>
+                  </>
+                ) : null}
                 <li aria-hidden className="flex items-center text-brand/35">
                   <ChevronRight className="size-3.5" strokeWidth={2} />
                 </li>

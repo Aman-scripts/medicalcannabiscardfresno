@@ -47,9 +47,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1240px]">
         <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1.2fr_1.5fr] lg:gap-8">
           <div>
-            <div className="mb-4">
+            <Link
+              href="/#book"
+              className="mb-4 inline-block no-underline transition hover:opacity-90"
+              aria-label="Medical Cannabis Card Fresno home"
+            >
               <BrandMark size="md" onDark />
-            </div>
+            </Link>
             <p className="m-0 max-w-[280px] text-sm leading-relaxed text-white/85">
               Licensed telehealth evaluations for medical cannabis
               recommendations in Fresno, California.
@@ -100,6 +104,12 @@ export function SiteFooter() {
                 className="text-white/90 no-underline hover:text-white"
               >
                 Contact Us
+              </Link>
+              <Link
+                href="/legal/"
+                className="text-white/90 no-underline hover:text-white"
+              >
+                Legal Policies
               </Link>
             </div>
           </div>
