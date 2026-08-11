@@ -14,6 +14,7 @@ const reviewsPage: LegalPage = {
   title: "Reviews",
   description:
     "Read verified patient reviews for Medical Cannabis Card Fresno and what patients say about their evaluation.",
+  sections: [],
 };
 
 function StarRow() {
