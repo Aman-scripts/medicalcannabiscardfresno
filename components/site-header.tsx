@@ -2,11 +2,11 @@ import Link from "next/link";
 import { BookingCta } from "@/components/booking-cta";
 import { BrandMark } from "@/components/brand-mark";
 import { MobileNavSlot } from "@/components/mobile-nav-slot";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/home-content";
 
 const desktopNavLinks = [
   { href: "/#price", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/about-us/", label: "About us" },
   { href: "/contact/", label: "Contact us" },
 ];
 
@@ -34,12 +34,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-5 sm:flex">
-          <a
-            href={PHONE_HREF}
-            className="hidden text-base font-semibold text-brand no-underline hover:text-brand-soft lg:inline"
-          >
-            {PHONE_DISPLAY}
-          </a>
           <BookingCta className="inline-flex items-center rounded-full border-0 bg-brand px-6 py-2.5 text-base font-semibold text-primary-foreground transition hover:bg-brand-deep">
             Get Started
           </BookingCta>

@@ -78,6 +78,18 @@ export function SiteFooter() {
                 FAQs
               </Link>
               <Link
+                href="/reviews/"
+                className="text-white/90 no-underline hover:text-white"
+              >
+                Reviews
+              </Link>
+              <Link
+                href="/about-us/"
+                className="text-white/90 no-underline hover:text-white"
+              >
+                About Us
+              </Link>
+              <Link
                 href="/contact/"
                 className="text-white/90 no-underline hover:text-white"
               >

@@ -17,13 +17,13 @@ export type LegalPage = {
 export const legalNav: { href: string; label: string }[] = [
   { href: "/privacy/", label: "Privacy Policy" },
   { href: "/hipaa-compliance/", label: "HIPAA Compliance" },
-  { href: "/consent-for-telehealth/", label: "Consent for Telehealth" },
+  { href: "/consent-for-telehealth/", label: "Consent to Telehealth" },
   { href: "/terms/", label: "Terms of Use" },
   { href: "/refund-policy/", label: "Refund Policy" },
   { href: "/shipment-policy/", label: "Shipment Policy" },
   { href: "/accessibility-statement/", label: "Accessibility Statement" },
   { href: "/editorial-policy/", label: "Editorial Policy" },
-  { href: "/disclaimer/", label: "Disclaimer" },
+  { href: "/disclaimer/", label: "Disclaimer & Policies" },
 ];
 
 export const privacyPolicy: LegalPage = {
@@ -31,120 +31,111 @@ export const privacyPolicy: LegalPage = {
   href: "/privacy/",
   navLabel: "Privacy Policy",
   title: "Privacy Policy",
-  lastUpdated: "16 September 2025",
+  lastUpdated: null,
   description:
-    "How Medical Cannabis Card Fresno collects, uses, and protects your information.",
+    "Learn how Medical Cannabis Card Fresno collects, uses, and protects your personal and health information during your medical marijuana evaluation.",
   sections: [
     {
       paragraphs: [
-        "At Medical Cannabis Card Fresno, protecting your privacy is part of our commitment to patient care. This policy explains what information we collect, how it is used, and the choices you have.",
+        "At Medical Cannabis Card Fresno, protecting your privacy matters to us just as much as helping you get your medical marijuana recommendation. This policy explains what information we collect when you visit our website or book an evaluation with us, how we use it, and the steps we take to keep it safe.",
+        "We know that health information is sensitive. That's why our practices are built around HIPAA principles wherever they apply, and why we limit who can access your records to only the people who actually need them to do their job.",
+        "By using our website or booking a consultation through us, you're agreeing to the practices outlined below. Please take a few minutes to read through it.",
       ],
     },
     {
-      heading: "Our Commitment",
+      heading: "What Information We Collect",
       paragraphs: [
-        "We respect your privacy and safeguard your personal, medical, and payment details. All practices comply with HIPAA, the California Consumer Privacy Act (CCPA), the California Privacy Rights Act (CPRA), state laws, and Fresno local ordinances.",
+        "When you schedule an evaluation with us, we ask for the basics needed to confirm your identity and connect you with a licensed physician. That includes your name, contact details, and some form of identification, along with any health information relevant to your evaluation.",
+        "We also collect some technical details automatically when you browse our site, things like your IP address, device type, and how you interact with our pages. We rely on tools such as Google Analytics to understand this and to keep our website running smoothly and securely.",
       ],
     },
     {
-      heading: "Information We Collect",
-      paragraphs: ["We may collect the following types of information:"],
+      heading: "Your Health Information",
+      paragraphs: [
+        "When you speak with one of our licensed physicians, they'll ask about your medical history and current health to determine whether a medical marijuana recommendation is appropriate for you. This information is handled carefully and used only for that purpose.",
+        "We don't use your health details for marketing, and we don't hand them over to anyone outside our care team without your permission, unless we're legally required to.",
+      ],
+    },
+    {
+      heading: "How We Use Your Information",
+      paragraphs: ["Generally speaking, we use what we collect to:"],
       listItems: [
-        "Personal Details: Name, contact information, ID, and proof of Fresno residency.",
-        "Medical Information: Health history, conditions, medications, and prior cannabis use, if shared.",
-        "Technical Data: Device type, browser, IP address, cookies, and site usage.",
-        "Payment Details: Processed securely through third-party providers; we do not store full card numbers.",
-        "Account & Location Data: Basic account credentials (when you sign up), ZIP code, or general location to confirm eligibility.",
-        "Children’s Privacy: Our services are not intended for children under 13. We do not knowingly collect personal information from anyone under 13 and will delete such data if discovered.",
+        "Match you with a licensed physician for your evaluation",
+        "Confirm your identity and eligibility",
+        "Process your payment and schedule your appointment",
+        "Send you appointment reminders and updates",
+        "Keep accurate records for compliance purposes",
+        "Improve how our website works",
       ],
     },
     {
-      heading: "Why We Collect Information",
-      paragraphs: ["We use the information collected to:"],
-      listItems: [
-        "Confirm your identity, age, and residency.",
-        "Provide accurate medical cannabis evaluations.",
-        "Send service updates, reminders, and important notifications (via email, SMS, or phone calls).",
-        "Meet California and Fresno legal requirements.",
-        "Improve site functionality, security, and services.",
-        "Understand how our site is used (through cookies and analytics) and personalize your experience.",
-      ],
-    },
-    {
-      heading: "Cookies and Analytics",
+      heading: "Payments",
       paragraphs: [
-        "We use cookies and similar technologies to analyze website traffic and improve user experience. You can accept or deny cookies in your browser settings. Denying cookies may limit personalized features.",
-        "We may also use trusted analytics providers (such as Google Analytics or Microsoft Clarity) to collect anonymous data like page views, time spent on site, and device/browser information. This helps us optimize our services and detect fraud or security issues.",
+        "All payments go through secure, third party processors. We never see or store your full card number on our own servers. If you're redirected to a payment provider's site to finish checking out, their privacy policy covers what happens with your information there.",
       ],
     },
     {
-      heading: "Do Not Sell or Share My Personal Information (CPRA)",
+      heading: "Cookies and Website Analytics",
       paragraphs: [
-        "Under the CPRA, California residents have the right to opt out of the sale or sharing of their personal information. While Medical Cannabis Card Fresno does not sell personal information, we still provide a “Do Not Sell or Share My Personal Information” option on our website.",
+        "Like most websites, ours uses cookies to help things run better and to give us a sense of how people use our site. You're free to adjust your browser to block cookies, though a few features might not work quite right if you do.",
       ],
     },
     {
-      heading: "Information Sharing",
+      heading: "Staying in Touch",
       paragraphs: [
-        "We do not sell or trade your information. Data may only be shared with:",
-      ],
-      listItems: [
-        "Licensed doctors for evaluation purposes",
-        "Trusted service providers under strict privacy agreements",
-        "Government authorities, when required by law or regulation",
+        "If you give us a phone number or email, we may use it to send appointment confirmations, reminders, or the occasional update about our services. You can opt out of anything promotional whenever you'd like. We won't sell your email or phone number to anyone.",
       ],
     },
     {
-      heading: "How We Protect Data",
-      paragraphs: ["We use industry-standard safeguards, including:"],
-      listItems: [
-        "Encrypted online connections.",
-        "HIPAA-compliant record storage.",
-        "Restricted staff access with authentication controls.",
-        "End-to-end encryption for sensitive data.",
-        "Regular monitoring and system checks.",
-      ],
-    },
-    {
-      heading: "Data Retention",
+      heading: "Who We Share Information With",
       paragraphs: [
-        "We retain personal data only as long as necessary to provide services and comply with legal or business obligations. This may include:",
+        "We only share what's necessary, and only with:",
       ],
       listItems: [
-        "Legal requirements under state or federal law.",
-        "Protecting or defending our legal rights.",
-        "Maintaining accurate business and financial records.",
+        "The licensed physician handling your evaluation",
+        "Trusted vendors who help us with hosting, payments, or communication",
+        "Legal authorities, if we're required by law to disclose something",
       ],
     },
     {
+      paragraphs: ["We do not sell your personal or health information. Period."],
+    },
+    {
+      heading: "How We Protect Your Data",
       paragraphs: [
-        "Once data is no longer required, it is securely deleted.",
+        "We use a combination of technical and administrative safeguards, including encryption, to keep your information secure. That said, no online system is completely risk free, and we can't promise absolute security, though we work hard to minimize that risk.",
       ],
     },
     {
-      heading: "Your Rights",
-      paragraphs: ["Under CCPA and CPRA, you may request to:"],
+      heading: "Your Rights as a California Resident",
+      paragraphs: [
+        "Since we serve patients here in Fresno and throughout California, the California Consumer Privacy Act (CCPA) gives you a few specific rights, including the ability to:",
+      ],
       listItems: [
-        "Know the categories and specific pieces of personal information we collect.",
-        "Understand the sources, purposes, and third parties with whom data is shared.",
-        "View or update your records.",
-        "Receive a copy of your data in a secure format.",
-        "Adjust your communication preferences.",
-        "Request deletion of your account and related data (unless retention is required by law).",
+        "Ask what personal information we have on file for you",
+        "Request that we delete your personal information",
+        "Know that we don't sell your data, so there's nothing to opt out of there",
       ],
     },
     {
-      heading: "Contact Us",
       paragraphs: [
-        "For privacy-related questions or requests, reach out to our Medical Cannabis Card Fresno support team. We respond within 24 hours.",
+        "If you'd like to make any of these requests, just reach out to us using the contact details below. We'll get back to you within 30 days.",
+      ],
+    },
+    {
+      heading: "Children's Privacy",
+      paragraphs: [
+        "Our services are meant for adults 18 and older. We don't knowingly collect information from anyone under 18, and if we ever find out we have, we'll delete it right away.",
+      ],
+    },
+    {
+      heading: "Questions About This Policy",
+      paragraphs: [
+        "If anything here isn't clear or you'd like to submit a privacy request, reach out to us anytime:",
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
         "Email: contact@medicalcannabiscardfresno.com",
-        "Phone: 5592344795",
-      ],
-    },
-    {
-      heading: "Policy Updates",
-      paragraphs: [
-        "We may update this Privacy Policy at any time. Updates will appear here with a revised “Last Updated” date. Continued use of our services means acceptance of the updated policy.",
+        "Address: 1510 C St, Fresno, CA 93706",
       ],
     },
   ],
@@ -155,118 +146,150 @@ export const termsOfUse: LegalPage = {
   href: "/terms/",
   navLabel: "Terms of Use",
   title: "Terms of Use",
-  lastUpdated: "16 September 2025",
+  lastUpdated: null,
   description:
-    "Terms and conditions for using Medical Cannabis Card Fresno services.",
+    "Read the terms that govern your use of Medical Cannabis Card Fresno's website and telehealth medical marijuana evaluation services.",
   sections: [
     {
+      heading: "DISCLAIMER",
       paragraphs: [
-        "Welcome to Medical Cannabis Card Fresno. By accessing or using our website, you agree to the following terms and conditions. Please review them carefully before continuing.",
+        "Please read these terms carefully before using our website or booking an evaluation with us.",
+        "By accessing this website or using any of our services, you're agreeing to be bound by these Terms of Use along with our Privacy Policy. If you continue using the site after we update these terms, that counts as your acceptance of the changes.",
+        "Medical Cannabis Card Fresno is a platform that connects patients in Fresno with independent, licensed physicians for medical marijuana evaluations. We don't practice medicine ourselves, and we can't promise that any particular evaluation will result in a recommendation. That decision always rests with the physician who examines you.",
       ],
     },
     {
-      heading: "Who We Are",
+      heading: "1. What We Do",
       paragraphs: [
-        "Medical Cannabis Card Fresno provides access to licensed California physicians who evaluate patients for medical cannabis eligibility under state law. We are not a dispensary or cannabis provider. Card approvals are made only by licensed doctors after proper evaluation.",
+        "Medical Cannabis Card Fresno helps people in Fresno connect with independent, state licensed physicians for medical marijuana evaluations. We're not a medical practice ourselves. Every evaluation and every recommendation comes from the judgment of the physician you're paired with, not from us.",
+        "Our job is to handle the administrative and technical side of things, scheduling, video connections, and communication, so you can get in front of a licensed doctor without the hassle of an in person visit.",
+        "If a recommendation is issued, it's issued entirely at the discretion of the physician after they've assessed you individually. We have no influence over that outcome.",
       ],
     },
     {
-      heading: "Who Can Use Our Services",
-      listItems: [
-        "You must be 18 or older.",
-        "Patients under 18 require parent/guardian consent in line with California law.",
-        "You must be a California resident with a valid ID, and proof of Fresno residency is required.",
-      ],
-    },
-    {
-      heading: "How You May Use Our Services",
+      heading: "2. Who Can Use Our Services",
       paragraphs: [
-        "When using our website or booking an evaluation, you agree to:",
+        "To use our services, you need to be located in California, since that's where our services are offered and where our physicians are licensed to practice. By using this site, you're confirming that:",
       ],
       listItems: [
-        "Provide true and accurate information.",
-        "Use the platform only for lawful purposes.",
-        "Keep your account details secure.",
-        "Follow California’s medical cannabis regulations and applicable Fresno ordinances.",
-      ],
-    },
-    {
-      heading: "You Agree Not To",
-      listItems: [
-        "Submit false medical records.",
-        "Engage in fraud or unauthorized payments.",
-        "Attempt to hack, disrupt, or misuse our systems.",
-        "Copy, resell, or repurpose our website content.",
-      ],
-    },
-    {
-      heading: "Important Medical Notice",
-      listItems: [
-        "Information on this site is for educational purposes only.",
-        "It is not a substitute for direct medical advice from your healthcare provider.",
-        "Cannabis remains illegal under federal law. Recommendations are valid only in California under state guidelines.",
-        "The effectiveness of medical cannabis varies by patient; no guarantees of outcome are made.",
-      ],
-    },
-    {
-      heading: "Payments, Refunds & Cancellations",
-      listItems: [
-        "Payments: All fees must be paid before the consultation. We accept most major credit/debit cards.",
-        "Refunds: Provided when your medical cannabis card is not approved or the recommendation isn’t delivered within 24 to 48 hours. Not available after issuance.",
-        "Cancellations: You may reschedule or cancel with 24 to 48 hours’ notice. Late cancellations may incur fees.",
-      ],
-    },
-    {
-      heading: "Our Rights & Content Ownership",
-      listItems: [
-        "All text, images, graphics, videos, and other materials on this site belong to Medical Cannabis Card Fresno.",
-        "You may not copy, share, or modify content without written permission.",
-      ],
-    },
-    {
-      heading: "Liability & Responsibility",
-      paragraphs: ["We are not responsible for:"],
-      listItems: [
-        "Any indirect, incidental, or unexpected damages from using our services.",
-        "Third-party websites linked from our site.",
-        "Results or effectiveness of medical cannabis treatment.",
+        "You're at least 18 years old",
+        "You're physically located in California at the time of your evaluation",
+        "The information you give us during registration and your evaluation is accurate and truthful",
       ],
     },
     {
       paragraphs: [
-        "Our maximum liability is limited to the amount you paid for the service in question.",
+        "We rely on you to comply with all applicable California and federal laws around medical marijuana use and possession. If regulations change in a way that affects our ability to offer services, we reserve the right to adjust or pause them accordingly.",
       ],
     },
     {
-      heading: "Your Agreement to Protect Us",
+      heading: "3. The Physician Patient Relationship",
       paragraphs: [
-        "By using this site, you agree to indemnify and hold harmless Medical Cannabis Card Fresno, its staff, and physicians from any claims, losses, or expenses that result from misuse of our services or violation of these Terms.",
+        "A physician patient relationship only begins once a licensed doctor agrees to evaluate you and starts your assessment. We don't employ or supervise these physicians in a clinical sense. They're independent professionals making their own medical judgments.",
+        "Any advice, diagnosis, or recommendation you receive comes directly from that physician, not from Medical Cannabis Card Fresno.",
       ],
     },
     {
-      heading: "Privacy Protection",
+      heading: "4. Telehealth Consent",
       paragraphs: [
-        "Your use of our site is also subject to our Privacy Policy, which explains how we collect, store, and safeguard your information.",
+        "Using our services means you're agreeing to receive your evaluation through telehealth, meaning video calls, messaging, or other digital communication rather than an in person visit.",
+        "A few things worth understanding upfront:",
       ],
-    },
-    {
-      heading: "Ending or Changing Services",
       listItems: [
-        "We may suspend or terminate your access if you violate these Terms.",
-        "We may update, modify, or discontinue parts of the website at any time.",
-        "Certain obligations (like payment, liability limits, and intellectual property) will continue even after termination.",
+        "A virtual visit isn't identical to seeing a doctor in person",
+        "Some conditions might not be a good fit for a remote evaluation",
+        "Technical hiccups can occasionally delay or interrupt a session",
+        "Your physician may decide an in person exam is needed instead",
       ],
     },
     {
-      heading: "Governing Law",
       paragraphs: [
-        "These Terms are governed by the laws of California. Any disputes must be resolved in the courts of Fresno County, CA.",
+        "Telehealth through our platform isn't meant for medical emergencies. If you're experiencing one, please call 911 or go to your nearest emergency room.",
       ],
     },
     {
-      heading: "Updates to Terms",
+      heading: "5. Privacy",
       paragraphs: [
-        "We may revise these Terms at any time without prior notice. Updates are effective once posted. Continued use of the site means you accept the changes.",
+        "How we collect, use, and protect your information, including anything shared during your evaluation, is covered in our Privacy Policy. We handle all health information in line with HIPAA privacy and security standards. Using our site means you've read and agree to that policy as well.",
+      ],
+    },
+    {
+      heading: "6. Where Federal and State Law Stand",
+      paragraphs: [
+        "Cannabis laws can be confusing because state and federal rules don't line up. California permits medical marijuana use under state law, but marijuana is still classified as a Schedule I substance federally. That mismatch means certain activities, like possession or transport, can carry federal risk even when they're legal under California law.",
+        "We operate in line with California's rules for medical marijuana evaluations, but we can't speak to federal legality, and nothing here should be taken as legal advice.",
+      ],
+    },
+    {
+      heading: "7. Your Responsibilities",
+      paragraphs: ["When you use our platform, you agree to:"],
+      listItems: [
+        "Give us accurate and honest information",
+        "Keep your account details private and secure",
+        "Follow all applicable laws while using our services",
+      ],
+    },
+    {
+      paragraphs: ["You agree not to:"],
+      listItems: [
+        "Submit false or misleading information",
+        "Use someone else's identity to access our services",
+        "Try to break into our systems or access accounts that aren't yours",
+        "Interfere with how the platform runs",
+        "Copy, alter, or misuse our website's content or technology",
+      ],
+    },
+    {
+      paragraphs: [
+        "If we find that you've violated these terms or used our platform in a way that's unlawful or harmful, we can suspend or terminate your access.",
+      ],
+    },
+    {
+      heading: "8. Fees and Refunds",
+      paragraphs: [
+        "We'll always let you know the cost of your evaluation before you confirm your appointment. Whether you qualify for a refund depends on a few factors, including the outcome of your evaluation and the timing of your request. You can find the full breakdown in our Refund Policy.",
+      ],
+    },
+    {
+      heading: "9. Limits on Our Liability",
+      paragraphs: [
+        "To the extent allowed by California law, Medical Cannabis Card Fresno and our team aren't responsible for indirect or consequential damages related to your use of our services, things like lost profits or business interruptions.",
+        "If we are found liable for anything, our total responsibility won't exceed what you paid us in the twelve months before the issue arose. Some parts of California law may limit how far this protection goes, in which case we'll follow whatever the law allows.",
+      ],
+    },
+    {
+      heading: "10. Indemnification",
+      paragraphs: [
+        "If a claim comes up because of something you did, misusing our services, breaking these terms, breaking the law, or infringing on someone else's rights, you agree to cover any resulting costs, damages, or legal fees we incur as a result. This responsibility continues even after you stop using our services.",
+      ],
+    },
+    {
+      heading: "11. Governing Law",
+      paragraphs: [
+        "These terms are governed by the laws of the State of California, regardless of conflict of law principles. Any dispute related to these terms will be handled in California state or federal courts, and you agree to that jurisdiction.",
+        "Claims must be brought individually, not as part of a class action. That said, either of us can still seek an injunction or similar relief when it's appropriate.",
+      ],
+    },
+    {
+      heading: "12. Changes to These Terms",
+      paragraphs: [
+        "We may update these terms from time to time. Once a revised version is posted, it takes effect immediately, and continuing to use our site afterward means you accept the changes. We also reserve the right to adjust or pause parts of our service as needed for legal or operational reasons.",
+      ],
+    },
+    {
+      heading: "13. Ending Access",
+      paragraphs: [
+        "We can suspend or end your access to our platform at any time if we believe you've violated these terms or used our services in a harmful or unlawful way. Ending your access doesn't erase any obligations you already had, like unpaid fees. Sections that are meant to last beyond termination, like liability limits and indemnification, will continue to apply.",
+      ],
+    },
+    {
+      heading: "14. Contact Us",
+      paragraphs: [
+        "Questions about these terms? Reach out anytime.",
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
+        "Email: contact@medicalcannabiscardfresno.com",
+        "Address: 1510 C St, Fresno, CA 93706",
       ],
     },
   ],
@@ -277,96 +300,70 @@ export const refundPolicy: LegalPage = {
   href: "/refund-policy/",
   navLabel: "Refund Policy",
   title: "Refund Policy",
-  lastUpdated: "16 September 2025",
+  lastUpdated: null,
   description:
-    "How Medical Cannabis Card Fresno handles refunds for consultations and card services.",
+    "Read our refund policy, including when you qualify for a full refund on your medical marijuana evaluation and how to request one.",
   sections: [
     {
       paragraphs: [
-        "Your trust is our priority at Medical Cannabis Card Fresno. This policy explains how we handle refunds for telehealth consultations and medical cannabis card services.",
+        "We stand behind our evaluations with a 100% money back guarantee, as long as your situation meets the conditions below. This policy covers the medical marijuana evaluation services we provide here in Fresno.",
+        "Please take a moment to read through this before booking your appointment.",
       ],
     },
     {
-      heading: "Who Can Request a Refund",
-      paragraphs: ["Refunds are available to patients who:"],
-      listItems: [
-        "Did not complete their consultation due to technical issues or provider absence.",
-        "Canceled 24 hours or more before their appointment.",
-        "Were found ineligible for a medical cannabis recommendation.",
-        "Were charged twice for the same service.",
-      ],
-    },
-    {
+      heading: "When You Qualify for a Full Refund",
       paragraphs: [
-        "All refund requests must be submitted within 30 days of the original transaction.",
+        "You're eligible for a complete refund of your evaluation fee in these situations:",
+        "The physician doesn't approve you. If the licensed physician reviews your case and determines you don't qualify for a medical marijuana recommendation, you get your money back.",
+        "We miss our turnaround window. If your approved recommendation isn't delivered within the timeframe we've promised, typically 24 to 48 hours after your evaluation is approved, you're entitled to a refund.",
+        "There's a verification issue on our end. If your recommendation can't be verified because of an error made by the physician or our platform, that's on us, and we'll refund you.",
+        "One thing worth noting: refunds only cover the evaluation fee you paid us directly. Any separate state fees or third party charges aren't included.",
       ],
     },
     {
-      heading: "When Refunds Are Not Available",
-      paragraphs: ["Refunds cannot be provided if:"],
+      heading: "When Refunds Don't Apply",
+      paragraphs: [
+        "There are a few situations where we're not able to offer a refund:",
+      ],
       listItems: [
-        "Your consultation or recommendation has already been completed.",
-        "You missed your appointment or canceled it less than 24 hours before.",
-        "You paid state or third-party fees (e.g., MMIC processing, background checks).",
-        "You simply changed your mind after booking.",
+        "You cancel after finishing your evaluation but before the physician has made a decision",
+        "You receive a valid recommendation and simply change your mind afterward",
+        "You gave us false or misleading information during your evaluation",
+        "You didn't qualify because you don't meet California's eligibility requirements",
       ],
     },
     {
-      heading: "How to Submit a Refund Request",
-      paragraphs: ["Follow these steps to request a refund:"],
-    },
-    {
-      heading: "1. Gather Your Information",
-      listItems: [
-        "Full name used for booking",
-        "Email linked to your account",
-        "Transaction ID or receipt",
-        "Appointment date",
-        "Reason for refund",
-        "Any supporting documents",
+      heading: "Missed Appointments",
+      paragraphs: [
+        "Life happens, but if you know you can't make your scheduled appointment, please reach out to us ahead of time so we can reschedule.",
+        "If you miss your appointment without giving us notice, a $25 missed appointment fee may apply. If you're later eligible for a refund on that same evaluation, this fee may be subtracted from it.",
       ],
     },
     {
-      heading: "2. Submit Your Request",
-      listItems: [
+      heading: "How to Request a Refund",
+      paragraphs: [
+        "Ready to request one? Just email us at contact@medicalcannabiscardfresno.com with your full name, the email address you used when you signed up, and a short note explaining what happened.",
+      ],
+    },
+    {
+      heading: "How Long It Takes",
+      paragraphs: [
+        "Once your refund is approved, it typically takes 7 to 10 business days to show up, depending on how you originally paid.",
+      ],
+    },
+    {
+      heading: "The Final Word",
+      paragraphs: [
+        "We reserve the right to review each request and make the final call on refund eligibility, based on this policy and applicable law.",
+      ],
+    },
+    {
+      heading: "Questions?",
+      paragraphs: [
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
         "Email: contact@medicalcannabiscardfresno.com",
-        "Phone: 5592344795, Mon to Fri, 9 AM to 6 PM PST",
-      ],
-    },
-    {
-      heading: "3. Processing",
-      listItems: [
-        "Refunds are reviewed within 24 to 48 hours.",
-        "Approved refunds are issued within 5 to 7 business days.",
-      ],
-    },
-    {
-      heading: "Partial Refunds",
-      paragraphs: ["Partial refunds may be considered if:"],
-      listItems: [
-        "Your consultation starts, but cannot be completed due to technical issues.",
-        "Platform interruptions prevent full service delivery.",
-      ],
-    },
-    {
-      paragraphs: [
-        "Partial refund amounts depend on how much of the consultation was completed.",
-      ],
-    },
-    {
-      heading: "Refund Method & Security",
-      listItems: [
-        "Refunds are issued to the original payment method.",
-        "All payments are handled securely through encrypted systems.",
-        "If your payment method is inactive, our support team will arrange an alternative.",
-      ],
-    },
-    {
-      heading: "Additional Notes",
-      listItems: [
-        "Always review fees, services, and policies before booking.",
-        "Contact our support team with any questions regarding refunds.",
-        "Refunds are designed to be fair, transparent, and timely.",
+        "Address: 1510 C St, Fresno, CA 93706",
       ],
     },
   ],
@@ -376,54 +373,130 @@ export const hipaaCompliance: LegalPage = {
   slug: "hipaa-compliance",
   href: "/hipaa-compliance/",
   navLabel: "HIPAA Compliance",
-  title: "HIPAA Compliance",
-  lastUpdated: "16 September 2025",
+  title: "HIPAA Compliance and Health Information Privacy",
+  lastUpdated: null,
   description:
-    "How Medical Cannabis Card Fresno protects patient health information under HIPAA.",
+    "Learn how Medical Cannabis Card Fresno protects patient health information and follows HIPAA privacy and security standards during telehealth evaluations.",
   sections: [
     {
       paragraphs: [
-        "Medical Cannabis Card Fresno is committed to protecting your protected health information (PHI) in accordance with the Health Insurance Portability and Accountability Act (HIPAA) and applicable California privacy laws.",
+        "Protecting your privacy is something we take seriously at Medical Cannabis Card Fresno. As a telehealth service connecting Fresno patients with licensed physicians for medical marijuana evaluations, we understand that your health information is personal, and we've built our practices around keeping it that way.",
+        "Our policies and systems are designed with HIPAA (the Health Insurance Portability and Accountability Act) in mind, so this page walks through what that means and how we put it into practice.",
       ],
     },
     {
-      heading: "1. Our Commitment",
+      heading: "What Is HIPAA?",
       paragraphs: [
-        "We maintain administrative, technical, and physical safeguards designed to protect the confidentiality, integrity, and availability of your health information. Access to PHI is limited to authorized personnel and licensed providers who need it to deliver care or support your evaluation.",
+        "HIPAA is a federal law passed in 1996 that sets national standards for protecting sensitive patient health information. It requires organizations that handle medical data, like ours, to put safeguards in place that prevent unauthorized access, disclosure, or misuse of that information.",
+        "At its core, HIPAA is about three things: keeping health information confidential, securing electronic records and communications, and giving patients real control over their own medical data.",
       ],
     },
     {
-      heading: "2. How We Protect Your Information",
-      listItems: [
-        "Encrypted transmission of sensitive data where appropriate.",
-        "Secure systems and access controls for staff and providers.",
-        "Business Associate Agreements with vendors that handle PHI.",
-        "Staff training on privacy and security practices.",
-        "Monitoring and response procedures for potential security incidents.",
-      ],
-    },
-    {
-      heading: "3. How We Use and Share PHI",
+      heading: "Our Approach to Compliance",
       paragraphs: [
-        "We use and disclose PHI only as permitted or required by law, including to:",
+        "We've put administrative, technical, and physical safeguards in place that align with HIPAA standards. In practice, that means your health information is:",
       ],
       listItems: [
-        "Provide telehealth evaluations and related services.",
-        "Coordinate care with licensed physicians and clinical staff.",
-        "Process payments and maintain required records.",
-        "Comply with legal, regulatory, or law-enforcement requests when required.",
+        "Only collected when it's actually needed for your evaluation",
+        "Stored on secure systems with limited access",
+        "Protected from unauthorized disclosure or misuse",
+        "Only accessible to the physicians and staff who need it to do their job",
       ],
     },
     {
-      heading: "4. Your Rights",
       paragraphs: [
-        "Depending on applicable law, you may have rights to access, request corrections to, receive an accounting of certain disclosures of, or request restrictions on certain uses of your PHI. To exercise these rights, contact our support team.",
+        "We regularly review our policies and systems to make sure we're keeping up with best practices.",
       ],
     },
     {
-      heading: "5. Questions or Concerns",
+      heading: "What Counts as Protected Health Information",
       paragraphs: [
-        "If you have questions about our HIPAA practices, email contact@medicalcannabiscardfresno.com or call (559) 234-4795. We respond within 24 hours whenever possible.",
+        "Protected Health Information, or PHI, refers to anything that identifies you and relates to your health or care. For our patients, that typically includes things like:",
+      ],
+      listItems: [
+        "Your medical history or current health conditions",
+        "Notes from your physician consultation",
+        "Details from your telehealth visit",
+        "Information related to your medical marijuana evaluation",
+      ],
+    },
+    {
+      paragraphs: [
+        "All of this is treated with the same level of care and protection required under HIPAA.",
+      ],
+    },
+    {
+      heading: "How We Keep Your Information Safe",
+      paragraphs: [
+        "We rely on a few different layers of protection to keep your information secure.",
+        "Administrative safeguards limit who on our team can access your health information, based on whether they actually need it for their role.",
+        "Technical safeguards cover the systems themselves, encrypted communication, secure storage, and access controls that keep your data protected as it moves through our platform.",
+        "Physical safeguards protect the infrastructure behind the scenes, the servers and networks that support our telehealth services.",
+        "Together, these layers work to keep your information confidential and accurate.",
+      ],
+    },
+    {
+      heading: "Keeping Your Telehealth Visit Private",
+      paragraphs: [
+        "Since your evaluation happens remotely, we use secure video calls, protected messaging, and encrypted transmission for any medical documentation involved. These tools are there to make sure your visit stays just as private as an in person appointment would be.",
+      ],
+    },
+    {
+      heading: "How Your Information Gets Used",
+      paragraphs: [
+        "We only use or share your health information when it's necessary, such as to:",
+      ],
+      listItems: [
+        "Support your physician during your evaluation",
+        "Facilitate your telehealth visit",
+        "Keep accurate records for compliance purposes",
+        "Meet legal requirements when we're required to",
+      ],
+    },
+    {
+      paragraphs: ["We do not sell your medical information, ever."],
+    },
+    {
+      heading: "Your Rights as a Patient",
+      paragraphs: [
+        "You have certain rights when it comes to your own health information, including the ability to:",
+      ],
+      listItems: [
+        "Ask to see your personal health records",
+        "Request a correction if something's inaccurate",
+        "Ask us to limit certain uses of your information",
+        "Request a specific, confidential way to be contacted",
+      ],
+    },
+    {
+      paragraphs: [
+        "If you'd like to make any of these requests, just reach out using the contact details below.",
+      ],
+    },
+    {
+      heading: "Data Security",
+      paragraphs: [
+        "We use reasonable safeguards, including encryption and controlled access, to protect your data from unauthorized use or disclosure. That said, no system connected to the internet can promise complete security, and we want to be upfront about that even as we do our best to minimize risk.",
+        "This page works alongside our Privacy Policy and Terms of Use, which go into more detail on how your data is collected and handled overall.",
+      ],
+    },
+    {
+      heading: "Frequently Asked Questions",
+      paragraphs: [
+        "Is Medical Cannabis Card Fresno HIPAA compliant? Yes. We follow privacy and security practices built around HIPAA standards to protect your health information throughout your telehealth evaluation.",
+        "How do you protect my information? We use secure systems, limited access controls, and privacy safeguards designed to keep patient data protected from unauthorized access or disclosure.",
+        "Are telehealth visits actually secure? Yes. Our telehealth consultations use HIPAA aligned technology to help keep your visit private and confidential from start to finish.",
+        "Is my medical marijuana evaluation kept confidential? Yes. Any evaluation conducted through one of our licensed physicians is treated as confidential medical information under HIPAA guidelines.",
+        "Who can see my health information? Access is limited strictly to the licensed physician handling your care and any staff members who need it to support your evaluation.",
+      ],
+    },
+    {
+      heading: "Questions About Your Privacy?",
+      paragraphs: [
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
+        "Email: contact@medicalcannabiscardfresno.com",
+        "Address: 1510 C St, Fresno, CA 93706",
       ],
     },
   ],
@@ -432,56 +505,118 @@ export const hipaaCompliance: LegalPage = {
 export const consentForTelehealth: LegalPage = {
   slug: "consent-for-telehealth",
   href: "/consent-for-telehealth/",
-  navLabel: "Consent for Telehealth",
-  title: "Consent for Telehealth",
-  lastUpdated: "16 September 2025",
+  navLabel: "Consent to Telehealth",
+  title: "Consent to Telehealth",
+  lastUpdated: null,
   description:
-    "Informed consent for telehealth medical cannabis evaluations in Fresno, California.",
+    "Understand how telehealth works for your medical marijuana evaluation with Medical Cannabis Card Fresno, including your rights and what to expect.",
   sections: [
     {
       paragraphs: [
-        "By booking or participating in a telehealth evaluation with Medical Cannabis Card Fresno, you acknowledge and consent to receiving healthcare services remotely by video or audio, as permitted under California law (including Business and Professions Code § 2290.5).",
+        "This page explains how telehealth works when you book an evaluation with Medical Cannabis Card Fresno. Telehealth lets you connect with a licensed physician remotely, using secure video and messaging instead of an in person visit.",
+        "By using our telehealth services, you're confirming that you understand this consent and agree to receive care this way, wherever it's permitted by law.",
       ],
     },
     {
-      heading: "1. Nature of Telehealth Services",
+      heading: "How Telehealth Works",
       paragraphs: [
-        "Telehealth allows you to consult with a licensed California healthcare provider without an in-person visit. The provider will review your information, discuss your medical history and qualifying condition(s), and determine whether a medical cannabis recommendation is appropriate.",
+        "Telehealth lets a physician evaluate you and offer medical guidance without you needing to step into an office. Your consultation might involve:",
       ],
-    },
-    {
-      heading: "2. Benefits and Limitations",
       listItems: [
-        "Benefits may include convenience, faster access, and reduced travel.",
-        "Limitations may include technology failures, reduced ability to perform a full physical exam, and potential delays if your connection is unstable.",
-        "Your provider may determine that telehealth is not appropriate and recommend an in-person evaluation instead.",
+        "A live video call",
+        "A phone or audio conversation",
+        "Secure messaging",
+        "Digital sharing of medical documents or records",
       ],
     },
     {
-      heading: "3. Privacy and Security",
       paragraphs: [
-        "Telehealth sessions are conducted through platforms intended to protect patient privacy. You agree to join from a reasonably private location and not record the session without permission. See our Privacy Policy and HIPAA Compliance page for more detail.",
+        "We operate as a platform that connects Fresno patients with independent, licensed physicians for medical marijuana evaluations. You can find more detail on how this works in our Terms of Use.",
       ],
     },
     {
-      heading: "4. Your Responsibilities",
+      heading: "How This Differs From an In Person Visit",
+      paragraphs: [
+        "A virtual visit isn't quite the same as sitting across from a doctor in person. Since everything happens remotely, your physician relies heavily on the information you share during the call to make their assessment.",
+        "There are also situations where an in person exam might be needed instead, and your physician has the final say on whether telehealth is appropriate for you.",
+      ],
+    },
+    {
+      heading: "The Upside of Telehealth",
+      paragraphs: [
+        "There's a reason telehealth has become so popular. It typically means:",
+      ],
       listItems: [
-        "Provide accurate identity, residency, and medical information.",
-        "Use a device and internet connection suitable for video or audio consultation.",
-        "Disclose relevant medications, conditions, and allergies.",
-        "Ask questions if you do not understand any part of the evaluation.",
+        "Easier access to care, especially if getting to an office is a hassle",
+        "No travel time involved",
+        "Faster turnaround when connecting with a physician",
       ],
     },
     {
-      heading: "5. Right to Withdraw Consent",
+      heading: "What to Keep in Mind",
       paragraphs: [
-        "You may withdraw telehealth consent at any time before or during the consultation. Withdrawal may mean we cannot complete a remote evaluation, and refund eligibility will follow our Refund Policy.",
+        "Like any medical service, there are a few limitations worth knowing about:",
+      ],
+      listItems: [
+        "Occasional technical hiccups or delays during your call",
+        "Physical exams aren't possible the way they would be in person",
+        "Incomplete or inaccurate information on your end could slow things down or affect your evaluation",
       ],
     },
     {
-      heading: "6. Acknowledgment",
+      heading: "Not Meant for Emergencies",
       paragraphs: [
-        "By continuing with a booking or consultation, you confirm that you understand the nature, benefits, and limitations of telehealth, and that you voluntarily consent to receive services in this manner.",
+        "Telehealth through Medical Cannabis Card Fresno isn't built for medical or psychiatric emergencies. If you're going through one, please call 911 or head to the nearest emergency room right away.",
+      ],
+    },
+    {
+      heading: "When the Physician Relationship Begins",
+      paragraphs: [
+        "Just scheduling an appointment or filling out your information doesn't create a physician patient relationship on its own. That relationship only starts once a licensed physician actually begins your evaluation.",
+      ],
+    },
+    {
+      heading: "Be Honest and Thorough",
+      paragraphs: [
+        "Your physician bases their evaluation on what you tell them, so it matters that the information you provide, your health history, symptoms, and current conditions, is accurate and complete. Leaving things out or providing false information can affect the quality of care you receive.",
+      ],
+    },
+    {
+      heading: "About Electronic Communication",
+      paragraphs: [
+        "Telehealth visits happen through digital tools like video calls and messaging platforms. We take reasonable steps to protect this communication, but no electronic system is completely risk free. You can read more about how we handle your data in our Privacy Policy.",
+      ],
+    },
+    {
+      heading: "Keeping Your Information Private",
+      paragraphs: [
+        "We handle everything shared during your telehealth visit in line with HIPAA privacy standards. For more on how we protect your health information, take a look at our HIPAA Compliance page.",
+      ],
+    },
+    {
+      heading: "Your Voluntary Agreement",
+      paragraphs: [
+        "By moving forward with a telehealth visit, you're confirming that:",
+      ],
+      listItems: [
+        "You understand what telehealth involves",
+        "You're aware of both its benefits and its limitations",
+        "You're voluntarily choosing to receive care this way",
+        "You've had the chance to review our Terms of Use and Privacy Policy",
+      ],
+    },
+    {
+      paragraphs: [
+        "If any part of this doesn't sit right with you, it's best not to proceed with a telehealth evaluation through our platform.",
+      ],
+    },
+    {
+      heading: "Have Questions?",
+      paragraphs: [
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
+        "Email: contact@medicalcannabiscardfresno.com",
+        "Address: 1510 C St, Fresno, CA 93706",
       ],
     },
   ],
@@ -492,41 +627,86 @@ export const accessibilityStatement: LegalPage = {
   href: "/accessibility-statement/",
   navLabel: "Accessibility Statement",
   title: "Accessibility Statement",
-  lastUpdated: "16 September 2025",
+  lastUpdated: null,
   description:
-    "Our commitment to making Medical Cannabis Card Fresno accessible to all users.",
+    "Medical Cannabis Card Fresno is committed to making our website and telehealth services accessible to all patients, including those with disabilities.",
   sections: [
     {
       paragraphs: [
-        "Medical Cannabis Card Fresno aims to provide a website experience that is accessible to people with disabilities and usable across common devices and assistive technologies.",
+        "At Medical Cannabis Card Fresno, we want everyone to be able to use our website and telehealth services comfortably, including patients with disabilities. Whether you're checking your eligibility, reading through our resources, or scheduling a consultation, we want that experience to work for you. Accessibility isn't something we check off once, it's something we keep working on.",
       ],
     },
     {
-      heading: "1. Our Commitment",
+      heading: "Our Commitment",
       paragraphs: [
-        "We work to align our site with widely recognized accessibility practices, including principles from the Web Content Accessibility Guidelines (WCAG). We continuously improve navigation, contrast, readability, and interactive elements.",
+        "We put real effort into making sure our site works well for people with a range of abilities and assistive technology needs. Since we're a telehealth provider, that matters even more, patients need to be able to reach a licensed physician online without running into unnecessary obstacles.",
+        "We regularly go back through our website looking for ways to make it easier to use, because accessibility isn't a one time fix.",
       ],
     },
     {
-      heading: "2. Accessibility Measures",
+      heading: "The Standards We Follow",
+      paragraphs: [
+        "Our website is built with accessibility best practices in mind, guided by the Web Content Accessibility Guidelines (WCAG) 2.1 from the World Wide Web Consortium. These are widely recognized standards meant to help people with visual, auditory, motor, or cognitive disabilities use the web more easily, and to make sure our site plays nicely with assistive technology.",
+      ],
+    },
+    {
+      heading: "What That Looks Like on Our Site",
+      paragraphs: [
+        "A few things we build into our website to support accessibility:",
+      ],
       listItems: [
-        "Semantic headings and structured page layouts.",
-        "Keyboard-friendly navigation for key interactive elements.",
-        "Text alternatives for meaningful images where provided.",
-        "Readable typography and brand color contrast for primary content.",
-        "Responsive layouts for desktop and mobile screens.",
+        "A clean, consistent layout across pages",
+        "Headings that follow a logical order",
+        "Compatibility with screen readers",
+        "Alt text on images",
+        "A responsive design that works well on both mobile and desktop",
+        "Text that's easy to read and can be resized",
+        "Enough color contrast to make text easy to see",
       ],
     },
     {
-      heading: "3. Known Limitations",
+      heading: "Making Telehealth Accessible",
       paragraphs: [
-        "Some third-party content, such as embedded maps or external widgets, may not fully meet the same accessibility standards as our core pages. We welcome feedback so we can prioritize improvements.",
+        "Our whole platform is built around removing barriers to getting care, and that includes making sure patients using assistive technology can find what they need, whether that's scheduling info, eligibility details, or how to reach support.",
       ],
     },
     {
-      heading: "4. Feedback",
+      heading: "We're Always Improving",
       paragraphs: [
-        "If you encounter an accessibility barrier, contact us at contact@medicalcannabiscardfresno.com or (559) 234-4795. Please include the page URL and a brief description of the issue. We will review your request and respond as soon as possible.",
+        "Standards and technology change, and so do we. We check in on our website regularly to spot areas that could be better and keep making updates as things evolve.",
+      ],
+    },
+    {
+      heading: "A Note on Third Party Tools",
+      paragraphs: [
+        "Parts of our site, like scheduling or payment processing, run through outside tools we don't fully control. We do our best to keep things accessible throughout, but we can't make guarantees about tools built by someone else. If you run into a snag with any of these, just let us know and we'll help however we can.",
+      ],
+    },
+    {
+      heading: "Need a Hand?",
+      paragraphs: [
+        "If you're having trouble accessing something on our website, reach out to us. We'll do what we can to get you the information or support you need in a format that works for you.",
+      ],
+    },
+    {
+      heading: "Related Pages",
+      paragraphs: [
+        "Accessibility ties into how we handle patient data and run our platform more broadly. You might also find these pages helpful:",
+      ],
+      listItems: [
+        "Privacy Policy",
+        "Terms of Use",
+        "HIPAA Compliance",
+      ],
+    },
+    {
+      heading: "Have Feedback?",
+      paragraphs: [
+        "If you've run into a barrier on our site or have an idea for how we can improve, we'd genuinely like to hear it. Feel free to reach out anytime.",
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
+        "Email: contact@medicalcannabiscardfresno.com",
+        "Address: 1510 C St, Fresno, CA 93706",
       ],
     },
   ],
@@ -537,45 +717,71 @@ export const editorialPolicy: LegalPage = {
   href: "/editorial-policy/",
   navLabel: "Editorial Policy",
   title: "Editorial Policy",
-  lastUpdated: "16 September 2025",
+  lastUpdated: null,
   description:
-    "How Medical Cannabis Card Fresno creates and reviews educational content.",
+    "Learn about the standards behind the medical marijuana content published by Medical Cannabis Card Fresno, from accuracy checks to our review process.",
   sections: [
     {
       paragraphs: [
-        "This Editorial Policy explains how Medical Cannabis Card Fresno develops, reviews, and updates educational content about medical cannabis access in Fresno and California.",
+        "At Medical Cannabis Card Fresno, we care about giving our readers accurate, useful information about medical marijuana, cannabis wellness, and the legal and health topics that come with it. This page explains the standards our content is held to and how we make sure it's worth your time.",
       ],
     },
     {
-      heading: "1. Purpose of Our Content",
+      heading: "What We Stand For",
       paragraphs: [
-        "Our content is intended to educate patients about qualifying conditions, the evaluation process, card options, and related California regulations. It is not a substitute for personalized medical advice from a licensed clinician.",
+        "Our vision is to make reliable, easy to understand medical marijuana information available to every patient and caregiver who needs it.",
+        "Our mission is to explain MMJ usage, regulations, and wellness topics in a way that's accurate, ethical, and genuinely easy to follow.",
+        "Our promise is to stay aligned with California's medical marijuana regulations and back our content with input from licensed professionals and credible research.",
       ],
     },
     {
-      heading: "2. Accuracy and Review",
+      heading: "How We Approach Our Content",
+      paragraphs: [
+        "We take a few things seriously when putting content together:",
+      ],
       listItems: [
-        "We strive to keep information accurate, clear, and up to date.",
-        "Content related to medical or legal topics is reviewed against current California guidance and our clinical workflow.",
-        "We update pages when laws, processes, pricing, or service details change.",
+        "Expert input. Our content is written and reviewed by people who actually understand this space, not generic filler writers.",
+        "Accuracy first. We fact check what we publish and lean on credible sources like state regulations and established research rather than guesswork.",
+        "Clearing up confusion. There's a lot of misinformation floating around about medical marijuana, and we try to address it head on rather than add to it.",
+        "Trustworthy sourcing. We only reference sources we consider current and reliable, because our goal is for you to actually trust what you're reading.",
       ],
     },
     {
-      heading: "3. Sources",
+      heading: "Our Ethical Standards",
       paragraphs: [
-        "When we reference laws or programs, we rely on publicly available California statutes, regulations, and reputable health-education sources. Clinical decisions remain with licensed providers after an individual evaluation.",
+        "We believe education works better than criticism. You won't find us taking shots at other providers, dispensaries, or practitioners here. Our focus stays on giving you useful, respectful information.",
+        "When it comes to medical, legal, or wellness topics, we aim to stay objective and put patient safety and legal compliance first, every time.",
       ],
     },
     {
-      heading: "4. Independence",
+      heading: "Why You Can Trust What We Publish",
       paragraphs: [
-        "Educational articles and service pages are written to inform patients. Marketing offers or partner mentions, if any, will be presented clearly and will not replace medical judgment.",
+        "A few things back up the content on this site:",
+      ],
+      listItems: [
+        "Our team has real experience in cannabis medicine, wellness, and the regulatory side of things",
+        "We genuinely care about patient advocacy and responsible cannabis use, not just page views",
+        "Any medical or legal guidance comes from licensed professionals, not from us guessing",
+        "Every piece goes through research that considers the science, real patient experiences, and the legal landscape",
       ],
     },
     {
-      heading: "5. Corrections",
+      heading: "How We Review Everything",
       paragraphs: [
-        "If you believe content is inaccurate or outdated, email contact@medicalcannabiscardfresno.com with the page link and details. We will investigate and correct material errors when appropriate.",
+        "Before anything gets published, it goes through a careful editing process to check for clarity and accuracy. We also revisit our process regularly to catch mistakes early and keep improving how we do things.",
+      ],
+    },
+    {
+      heading: "Found Something Off?",
+      paragraphs: [
+        "We're not perfect, and we'd rather know about a mistake than have it sit uncorrected. If you spot an error or have a suggestion, reach out to us at contact@medicalcannabiscardfresno.com.",
+        "We take feedback seriously and update our content whenever it makes things more accurate or useful.",
+      ],
+    },
+    {
+      heading: "Our Commitment to You",
+      paragraphs: [
+        "At the end of the day, we want Fresno patients, caregivers, and anyone curious about medical marijuana to have a resource they can actually rely on. That's what we're working toward with every page we publish.",
       ],
     },
   ],
@@ -588,12 +794,58 @@ export const shipmentPolicy: LegalPage = {
   title: "Shipment Policy",
   lastUpdated: null,
   description:
-    "Delivery timelines and support for your Medical Cannabis Card Fresno plastic card.",
+    "Learn how Medical Cannabis Card Fresno ships your medical marijuana card, including delivery timeframes, tracking, and what to do if there's an issue.",
   sections: [
     {
       paragraphs: [
-        "At Medical Cannabis Card Fresno, we prioritize the safe and timely delivery of your medical marijuana card. Once approved, your card will be shipped and is expected to arrive within 10 to 12 business days. In the unlikely event that you do not receive your card, or if it arrives damaged or incorrect, our team is here to help and will respond within 24 hours.",
-        "We provide 24/7 support to resolve any delivery issues promptly. For assistance, please contact us at contact@medicalcannabiscardfresno.com or call us at (559) 234-4795. Your satisfaction and timely access to your medical cannabis card are our top priorities.",
+        "Getting your medical marijuana card to you safely and on time matters to us. Here's what to expect once your application is approved.",
+      ],
+    },
+    {
+      heading: "1. Processing and Delivery Time",
+      paragraphs: [
+        "Once you're approved, we get your card prepared and shipped within 10 to 12 business days. We move as quickly as we can so you can start using your card without unnecessary waiting around.",
+      ],
+    },
+    {
+      heading: "2. Shipping and Tracking",
+      paragraphs: [
+        "We ship through trusted carriers, and every card comes with a tracking number so you can follow its progress from our office all the way to your door.",
+      ],
+    },
+    {
+      heading: "3. If Something Goes Wrong",
+      paragraphs: [
+        "If your card hasn't shown up by the expected date, or if it arrives lost, damaged, or stolen, reach out to our support team right away. We'll get back to you within 24 hours, and if a replacement is needed, we'll take care of it.",
+      ],
+    },
+    {
+      heading: "4. How Your Card Is Packaged",
+      paragraphs: [
+        "Your card ships in a securely sealed envelope, so it stays protected and untampered with the whole way to you.",
+      ],
+    },
+    {
+      heading: "5. Your Part in the Process",
+      paragraphs: [
+        "Once your package is delivered, and signed for if that's required, it's considered received on our end. It helps to have someone available at the delivery address so your card doesn't sit out unattended.",
+      ],
+    },
+    {
+      heading: "6. When Delays Happen",
+      paragraphs: [
+        "Every now and then, things like holidays, carrier backups, or bad weather can push delivery back a bit. It doesn't happen often, but we appreciate your patience if it does.",
+      ],
+    },
+    {
+      heading: "7. Need Help?",
+      paragraphs: [
+        "Our team is here for any questions about your shipment.",
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
+        "Email: contact@medicalcannabiscardfresno.com",
+        "Address: 1510 C St, Fresno, CA 93706",
+        "We want your medical marijuana card to reach you safely and on time, so you can focus on what matters, your health.",
       ],
     },
   ],
@@ -602,15 +854,207 @@ export const shipmentPolicy: LegalPage = {
 export const disclaimer: LegalPage = {
   slug: "disclaimer",
   href: "/disclaimer/",
-  navLabel: "Disclaimer",
-  title: "Medical Disclaimer",
+  navLabel: "Disclaimer & Policies",
+  title: "Disclaimer & Policies",
   lastUpdated: null,
   description:
-    "Educational disclaimer for Medical Cannabis Card Fresno information and services.",
+    "Review the disclaimers and policies that apply to Medical Cannabis Card Fresno's website and medical marijuana evaluation services.",
   sections: [
     {
       paragraphs: [
-        "The information provided by Medical Cannabis Card Fresno is for educational and informational purposes only. Approval and issuance of a medical cannabis card does not constitute medical advice or treatment. Always consult a licensed healthcare professional regarding any medical condition or questions about medical cannabis use. Use of medical cannabis should be in accordance with applicable state laws and your physician’s recommendations.",
+        "At Medical Cannabis Card Fresno, our goal is to make it easy for people in Fresno to access educational information and connect with licensed physicians for medical marijuana evaluations. Before you use this site, there are a few things we want to be upfront about. By browsing our website or using our services, you're agreeing to the points below.",
+      ],
+    },
+    {
+      heading: "1. Information Only, Not Medical Advice",
+      paragraphs: [
+        "Everything on this website is meant to inform, not to replace guidance from a healthcare provider. We want to help you understand your options, but any decision about your health should be made together with a licensed physician, not based solely on something you read here.",
+      ],
+    },
+    {
+      heading: "2. We're Not a Healthcare Provider",
+      paragraphs: [
+        "Medical Cannabis Card Fresno itself doesn't practice medicine. What we do is connect you with a licensed physician who conducts your evaluation. A medical marijuana recommendation isn't the same thing as a prescription, and it shouldn't take the place of care you're already receiving from your regular doctor.",
+      ],
+    },
+    {
+      heading: "3. We Don't Diagnose or Treat",
+      paragraphs: [
+        "Nothing on our site is designed to diagnose a condition, treat it, or claim to cure anything. Our role is limited to helping you connect with a physician who can properly evaluate you. For anything beyond that, please talk to a qualified healthcare provider.",
+      ],
+    },
+    {
+      heading: "4. Your Health, Your Choice",
+      paragraphs: [
+        "Whatever you decide to do based on information from our platform is ultimately your call, and your responsibility. We can't be held accountable for outcomes tied to decisions made without a licensed provider's input. When in doubt, check with a physician first.",
+      ],
+    },
+    {
+      heading: "5. About Testimonials",
+      paragraphs: [
+        "If you come across patient testimonials or reviews on our site, keep in mind that they reflect one person's individual experience. Your results could be completely different, and testimonials should never be treated as medical guidance.",
+      ],
+    },
+    {
+      heading: "6. No Endorsements",
+      paragraphs: [
+        "We don't vouch for the safety or effectiveness of any product, service, or therapy mentioned on our website. Just because something is referenced here doesn't mean we're recommending it. Always do your own research and loop in a healthcare provider before trying anything new.",
+      ],
+    },
+    {
+      heading: "7. What We Actually Do",
+      paragraphs: [
+        "To put it simply, our platform exists to link Fresno residents with licensed physicians for medical marijuana evaluations. We're not a substitute for an established doctor patient relationship, and the medical decisions themselves come from the physician, not from us.",
+      ],
+    },
+    {
+      heading: "8. If You're Having an Emergency",
+      paragraphs: [
+        "Our platform isn't built for urgent or emergency care. If you're facing a medical emergency, please call 911 or head to your nearest emergency room right away rather than using our site.",
+      ],
+    },
+    {
+      heading: "9. Links to Other Websites",
+      paragraphs: [
+        "You might occasionally find links on our site pointing to outside websites. We don't manage or vouch for what's on those sites, so anything you do there is at your own discretion. It's worth checking their privacy and usage policies separately.",
+      ],
+    },
+    {
+      heading: "10. A Few Special Situations",
+      paragraphs: [
+        "If you're under 18, pregnant, breastfeeding, or managing a serious health condition, please talk with a licensed physician before acting on anything from this website. These situations call for more personalized guidance than a general disclaimer can offer.",
+      ],
+    },
+    {
+      heading: "11. Alternative or Emerging Treatments",
+      paragraphs: [
+        "From time to time, our content might touch on newer or alternative treatment approaches. These aren't guaranteed to be safe or effective, so we'd encourage you to run anything like this by a trusted medical professional first.",
+      ],
+    },
+    {
+      heading: "12. Updates to This Page",
+      paragraphs: [
+        "We may revise this page occasionally to keep it accurate and current. Any changes will be posted right here, so it's a good idea to check back once in a while.",
+      ],
+    },
+    {
+      heading: "Questions?",
+      paragraphs: [
+        "If anything here needs clarifying, we're happy to help.",
+        "Medical Cannabis Card Fresno",
+        "Phone: (559) 234-4795",
+        "Email: contact@medicalcannabiscardfresno.com",
+        "Address: 1510 C St, Fresno, CA 93706",
+      ],
+    },
+  ],
+};
+
+export const aboutUs: LegalPage = {
+  slug: "about-us",
+  href: "/about-us/",
+  navLabel: "About Us",
+  title: "About Us",
+  lastUpdated: null,
+  description:
+    "Learn about Medical Cannabis Card Fresno, our team, and how we connect Fresno patients with licensed physicians for medical marijuana evaluations.",
+  sections: [
+    {
+      paragraphs: [
+        "Medical Cannabis Card Fresno is a fully online telehealth platform built to make getting your medical marijuana evaluation simple, affordable, and fully compliant with California law. We started with one goal in mind: cut out the confusion and delays that usually come with the certification process, and connect Fresno patients with licensed physicians through a secure virtual visit.",
+        "Since 2020, our platform has helped thousands of patients throughout California get their medical marijuana recommendations quickly and responsibly. Everything about how we operate is built around reducing barriers, protecting your privacy, and making sure every evaluation meets California's medical and legal standards.",
+      ],
+    },
+    {
+      heading: "Why We Exist",
+      paragraphs: [
+        "Getting access to medical cannabis shouldn't feel confusing or overpriced. Too many patients run into complicated rules, long waits, and information that's hard to trust. We exist to make that process simpler.",
+        "Our goal is to give Fresno patients clear answers, honest pricing, and a legitimate medical evaluation, without the runaround. By pairing solid technology with genuinely patient focused care, we let you spend your energy on your health instead of paperwork.",
+        "Legal Compliance. Every evaluation is handled by a licensed physician, in line with California's medical marijuana and telehealth laws.",
+        "Secure Telemedicine. Our platform runs on HIPAA compliant, encrypted technology, so your information stays protected the whole way through.",
+        "Unbiased Medical Judgment. Physicians make their own independent decisions based on your medical history and California's qualifying conditions, nothing else factors in.",
+      ],
+    },
+    {
+      heading: "Meet Our Leadership Team",
+      paragraphs: [
+        "Our leadership brings together experience in healthcare operations, technology, and ethical, patient centered marketing.",
+        "Gourav Sharma, Founder. Gourav oversees platform strategy and operations, focused on scaling compliant digital healthcare while keeping the patient experience smooth and straightforward.",
+        "Prince Sharma, Chief Marketing Officer. Prince leads brand strategy and patient education, with an emphasis on ethical, compliant healthcare marketing.",
+        "Ashish Osten, Marketing Manager. Ashish oversees content strategy and visibility, making sure patients can find accurate, reliable information about medical cannabis.",
+      ],
+    },
+    {
+      heading: "How It Works",
+      paragraphs: [
+        "Our process is secure, HIPAA compliant, and built to be as painless as possible.",
+      ],
+      listItems: [
+        "Connect. Fill out a short intake form with your basic information.",
+        "Book. Pick a time that works for you to meet with a California licensed physician.",
+        "Consult. Join a secure video visit, usually around 10 to 15 minutes.",
+        "Receive. If you're approved, your recommendation is delivered digitally.",
+      ],
+    },
+    {
+      paragraphs: [
+        "Every evaluation is handled by an independent, state licensed physician who follows established medical and telehealth guidelines. We don't promise approvals, and nothing about pricing or timelines has any influence on a physician's decision.",
+      ],
+    },
+    {
+      heading: "Medical Credibility and Compliance",
+      paragraphs: [
+        "Medical integrity guides everything we do. Our platform is built to support physicians in delivering evaluations that are compliant with California law while keeping the process clear for patients.",
+      ],
+      listItems: [
+        "Licensed physicians only",
+        "HIPAA compliant technology",
+        "Evaluations built around California's specific requirements",
+        "Transparent standards at every step",
+      ],
+    },
+    {
+      paragraphs: [
+        "From your first form to your final result, we try to keep things clear and predictable. That said, the medical decision always belongs to your physician, based on your history and California's requirements, not shortcuts or automation.",
+      ],
+    },
+    {
+      heading: "Transparent Pricing",
+      paragraphs: [
+        "You deserve to know exactly what you're paying for, upfront, with no surprises.",
+      ],
+      listItems: [
+        "No hidden fees",
+        "No cannabis sales",
+        "No commissions",
+        "Clear, straightforward pricing",
+      ],
+    },
+    {
+      paragraphs: [
+        "You only pay for your evaluation. Any state registration fees, if applicable, go directly to the state, not through us.",
+      ],
+    },
+    {
+      heading: "What We Stand For",
+      paragraphs: [
+        "Our Mission. To make medical marijuana evaluations simple, affordable, and patient focused, while holding to the highest standards of ethics, privacy, and legal compliance.",
+        "Our Vision. To be a trusted name in cannabis based telehealth, known for transparency and genuine care for patient wellbeing.",
+        "Our Core Values. Patient trust and privacy come first. Physicians make independent medical judgments. We follow California's cannabis laws closely. And evaluations stay accessible and affordable.",
+      ],
+    },
+    {
+      heading: "What Not to Expect",
+      paragraphs: [
+        "We'd rather be upfront about what we don't do:",
+      ],
+      listItems: [
+        "We don't provide direct medical treatment, only independent evaluations and recommendations",
+        "We can't guarantee approval, that call belongs entirely to the physician",
+        "We don't sell or distribute cannabis or cannabis products",
+        "Pricing and timelines never influence a physician's medical decision",
+        "We don't offer legal advice or interpret cannabis regulations",
+        "We have no partnerships or financial ties to dispensaries",
       ],
     },
   ],
@@ -626,4 +1070,5 @@ export const legalPages = [
   accessibilityStatement,
   editorialPolicy,
   disclaimer,
+  aboutUs,
 ] as const;
