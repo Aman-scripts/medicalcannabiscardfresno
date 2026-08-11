@@ -242,7 +242,7 @@ export const sitemapEntries = Object.values(pages).filter((p) => !p.noIndex);
 
 export function buildMetadata(page: PageSeo): Metadata {
   const canonical = canonicalUrl(page.path);
-  const ogImage = absoluteUrl(page.ogImage ?? "/logo.png");
+  const ogImage = absoluteUrl(page.ogImage ?? "/team-section.jpg");
 
   return {
     metadataBase: new URL(`${SITE_URL}/`),
