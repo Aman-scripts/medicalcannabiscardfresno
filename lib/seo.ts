@@ -3,12 +3,26 @@ import {
   ADDRESS,
   EMAIL,
   PHONE_DISPLAY,
+  conditions,
   faqs,
+  steps,
 } from "@/lib/home-content";
 
 export const SITE_URL = "https://medicalcannabiscardfresno.com";
 export const SITE_NAME = "Medical Cannabis Card Fresno";
 export const SITE_TAGLINE = "Licensed medical cannabis card evaluations in Fresno, CA";
+
+const PHONE_E164 = "+1-559-234-4795";
+const MAPS_URL = "https://maps.google.com/?q=1510+C+St+Fresno+CA+93706";
+const ORG_ID = `${SITE_URL}/#organization`;
+const LOGO_ID = `${SITE_URL}/#logo`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+const WEBPAGE_ID = `${SITE_URL}/#webpage`;
+const SERVICE_ID = `${SITE_URL}/#service`;
+const BREADCRUMB_ID = `${SITE_URL}/#breadcrumb`;
+const HOWTO_ID = `${SITE_URL}/#howto`;
+const FAQ_ID = `${SITE_URL}/#faq`;
+const CONDITIONS_ID = `${SITE_URL}/#conditions`;
 
 /** Site-wide publish / modify timestamps (ISO 8601). */
 export const SITE_DATES = {
@@ -248,6 +262,37 @@ export function buildMetadata(page: PageSeo): Metadata {
   };
 }
 
+const postalAddress = {
+  "@type": "PostalAddress",
+  streetAddress: "1510 C St",
+  addressLocality: "Fresno",
+  addressRegion: "CA",
+  postalCode: "93706",
+  addressCountry: "US",
+} as const;
+
+const openingHoursSpecification = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    opens: "09:00",
+    closes: "22:00",
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: "Sunday",
+    opens: "09:00",
+    closes: "18:00",
+  },
+] as const;
+
 export function localBusinessSchema() {
   return {
     "@type": ["MedicalBusiness", "LocalBusiness"],
@@ -255,43 +300,16 @@ export function localBusinessSchema() {
     name: SITE_NAME,
     url: `${SITE_URL}/`,
     image: absoluteUrl("/logo.png"),
-    telephone: PHONE_DISPLAY,
+    telephone: PHONE_E164,
     email: EMAIL,
     description: pages.home.description,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "1510 C St",
-      addressLocality: "Fresno",
-      addressRegion: "CA",
-      postalCode: "93706",
-      addressCountry: "US",
-    },
+    address: postalAddress,
     geo: {
       "@type": "GeoCoordinates",
       latitude: 36.7323,
       longitude: -119.7924,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        opens: "09:00",
-        closes: "22:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Sunday",
-        opens: "09:00",
-        closes: "18:00",
-      },
-    ],
+    openingHoursSpecification,
     areaServed: {
       "@type": "City",
       name: "Fresno",
@@ -303,11 +321,11 @@ export function localBusinessSchema() {
 export function websiteSchema() {
   return {
     "@type": "WebSite",
-    "@id": `${SITE_URL}/#website`,
+    "@id": WEBSITE_ID,
     name: SITE_NAME,
     url: `${SITE_URL}/`,
     description: SITE_TAGLINE,
-    publisher: { "@id": `${SITE_URL}/#business` },
+    publisher: { "@id": ORG_ID },
     inLanguage: "en-US",
   };
 }
@@ -319,8 +337,8 @@ export function webPageSchema(page: PageSeo) {
     url: absoluteUrl(page.path),
     name: page.title,
     description: page.description,
-    isPartOf: { "@id": `${SITE_URL}/#website` },
-    about: { "@id": `${SITE_URL}/#business` },
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": ORG_ID },
     inLanguage: "en-US",
     ...(page.published ? { datePublished: page.published } : {}),
     ...(page.modified ? { dateModified: page.modified } : {}),
@@ -344,6 +362,7 @@ export function breadcrumbSchema(
 export function faqSchema() {
   return {
     "@type": "FAQPage",
+    "@id": FAQ_ID,
     mainEntity: faqs.map((item) => ({
       "@type": "Question",
       name: item.q,
@@ -357,29 +376,203 @@ export function faqSchema() {
 
 export function organizationSchema() {
   return {
-    "@type": "Organization",
-    "@id": `${SITE_URL}/#organization`,
+    "@type": ["MedicalOrganization", "MedicalBusiness"],
+    "@id": ORG_ID,
     name: SITE_NAME,
     url: `${SITE_URL}/`,
-    logo: absoluteUrl("/logo.png"),
-    email: EMAIL,
-    telephone: PHONE_DISPLAY,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "1510 C St",
-      addressLocality: "Fresno",
-      addressRegion: "CA",
-      postalCode: "93706",
-      addressCountry: "US",
+    logo: { "@id": LOGO_ID },
+    image: { "@id": LOGO_ID },
+    description:
+      "Medical Cannabis Card Fresno is a telehealth platform connecting Fresno patients with licensed physicians for California-compliant medical marijuana evaluations via secure, HIPAA-compliant video consultations.",
+    knowsAbout: ["Cannabis Medicine", "Telemedicine"],
+    areaServed: {
+      "@type": "City",
+      name: "Fresno",
+      containedInPlace: {
+        "@type": "State",
+        name: "California",
+      },
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+1-559-234-4795",
-      contactType: "customer service",
-      areaServed: "US",
+    address: postalAddress,
+    telephone: PHONE_E164,
+    email: EMAIL,
+    openingHoursSpecification,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: PHONE_E164,
+        contactType: "customer service",
+        areaServed: "US-CA",
+        availableLanguage: ["English"],
+      },
+      {
+        "@type": "ContactPoint",
+        email: EMAIL,
+        contactType: "customer support",
+        areaServed: "US-CA",
+        availableLanguage: ["English"],
+      },
+    ],
+    sameAs: [MAPS_URL],
+    publishingPrinciples: absoluteUrl("/editorial-policy/"),
+  };
+}
+
+export function logoSchema() {
+  return {
+    "@type": "ImageObject",
+    "@id": LOGO_ID,
+    url: absoluteUrl("/logo.png"),
+    contentUrl: absoluteUrl("/logo.png"),
+    caption: `${SITE_NAME} logo`,
+  };
+}
+
+export function medicalWebPageSchema() {
+  return {
+    "@type": "MedicalWebPage",
+    "@id": WEBPAGE_ID,
+    url: `${SITE_URL}/`,
+    name: pages.home.title,
+    description: pages.home.description,
+    inLanguage: "en-US",
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": SERVICE_ID },
+    audience: {
+      "@type": "MedicalAudience",
+      audienceType: "Patient",
+      geographicArea: {
+        "@type": "City",
+        name: "Fresno",
+        containedInPlace: {
+          "@type": "State",
+          name: "California",
+        },
+      },
+    },
+    breadcrumb: { "@id": BREADCRUMB_ID },
+    mainEntity: { "@id": SERVICE_ID },
+    ...(pages.home.published ? { datePublished: pages.home.published } : {}),
+    ...(pages.home.modified ? { dateModified: pages.home.modified } : {}),
+  };
+}
+
+export function homeBreadcrumbSchema() {
+  return {
+    "@type": "BreadcrumbList",
+    "@id": BREADCRUMB_ID,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: absoluteUrl("/contact/"),
+      },
+    ],
+  };
+}
+
+export function serviceSchema() {
+  return {
+    "@type": "Service",
+    "@id": SERVICE_ID,
+    name: "Fresno Medical Cannabis Card Evaluation",
+    description:
+      "Online medical marijuana evaluation by a California-licensed physician via HIPAA-compliant telehealth, with same-day digital recommendation when approved.",
+    serviceType: "Medical Marijuana Evaluation",
+    category: "Telemedicine",
+    provider: [{ "@id": ORG_ID }],
+    areaServed: {
+      "@type": "City",
+      name: "Fresno",
+      containedInPlace: {
+        "@type": "State",
+        name: "California",
+      },
+    },
+    availableChannel: {
+      "@type": "ServiceChannel",
       availableLanguage: ["English"],
     },
+    hoursAvailable: openingHoursSpecification,
+    offers: {
+      "@type": "Offer",
+      name: "Medical Cannabis Card Evaluation",
+      description:
+        "Digital recommendation evaluation fee with full refund guarantee if not approved.",
+      price: "55.00",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/`,
+      seller: { "@id": ORG_ID },
+      eligibleRegion: {
+        "@type": "State",
+        name: "California",
+      },
+    },
   };
+}
+
+export function howToSchema() {
+  return {
+    "@type": "HowTo",
+    "@id": HOWTO_ID,
+    name: "How to Get a Medical Cannabis Card in Fresno Online",
+    description: "Get your Fresno medical cannabis card in 4 simple steps.",
+    estimatedCost: {
+      "@type": "MonetaryAmount",
+      currency: "USD",
+      value: "55",
+    },
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.body,
+    })),
+  };
+}
+
+export function conditionsSchema() {
+  return {
+    "@type": "ItemList",
+    "@id": CONDITIONS_ID,
+    name: "Qualifying Medical Conditions for a Fresno Medical Cannabis Card",
+    description:
+      "Common conditions evaluated for a California medical cannabis recommendation in Fresno. Your physician may approve additional conditions based on your health needs.",
+    numberOfItems: conditions.length,
+    itemListOrder: "https://schema.org/ItemListUnordered",
+    itemListElement: conditions.map((condition, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "MedicalCondition",
+        name: condition.title,
+        description: condition.body,
+      },
+    })),
+  };
+}
+
+/** Full JSON-LD @graph for the Fresno home page (matches schema doc structure). */
+export function homePageGraph() {
+  return [
+    organizationSchema(),
+    logoSchema(),
+    websiteSchema(),
+    medicalWebPageSchema(),
+    homeBreadcrumbSchema(),
+    serviceSchema(),
+    howToSchema(),
+    faqSchema(),
+    conditionsSchema(),
+  ];
 }
 
 /** Generates `/llms.txt` (markdown links) for agents and Lighthouse Agentic Browsing. */

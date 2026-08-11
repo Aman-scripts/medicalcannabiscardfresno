@@ -1,4 +1,4 @@
-import { sendGTMEvent } from "@next/third-parties/google";
+  import { sendGTMEvent } from "@next/third-parties/google";
 import { SITE_URL } from "@/lib/seo";
 
 export function getHeallyUtmSource() {

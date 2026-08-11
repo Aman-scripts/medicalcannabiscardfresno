@@ -6,6 +6,7 @@ import { MobileNavSlot } from "@/components/mobile-nav-slot";
 const desktopNavLinks = [
   { href: "/#price", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/reviews/", label: "Reviews" },
   { href: "/about-us/", label: "About us" },
   { href: "/contact/", label: "Contact us" },
 ];
