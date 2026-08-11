@@ -101,7 +101,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/about-us/",
     title: "About Us | Medical Cannabis Card Fresno",
     description:
-      "Learn about Medical Cannabis Card Fresno, our team, and how we connect Fresno patients with licensed physicians for medical marijuana evaluations.",
+      "Learn about Medical Cannabis Card Fresno, our team, and how we connect Fresno patients with licensed physicians.",
     published: SITE_DATES.published,
     modified: SITE_DATES.modified,
   },
@@ -109,7 +109,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/reviews/",
     title: "Reviews | Medical Cannabis Card Fresno",
     description:
-      "Read verified patient reviews for Medical Cannabis Card Fresno and see what real patients say about their medical marijuana evaluation experience.",
+      "Read verified patient reviews for Medical Cannabis Card Fresno and what patients say about their evaluation.",
     published: SITE_DATES.published,
     modified: SITE_DATES.modified,
   },
@@ -117,7 +117,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/privacy/",
     title: "Privacy Policy | Medical Cannabis Card Fresno",
     description:
-      "Learn how Medical Cannabis Card Fresno collects, uses, and protects your personal and health information during your medical marijuana evaluation.",
+      "Learn how Medical Cannabis Card Fresno collects, uses, and protects your personal and health information.",
     published: "2024-01-15T08:00:00-08:00",
     modified: "2025-09-16T08:00:00-07:00",
   },
@@ -125,7 +125,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/terms/",
     title: "Terms of Use | Medical Cannabis Card Fresno",
     description:
-      "Read the terms that govern your use of Medical Cannabis Card Fresno's website and telehealth medical marijuana evaluation services.",
+      "Read the terms that govern use of Medical Cannabis Card Fresno's website and telehealth evaluation services.",
     published: "2024-01-15T08:00:00-08:00",
     modified: "2025-09-16T08:00:00-07:00",
   },
@@ -133,7 +133,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/refund-policy/",
     title: "Refund Policy | Medical Cannabis Card Fresno",
     description:
-      "Read our refund policy, including when you qualify for a full refund on your medical marijuana evaluation and how to request one.",
+      "Read our refund policy, including when you qualify for a full refund and how to request one.",
     published: "2024-01-15T08:00:00-08:00",
     modified: "2025-09-16T08:00:00-07:00",
   },
@@ -141,7 +141,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/shipment-policy/",
     title: "Shipping Policy | Medical Cannabis Card Fresno",
     description:
-      "Learn how Medical Cannabis Card Fresno ships your medical marijuana card, including delivery timeframes, tracking, and what to do if there's an issue.",
+      "Learn how Medical Cannabis Card Fresno ships your medical marijuana card, including delivery times and tracking.",
     published: SITE_DATES.published,
     modified: SITE_DATES.modified,
   },
@@ -149,7 +149,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/hipaa-compliance/",
     title: "HIPAA Compliance | Medical Cannabis Card Fresno",
     description:
-      "Learn how Medical Cannabis Card Fresno protects patient health information and follows HIPAA privacy and security standards during telehealth evaluations.",
+      "Learn how Medical Cannabis Card Fresno protects patient health information under HIPAA privacy standards.",
     published: "2024-01-15T08:00:00-08:00",
     modified: "2025-09-16T08:00:00-07:00",
   },
@@ -157,7 +157,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/consent-for-telehealth/",
     title: "Consent to Telehealth | Medical Cannabis Card Fresno",
     description:
-      "Understand how telehealth works for your medical marijuana evaluation with Medical Cannabis Card Fresno, including your rights and what to expect.",
+      "Understand how telehealth works for your medical marijuana evaluation with Medical Cannabis Card Fresno.",
     published: "2024-01-15T08:00:00-08:00",
     modified: "2025-09-16T08:00:00-07:00",
   },
@@ -165,7 +165,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/accessibility-statement/",
     title: "Accessibility Statement | Medical Cannabis Card Fresno",
     description:
-      "Medical Cannabis Card Fresno is committed to making our website and telehealth services accessible to all patients, including those with disabilities.",
+      "Medical Cannabis Card Fresno is committed to making our website and telehealth services accessible to all.",
     published: "2024-01-15T08:00:00-08:00",
     modified: "2025-09-16T08:00:00-07:00",
   },
@@ -173,7 +173,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/editorial-policy/",
     title: "Editorial Policy | Medical Cannabis Card Fresno",
     description:
-      "Learn about the standards behind the medical marijuana content published by Medical Cannabis Card Fresno, from accuracy checks to our review process.",
+      "Learn about the standards behind Medical Cannabis Card Fresno content, from accuracy checks to review process.",
     published: "2024-01-15T08:00:00-08:00",
     modified: "2025-09-16T08:00:00-07:00",
   },
@@ -181,7 +181,7 @@ export const pages: Record<string, PageSeo> = {
     path: "/disclaimer/",
     title: "Disclaimer & Policies | Medical Cannabis Card Fresno",
     description:
-      "Review the disclaimers and policies that apply to Medical Cannabis Card Fresno's website and medical marijuana evaluation services.",
+      "Review the disclaimers and policies for Medical Cannabis Card Fresno's website and evaluation services.",
     published: SITE_DATES.published,
     modified: SITE_DATES.modified,
   },
