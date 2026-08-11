@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
+  async rewrites() {
+    return [
+      {
+        source: "/sitemap.xml",
+        destination: "/sitemap",
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [75, 90, 95],
