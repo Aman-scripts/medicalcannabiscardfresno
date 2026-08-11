@@ -10,8 +10,15 @@ export type SitemapRow = {
 function sitemapMeta(path: string): Pick<SitemapRow, "changefreq" | "priority"> {
   if (path === "/") return { changefreq: "weekly", priority: "1.0" };
   if (path === "/reviews/") return { changefreq: "weekly", priority: "0.8" };
-  if (path === "/about-us/" || path === "/contact/") {
+  if (
+    path === "/about-us/" ||
+    path === "/contact/" ||
+    path === "/medical-marijuana-doctors/"
+  ) {
     return { changefreq: "monthly", priority: "0.8" };
+  }
+  if (path.startsWith("/medical-marijuana-doctors/")) {
+    return { changefreq: "monthly", priority: "0.7" };
   }
   if (
     path === "/privacy/" ||

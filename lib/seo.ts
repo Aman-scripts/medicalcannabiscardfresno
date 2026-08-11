@@ -127,6 +127,23 @@ export const pages: Record<string, PageSeo> = {
     published: SITE_DATES.published,
     modified: SITE_DATES.modified,
   },
+  doctors: {
+    path: "/medical-marijuana-doctors/",
+    title: "Our Doctors | Medical Cannabis Fresno",
+    description:
+      "Meet our California-licensed medical marijuana doctors offering HIPAA-compliant telehealth evaluations in Fresno.",
+    published: SITE_DATES.published,
+    modified: SITE_DATES.modified,
+  },
+  doctorCheryl: {
+    path: "/medical-marijuana-doctors/cheryl-bugailiskis/",
+    title: "Cheryl Bugailiskis, MD | Fresno MMJ Doctor",
+    description:
+      "Dr. Cheryl Bugailiskis provides California-licensed medical cannabis evaluations for Fresno patients via telehealth.",
+    published: SITE_DATES.published,
+    modified: SITE_DATES.modified,
+    ogImage: "/dr-cheryl-bugailiskis.webp",
+  },
   privacy: {
     path: "/privacy/",
     title: "Privacy Policy | Medical Cannabis Card Fresno",
@@ -487,7 +504,12 @@ export function serviceSchema() {
       "Online medical marijuana evaluation by a California-licensed physician via HIPAA-compliant telehealth, with same-day digital recommendation when approved.",
     serviceType: "Medical Marijuana Evaluation",
     category: "Telemedicine",
-    provider: [{ "@id": ORG_ID }],
+    provider: [
+      { "@id": ORG_ID },
+      {
+        "@id": `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/#physician`,
+      },
+    ],
     areaServed: {
       "@type": "City",
       name: "Fresno",
@@ -678,6 +700,20 @@ export function buildAgentLlmsTxt() {
       "Medical Marijuana Card Renewal",
       "/#renewal",
       "Renewal service for patients whose MMJ certifications are expiring in Fresno.",
+    ),
+    "",
+    "",
+    "## Medical Marijuana Doctors",
+    "",
+    link(
+      "Doctors Overview",
+      "/medical-marijuana-doctors/",
+      "Directory of licensed physicians who conduct telehealth medical cannabis evaluations for Fresno patients.",
+    ),
+    link(
+      "Cheryl Bugailiskis, MD",
+      "/medical-marijuana-doctors/cheryl-bugailiskis/",
+      "Board-certified pediatrician providing California-compliant medical cannabis evaluations via telehealth.",
     ),
     "",
     "",

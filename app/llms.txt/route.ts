@@ -112,6 +112,20 @@ export function GET() {
     ),
     "",
     "",
+    "## Medical Marijuana Doctors",
+    "",
+    link(
+      "Doctors Overview",
+      "/medical-marijuana-doctors/",
+      "Directory of licensed physicians who conduct telehealth medical cannabis evaluations for Fresno patients.",
+    ),
+    link(
+      "Cheryl Bugailiskis, MD",
+      "/medical-marijuana-doctors/cheryl-bugailiskis/",
+      "Board-certified pediatrician providing California-compliant medical cannabis evaluations via telehealth.",
+    ),
+    "",
+    "",
     "## Company & Legal",
     "",
     link(

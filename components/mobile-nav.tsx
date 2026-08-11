@@ -10,9 +10,7 @@ import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/home-content";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#price", label: "Pricing" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "/reviews/", label: "Reviews" },
+  { href: "/medical-marijuana-doctors/", label: "Our Doctors" },
   { href: "/about-us/", label: "About us" },
   { href: "/contact/", label: "Contact us" },
 ];
