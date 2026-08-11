@@ -15,6 +15,7 @@ import {
 import { JsonLd } from "@/components/seo/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { WebMcpBookingTool } from "@/components/webmcp-booking-tool";
 import {
   buildMetadata,
   faqSchema,
@@ -43,6 +44,7 @@ export default function Home() {
         }}
       />
       <SiteHeader />
+      <WebMcpBookingTool />
       <main id="main-content" data-cv="home">
         <HeroSection />
         <FeaturesSection />

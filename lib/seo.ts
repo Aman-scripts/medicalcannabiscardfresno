@@ -382,9 +382,11 @@ export function organizationSchema() {
   };
 }
 
-/** Generates `/llms.txt` from the same SEO source of truth as sitemap/robots. */
-export function buildLlmsTxt() {
-  const indexable = sitemapEntries;
+/** Generates `/llms.txt` (markdown links) for agents and Lighthouse Agentic Browsing. */
+export function buildAgentLlmsTxt() {
+  const link = (label: string, path: string, summary: string) =>
+    `- [${label}](${absoluteUrl(path)}): ${summary}`;
+
   const lines = [
     `# ${SITE_NAME}`,
     "",
@@ -393,16 +395,18 @@ export function buildLlmsTxt() {
     `Last-Updated: ${SITE_DATES.modified}`,
     "",
     "## Site",
-    `- Home: ${absoluteUrl("/")}`,
-    `- Contact: ${absoluteUrl("/contact/")}`,
-    `- Phone: ${PHONE_DISPLAY}`,
-    `- Email: ${EMAIL}`,
-    `- Address: ${ADDRESS}`,
+    link("Home", "/", "Book a medical cannabis card evaluation in Fresno"),
+    link(
+      "Contact",
+      "/contact/",
+      `Phone ${PHONE_DISPLAY}, email ${EMAIL}`,
+    ),
+    link("About Us", "/about-us/", "Our team and how evaluations work"),
+    link("Reviews", "/reviews/", "Verified patient feedback"),
     "",
     "## Pages",
-    ...indexable.map(
-      (page) =>
-        `- ${page.title}: ${absoluteUrl(page.path)} — ${page.description}`,
+    ...sitemapEntries.map((page) =>
+      link(page.title, page.path, page.description),
     ),
     "",
     "## Services",
@@ -412,12 +416,18 @@ export function buildLlmsTxt() {
     "- Physical plastic cards available",
     "- HIPAA-compliant patient intake",
     "",
+    "## Location",
+    `- Address: ${ADDRESS}`,
+    "",
     "## Optional",
-    `- Sitemap: ${SITE_URL}/sitemap.xml`,
-    `- Robots: ${SITE_URL}/robots.txt`,
-    `- LLMs: ${SITE_URL}/llms.txt`,
+    `- [Sitemap](${SITE_URL}/sitemap.xml)`,
+    `- [Robots](${SITE_URL}/robots.txt)`,
+    `- [LLMs](${SITE_URL}/llms.txt)`,
     "",
   ];
 
   return `${lines.join("\n")}\n`;
 }
+
+/** @deprecated Use buildAgentLlmsTxt */
+export const buildLlmsTxt = buildAgentLlmsTxt;

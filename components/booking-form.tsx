@@ -2,50 +2,13 @@
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import Link from "next/link";
-import { sendGTMEvent } from "@next/third-parties/google";
-import { SITE_URL } from "@/lib/seo";
-
-function getHeallyUtmSource() {
-  const hostname =
-    typeof window !== "undefined"
-      ? window.location.hostname
-      : SITE_URL.replace(/^https?:\/\//, "").replace(/\/$/, "");
-
-  return `utm-${hostname}`;
-}
-
-function validateName(value: string) {
-  const parts = value.trim().split(/\s+/).filter(Boolean);
-  if (parts.length < 2 || parts.some((part) => !/^[a-zA-Z'-]+$/.test(part))) {
-    return "Please enter your first and last name.";
-  }
-  return null;
-}
-
-function validateEmail(value: string) {
-  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value.trim())) {
-    return "Please enter a valid email address.";
-  }
-  return null;
-}
-
-function validatePhone(value: string) {
-  if (!/^\d{3}-\d{3}-\d{4}$/.test(value)) {
-    return "Please enter a valid phone number (e.g., 999-999-9999).";
-  }
-  return null;
-}
-
-function formatPhone(raw: string) {
-  const digits = raw.replace(/\D/g, "").slice(0, 10);
-  if (digits.length > 6) {
-    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
-  }
-  if (digits.length > 3) {
-    return `${digits.slice(0, 3)}-${digits.slice(3)}`;
-  }
-  return digits;
-}
+import {
+  formatPhone,
+  startHeallyBooking,
+  validateEmail,
+  validateName,
+  validatePhone,
+} from "@/lib/heally";
 
 type LeadErrors = {
   name?: string;
@@ -127,35 +90,7 @@ export function BookingForm({
     }
 
     setSubmitting(true);
-
-    const heallyUtmSource = getHeallyUtmSource();
-    const nameParts = name.trim().split(/\s+/);
-    const payload = {
-      first_name: nameParts[0],
-      last_name: nameParts.slice(1).join(" "),
-      email: email.trim().toLowerCase(),
-      phone,
-      state: "CA",
-      state_of_evaluation: "CA",
-      timezone: "PST",
-      extra_data: {
-        "contact[contact_type]": "Web Form",
-        "product[name]": "Eva",
-        utm_source: heallyUtmSource,
-      },
-    };
-
-    const preset = btoa(JSON.stringify(payload))
-      .replace(/\+/g, "-")
-      .replace(/\//g, "_")
-      .replace(/=+$/, "");
-
-    sendGTMEvent({
-      event: "heallyValidatedSubmit",
-      utm_source: heallyUtmSource,
-    });
-
-    window.location.href = `https://mymmj.getheally.com/patient_admin/prefill?redirect=sched&preset=${preset}&utm_source=${encodeURIComponent(heallyUtmSource)}`;
+    startHeallyBooking({ name, email, phone });
   }
 
   return (
@@ -177,6 +112,13 @@ export function BookingForm({
         className="flex flex-col gap-4"
         onSubmit={handleSubmit}
         noValidate
+        // WebMCP declarative annotations (ignored by browsers without support)
+        {...{
+          toolname: "bookMedicalCannabisCardForm",
+          tooldescription:
+            "Book a medical cannabis card evaluation in Fresno by submitting full name, email, and phone number.",
+          toolautosubmit: "",
+        }}
       >
         <div>
           <label
@@ -192,7 +134,11 @@ export function BookingForm({
             value={name}
             onChange={handleNameChange}
             aria-invalid={!!errors.name}
+            required
             className={inputClassName}
+            {...{
+              toolparamdescription: "Patient first and last name",
+            }}
           />
           {errors.name ? (
             <p className="mt-1.5 text-sm text-red-600">{errors.name}</p>
@@ -214,7 +160,11 @@ export function BookingForm({
             value={email}
             onChange={handleEmailChange}
             aria-invalid={!!errors.email}
+            required
             className={inputClassName}
+            {...{
+              toolparamdescription: "Patient email address",
+            }}
           />
           {errors.email ? (
             <p className="mt-1.5 text-sm text-red-600">{errors.email}</p>
@@ -236,7 +186,12 @@ export function BookingForm({
             value={phone}
             onChange={handlePhoneChange}
             aria-invalid={!!errors.phone}
+            required
             className={inputClassName}
+            {...{
+              toolparamdescription:
+                "Patient phone number formatted as 999-999-9999",
+            }}
           />
           {errors.phone ? (
             <p className="mt-1.5 text-sm text-red-600">{errors.phone}</p>
@@ -247,10 +202,16 @@ export function BookingForm({
           <label className="flex items-start gap-3 text-sm leading-snug text-brand">
             <input
               type="checkbox"
+              name="termsAccepted"
               checked={termsAccepted}
               onChange={(e) => handleTermsAcceptedChange(e.target.checked)}
               aria-invalid={!!errors.termsAccepted}
+              required
               className="mt-0.5 size-4 shrink-0 rounded border-2 border-brand accent-brand"
+              {...{
+                toolparamdescription:
+                  "Patient accepted the Terms and Conditions",
+              }}
             />
             <span>
               I accept the{" "}
@@ -270,6 +231,7 @@ export function BookingForm({
         <label className="flex items-start gap-3 text-sm leading-snug text-brand">
           <input
             type="checkbox"
+            name="marketingOptIn"
             className="mt-0.5 size-4 shrink-0 rounded border-2 border-brand accent-brand"
           />
           <span>
