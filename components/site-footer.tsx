@@ -62,52 +62,52 @@ export function SiteFooter() {
 
           <div>
             <FooterHeading>Quick Links</FooterHeading>
-            <div className="flex flex-col gap-2.5 text-sm">
+            <div className="flex flex-col gap-1 text-sm">
               <Link
                 href="/#qualify-condition"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 Qualifying Conditions
               </Link>
               <Link
                 href="/#price"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 Pricing Plans
               </Link>
               <Link
                 href="/#faq"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 FAQs
               </Link>
               <Link
                 href="/reviews/"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 Reviews
               </Link>
               <Link
                 href="/medical-marijuana-doctors/"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 Our Doctors
               </Link>
               <Link
                 href="/about-us/"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 About Us
               </Link>
               <Link
                 href="/contact/"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 Contact Us
               </Link>
               <Link
                 href="/legal/"
-                className="text-white/90 no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
               >
                 Legal Policies
               </Link>
@@ -116,14 +116,14 @@ export function SiteFooter() {
 
           <div>
             <FooterHeading>Legal, Compliance &amp; Editorial</FooterHeading>
-            <div className="flex flex-col gap-3 text-sm">
+            <div className="flex flex-col gap-1 text-sm">
               {legalNav.map((item) => {
                 const Icon = legalIcons[item.href];
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex items-center gap-2.5 text-white/90 no-underline hover:text-white"
+                    className="flex min-h-11 items-center gap-2.5 text-white no-underline hover:text-[#d8f0b8]"
                   >
                     {Icon ? (
                       <Icon
@@ -141,27 +141,32 @@ export function SiteFooter() {
 
           <div className="min-w-0">
             <FooterHeading>Contact Information</FooterHeading>
-            <div className="flex min-w-0 flex-col gap-2.5 text-sm text-white/90">
-              <a href={PHONE_HREF} className="no-underline hover:text-white">
+            <div className="flex min-w-0 flex-col gap-1 text-sm text-white">
+              <a
+                href={PHONE_HREF}
+                className="inline-flex min-h-11 items-center no-underline hover:text-[#d8f0b8]"
+              >
                 {PHONE_DISPLAY}
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="break-all no-underline hover:text-white"
+                className="inline-flex min-h-11 items-center break-all no-underline hover:text-[#d8f0b8]"
               >
                 {EMAIL}
               </a>
-              <span>{ADDRESS}</span>
-              <span className="whitespace-pre-line text-white/80">{HOURS}</span>
+              <span className="py-2">{ADDRESS}</span>
+              <span className="whitespace-pre-line py-2 text-white/90">
+                {HOURS}
+              </span>
             </div>
           </div>
         </div>
 
         <div className="flex flex-wrap justify-between gap-3 border-t border-white/15 pt-6">
-          <p className="m-0 text-xs text-white/80">
+          <p className="m-0 text-sm text-white/90">
             All Rights Reserved medicalcannabiscardfresno.com © 2026
           </p>
-          <p className="m-0 max-w-[520px] text-xs text-white/80">
+          <p className="m-0 max-w-[520px] text-sm text-white/90">
             This website does not sell medicine nor controlled substances. It is
             a network of doctors and nurse practitioners, not a pharmacy /
             dispensary.

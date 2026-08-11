@@ -467,14 +467,14 @@ export default async function DoctorDetailPage({ params }: DoctorPageProps) {
               {doctor.faqs.map((item) => (
                 <details
                   key={item.q}
-                  className="group rounded-[1.25rem] border border-border bg-white px-5 py-4 open:shadow-[0_10px_30px_rgba(28,80,60,0.06)]"
+                  className="group rounded-[1.25rem] border border-border bg-white px-5 py-3 open:shadow-[0_10px_30px_rgba(28,80,60,0.06)]"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-brand">
-                    <h3 className="font-heading m-0 text-[15px] font-semibold md:text-base">
+                  <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-1 text-brand">
+                    <h3 className="font-heading m-0 text-base font-semibold">
                       {item.q}
                     </h3>
                     <span
-                      className="flex size-8 shrink-0 items-center justify-center rounded-full bg-sand text-brand ring-1 ring-border transition group-open:rotate-45 group-open:bg-lime"
+                      className="flex size-11 shrink-0 items-center justify-center rounded-full bg-sand text-brand ring-1 ring-border transition group-open:rotate-45 group-open:bg-lime"
                       aria-hidden
                     >
                       +

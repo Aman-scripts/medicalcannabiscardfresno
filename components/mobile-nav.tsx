@@ -45,15 +45,15 @@ export function MobileNav() {
     <>
       <button
         type="button"
-        className="flex size-10 items-center justify-center rounded-full border border-border bg-white md:hidden"
+        className="flex size-12 items-center justify-center rounded-full border border-border bg-white md:hidden"
         aria-label="Open menu"
         aria-expanded={open}
         onClick={() => setOpen(true)}
       >
-        <span className="relative block h-3 w-4">
-          <span className="absolute top-0 left-0 h-px w-full bg-brand" />
-          <span className="absolute top-1.5 left-0 h-px w-full bg-brand" />
-          <span className="absolute top-3 left-0 h-px w-full bg-brand" />
+        <span className="relative block h-3.5 w-5" aria-hidden>
+          <span className="absolute top-0 left-0 h-0.5 w-full rounded-full bg-brand" />
+          <span className="absolute top-[6px] left-0 h-0.5 w-full rounded-full bg-brand" />
+          <span className="absolute top-3 left-0 h-0.5 w-full rounded-full bg-brand" />
         </span>
       </button>
 
@@ -78,26 +78,26 @@ export function MobileNav() {
                 type="button"
                 aria-label="Close menu"
                 onClick={() => setOpen(false)}
-                className="flex size-11 items-center justify-center rounded-full border border-brand/25 bg-white text-brand transition hover:border-brand/40 hover:bg-sand"
+                className="flex size-12 items-center justify-center rounded-full border border-brand/25 bg-white text-brand transition hover:border-brand/40 hover:bg-sand"
               >
                 <X className="size-5" strokeWidth={2} />
               </button>
             </div>
 
-            <nav className="flex flex-1 flex-col items-center justify-center gap-8 px-6">
+            <nav className="flex flex-1 flex-col items-center justify-center gap-5 px-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="font-heading text-3xl font-semibold tracking-tight text-brand no-underline transition hover:text-brand-soft"
+                  className="inline-flex min-h-12 items-center justify-center px-4 font-heading text-3xl font-semibold tracking-tight text-brand no-underline transition hover:text-brand-soft"
                 >
                   {link.label}
                 </Link>
               ))}
 
               <BookingCta
-                className="mt-4 inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-base font-semibold text-primary-foreground transition hover:bg-brand-deep"
+                className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-8 py-3.5 text-base font-semibold text-primary-foreground transition hover:bg-brand-deep"
                 onClick={() => setOpen(false)}
               >
                 Book a Consultation
@@ -107,7 +107,7 @@ export function MobileNav() {
             <div className="pb-10 text-center">
               <a
                 href={PHONE_HREF}
-                className="text-sm font-semibold tracking-wide text-brand no-underline transition hover:text-brand-soft"
+                className="inline-flex min-h-12 items-center justify-center px-4 text-base font-semibold tracking-wide text-brand no-underline transition hover:text-brand-soft"
               >
                 {PHONE_DISPLAY}
               </a>

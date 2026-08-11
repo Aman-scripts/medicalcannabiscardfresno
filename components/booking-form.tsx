@@ -18,7 +18,7 @@ type LeadErrors = {
 };
 
 const inputClassName =
-  "box-border min-h-11 w-full rounded-none border border-brand/25 bg-cream px-3.5 text-sm text-brand outline-none placeholder:text-brand/45 focus:border-brand aria-[invalid=true]:border-red-500";
+  "box-border min-h-12 w-full rounded-none border border-brand/25 bg-cream px-3.5 text-base text-brand outline-none placeholder:text-brand-soft/80 focus:border-brand aria-[invalid=true]:border-red-500";
 
 export function BookingForm({
   idPrefix = "booking",
@@ -199,7 +199,7 @@ export function BookingForm({
         </div>
 
         <div>
-          <label className="flex items-start gap-3 text-sm leading-snug text-brand">
+          <label className="flex min-h-12 cursor-pointer items-start gap-3 py-1 text-sm leading-snug text-brand">
             <input
               type="checkbox"
               name="termsAccepted"
@@ -207,7 +207,7 @@ export function BookingForm({
               onChange={(e) => handleTermsAcceptedChange(e.target.checked)}
               aria-invalid={!!errors.termsAccepted}
               required
-              className="mt-0.5 size-4 shrink-0 rounded border-2 border-brand accent-brand"
+              className="mt-0.5 size-6 shrink-0 rounded border-2 border-brand accent-brand"
               {...{
                 toolparamdescription:
                   "Patient accepted the Terms and Conditions",
@@ -217,7 +217,7 @@ export function BookingForm({
               I accept the{" "}
               <Link
                 href="/terms/"
-                className="font-semibold text-brand underline underline-offset-2 hover:text-brand-soft"
+                className="inline-flex min-h-11 items-center font-semibold text-brand underline underline-offset-2 hover:text-brand-soft"
               >
                 Terms and Conditions*
               </Link>
@@ -228,11 +228,11 @@ export function BookingForm({
           ) : null}
         </div>
 
-        <label className="flex items-start gap-3 text-sm leading-snug text-brand">
+        <label className="flex min-h-12 cursor-pointer items-start gap-3 py-1 text-sm leading-snug text-brand">
           <input
             type="checkbox"
             name="marketingOptIn"
-            className="mt-0.5 size-4 shrink-0 rounded border-2 border-brand accent-brand"
+            className="mt-0.5 size-6 shrink-0 rounded border-2 border-brand accent-brand"
           />
           <span>
             I agree to receive emails with educational content, exclusive
@@ -243,7 +243,7 @@ export function BookingForm({
         <button
           type="submit"
           disabled={submitting}
-          className="mt-1 w-full rounded-full bg-brand py-3.5 text-sm font-semibold text-primary-foreground transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-70"
+          className="mt-1 min-h-12 w-full rounded-full bg-brand py-3.5 text-base font-semibold text-primary-foreground transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-70"
         >
           {submitting ? "Processing..." : "GET YOUR CARD"}
         </button>

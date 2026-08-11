@@ -24,7 +24,7 @@ export function MobileNavSlot() {
   }, []);
 
   if (!ready) {
-    return <div className="size-10 shrink-0 md:hidden" aria-hidden />;
+    return <div className="size-12 shrink-0 md:hidden" aria-hidden />;
   }
 
   return <MobileNav />;

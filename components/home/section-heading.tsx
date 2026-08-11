@@ -10,7 +10,7 @@ export function SectionEyebrow({
       className={
         light
           ? "mb-3 text-[11px] font-semibold tracking-[0.16em] text-[#d8f0b8] uppercase"
-          : "mb-3 text-[11px] font-semibold tracking-[0.16em] text-brand-soft uppercase"
+          : "mb-3 text-xs font-semibold tracking-[0.16em] text-brand uppercase"
       }
     >
       <span className="mr-2 inline-block h-px w-6 translate-y-[-3px] bg-lime align-middle" />

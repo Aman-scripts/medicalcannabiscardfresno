@@ -28,18 +28,18 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <BookingCta className="inline-flex items-center rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-brand transition hover:bg-white lg:hidden">
+            <BookingCta className="inline-flex min-h-12 items-center rounded-full bg-lime px-6 py-3.5 text-base font-semibold text-brand transition hover:bg-white lg:hidden">
               Book an Appointment
             </BookingCta>
             <Link
               href="#our-process"
-              className="inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-cream lg:bg-lime lg:hover:bg-white"
+              className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-brand no-underline transition hover:bg-cream lg:bg-lime lg:hover:bg-white"
             >
               Check Our Process
             </Link>
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white no-underline ring-1 ring-white/55 transition hover:bg-white/10 lg:bg-white lg:text-brand lg:ring-0 lg:hover:bg-cream"
+              className="inline-flex min-h-12 items-center gap-2 rounded-full bg-white/15 px-6 py-3.5 text-base font-semibold text-white no-underline ring-1 ring-white/70 transition hover:bg-white/25 lg:bg-white lg:text-brand lg:ring-0 lg:hover:bg-cream"
             >
               <Phone className="size-4" aria-hidden />
               Call Us Today

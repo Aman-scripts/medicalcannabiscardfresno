@@ -15,7 +15,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1240px] items-center gap-4 px-5 py-3.5 lg:px-10 lg:py-4">
         <Link
           href="/"
-          className="mr-auto shrink-0 no-underline transition hover:opacity-90"
+          className="mr-auto inline-flex min-h-12 shrink-0 items-center no-underline transition hover:opacity-90"
         >
           <BrandMark size="sm" />
         </Link>

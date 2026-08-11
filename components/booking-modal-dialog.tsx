@@ -55,9 +55,9 @@ export function BookingModalDialog({
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-4 right-4 z-20 flex size-9 items-center justify-center rounded-full bg-cream text-brand transition hover:bg-sand"
+          className="absolute top-3 right-3 z-20 flex size-12 items-center justify-center rounded-full bg-cream text-brand transition hover:bg-sand"
         >
-          <X className="size-4" strokeWidth={2.25} />
+          <X className="size-5" strokeWidth={2.25} />
         </button>
         <BookingForm idPrefix="modal" titleId="booking-modal-title" />
       </div>
