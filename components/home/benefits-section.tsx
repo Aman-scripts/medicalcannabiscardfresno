@@ -62,7 +62,7 @@ export function BenefitsSection() {
               loading="lazy"
               className="h-full min-h-[280px] w-full object-cover"
             />
-            <div className="absolute bottom-4 left-4 max-w-[min(100%-2rem,16rem)] rounded-2xl bg-white px-4 py-3 shadow-lg sm:bottom-5 sm:left-5 sm:max-w-none sm:px-5 sm:py-4">
+            <div className="absolute bottom-4 left-4 hidden max-w-[min(100%-2rem,16rem)] rounded-2xl bg-white px-4 py-3 shadow-lg md:block sm:bottom-5 sm:left-5 sm:max-w-none sm:px-5 sm:py-4">
               <div className="font-heading text-2xl leading-none font-semibold tracking-tight text-brand sm:text-3xl sm:leading-tight">
                 98% Happy Customers
               </div>
