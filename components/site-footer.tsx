@@ -62,52 +62,52 @@ export function SiteFooter() {
 
           <div>
             <FooterHeading>Quick Links</FooterHeading>
-            <div className="flex flex-col gap-1 text-sm">
+            <div className="flex flex-col gap-2.5 text-sm">
               <Link
                 href="/#qualify-condition"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Qualifying Conditions
               </Link>
               <Link
                 href="/#price"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Pricing Plans
               </Link>
               <Link
                 href="/#faq"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 FAQs
               </Link>
               <Link
                 href="/reviews/"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Reviews
               </Link>
               <Link
                 href="/medical-marijuana-doctors/"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Our Doctors
               </Link>
               <Link
                 href="/about-us/"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 About Us
               </Link>
               <Link
                 href="/contact/"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Contact Us
               </Link>
               <Link
                 href="/legal/"
-                className="inline-flex min-h-11 items-center text-white no-underline hover:text-[#d8f0b8]"
+                className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Legal Policies
               </Link>
@@ -116,14 +116,14 @@ export function SiteFooter() {
 
           <div>
             <FooterHeading>Legal, Compliance &amp; Editorial</FooterHeading>
-            <div className="flex flex-col gap-1 text-sm">
+            <div className="flex flex-col gap-2.5 text-sm">
               {legalNav.map((item) => {
                 const Icon = legalIcons[item.href];
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex min-h-11 items-center gap-2.5 text-white no-underline hover:text-[#d8f0b8]"
+                    className="flex items-center gap-2.5 text-white no-underline hover:text-[#d8f0b8]"
                   >
                     {Icon ? (
                       <Icon
@@ -141,23 +141,18 @@ export function SiteFooter() {
 
           <div className="min-w-0">
             <FooterHeading>Contact Information</FooterHeading>
-            <div className="flex min-w-0 flex-col gap-1 text-sm text-white">
-              <a
-                href={PHONE_HREF}
-                className="inline-flex min-h-11 items-center no-underline hover:text-[#d8f0b8]"
-              >
+            <div className="flex min-w-0 flex-col gap-2.5 text-sm text-white">
+              <a href={PHONE_HREF} className="no-underline hover:text-[#d8f0b8]">
                 {PHONE_DISPLAY}
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="inline-flex min-h-11 items-center break-all no-underline hover:text-[#d8f0b8]"
+                className="break-all no-underline hover:text-[#d8f0b8]"
               >
                 {EMAIL}
               </a>
-              <span className="py-2">{ADDRESS}</span>
-              <span className="whitespace-pre-line py-2 text-white/90">
-                {HOURS}
-              </span>
+              <span>{ADDRESS}</span>
+              <span className="whitespace-pre-line text-white/90">{HOURS}</span>
             </div>
           </div>
         </div>

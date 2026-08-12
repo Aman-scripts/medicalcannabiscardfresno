@@ -66,11 +66,12 @@ export function LegalLayout({
           )}
         >
           <article className="min-w-0">
-            <nav aria-label="Breadcrumb" className="mb-7">
-              <ol className="m-0 inline-flex list-none flex-wrap items-center gap-1 rounded-full border border-border bg-cream/80 px-2.5 py-1.5 text-sm shadow-[0_1px_2px_rgba(28,80,60,0.04)]">
-                <li>
+            <nav aria-label="Breadcrumb" className="mb-7 max-w-full overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <ol className="m-0 inline-flex w-max max-w-none list-none items-center gap-1 rounded-full border border-border bg-cream/80 px-2.5 py-1.5 text-sm whitespace-nowrap shadow-[0_1px_2px_rgba(28,80,60,0.04)]">
+                <li className="shrink-0">
                   <Link
                     href="/"
+                    aria-label="Home"
                     className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-white"
                   >
                     <Home
@@ -78,33 +79,40 @@ export function LegalLayout({
                       strokeWidth={2}
                       aria-hidden
                     />
-                    Home
+                    <span className="hidden sm:inline">Home</span>
                   </Link>
                 </li>
                 {showLegalNav ? (
                   <>
-                    <li aria-hidden className="flex items-center text-brand/35">
+                    <li
+                      aria-hidden
+                      className="flex shrink-0 items-center text-brand/35"
+                    >
                       <ChevronRight className="size-3.5" strokeWidth={2} />
                     </li>
-                    <li>
+                    <li className="shrink-0">
                       <Link
                         href="/legal/"
                         className="inline-flex items-center rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-white"
                       >
-                        Legal Policies
+                        <span className="sm:hidden">Legal</span>
+                        <span className="hidden sm:inline">Legal Policies</span>
                       </Link>
                     </li>
                   </>
                 ) : null}
-                <li aria-hidden className="flex items-center text-brand/35">
+                <li
+                  aria-hidden
+                  className="flex shrink-0 items-center text-brand/35"
+                >
                   <ChevronRight className="size-3.5" strokeWidth={2} />
                 </li>
-                <li>
+                <li className="shrink-0">
                   <span
                     aria-current="page"
                     className="inline-flex items-center rounded-full bg-brand px-2.5 py-1 text-[13px] font-semibold text-white"
                   >
-                    {page.title}
+                    {page.navLabel}
                   </span>
                 </li>
               </ol>

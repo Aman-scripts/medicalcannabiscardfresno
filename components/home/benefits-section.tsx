@@ -62,11 +62,11 @@ export function BenefitsSection() {
               loading="lazy"
               className="h-full min-h-[280px] w-full object-cover"
             />
-            <div className="absolute bottom-5 left-5 rounded-2xl bg-white px-5 py-4 shadow-lg">
-              <div className="font-heading text-3xl font-semibold text-brand">
+            <div className="absolute bottom-4 left-4 max-w-[min(100%-2rem,16rem)] rounded-2xl bg-white px-4 py-3 shadow-lg sm:bottom-5 sm:left-5 sm:max-w-none sm:px-5 sm:py-4">
+              <div className="font-heading text-2xl leading-none font-semibold tracking-tight text-brand sm:text-3xl sm:leading-tight">
                 98% Happy Customers
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="mt-1.5 text-sm leading-snug text-muted-foreground">
                 Helping patients manage their conditions
               </div>
             </div>

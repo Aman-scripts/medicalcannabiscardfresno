@@ -43,24 +43,25 @@ export function ProcessSection() {
             return (
               <article
                 key={step.n}
-                className="overflow-hidden rounded-[1.75rem] bg-brand text-primary-foreground shadow-[0_12px_40px_rgba(28,80,60,0.12)]"
+                className="flex flex-col overflow-hidden rounded-[1.75rem] bg-brand text-primary-foreground shadow-[0_12px_40px_rgba(28,80,60,0.12)]"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative isolate">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    fill
+                    width={800}
+                    height={600}
                     loading="lazy"
                     quality={90}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
+                    className="block aspect-[4/3] h-auto w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/20 to-transparent" />
-                  <span className="absolute top-3 left-3 rounded-full bg-lime px-3 py-1 text-[11px] font-semibold tracking-[0.12em] text-brand uppercase">
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand from-20% via-brand/40 to-transparent" />
+                  <span className="absolute top-3 left-3 z-10 rounded-full bg-lime px-3 py-1 text-[11px] font-semibold tracking-[0.12em] text-brand uppercase">
                     Step {step.n}
                   </span>
                 </div>
-                <div className="relative p-5 pt-4">
+                <div className="relative z-10 -mt-10 flex flex-1 flex-col bg-transparent px-5 pt-2 pb-5">
                   <h3 className="font-heading m-0 mb-2 text-xl font-semibold">
                     {step.title}
                   </h3>
