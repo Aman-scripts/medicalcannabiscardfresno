@@ -50,14 +50,15 @@ export function TeamSection() {
         <div className="relative overflow-hidden rounded-[2rem] bg-brand-deep p-2 ring-1 ring-lime/30">
           <div className="overflow-hidden rounded-[1.6rem]">
             <Image
-              src="/team-section.jpg"
+              src="/team-section_two.webp"
               alt="Your trusted medical cannabis card team in Fresno"
-              width={1000}
-              height={750}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              quality={90}
+              width={795}
+              height={530}
+              sizes="(max-width: 1024px) 100vw, 620px"
+              quality={100}
+              unoptimized
               loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/3] h-auto w-full object-cover"
             />
           </div>
           <div className="absolute right-6 bottom-6 rounded-2xl bg-white px-5 py-4 shadow-lg">
