@@ -1,18 +1,33 @@
 import { SectionEyebrow } from "@/components/home/section-heading";
 import { faqs } from "@/lib/home-content";
+import { cn } from "@/lib/utils";
 
-export function FaqSection() {
+type FaqSectionProps = {
+  /** Use h1 on the dedicated FAQ page; h2 on the home section. */
+  headingAs?: "h1" | "h2";
+  className?: string;
+};
+
+export function FaqSection({
+  headingAs = "h2",
+  className,
+}: FaqSectionProps) {
+  const HeadingTag = headingAs;
+
   return (
     <section
       id="faq"
-      className="border-t border-border bg-sand px-5 py-16 md:px-10 md:py-24"
+      className={cn(
+        "border-t border-border bg-sand px-5 py-16 md:px-10 md:py-24",
+        className,
+      )}
     >
       <div className="mx-auto max-w-[840px]">
         <div className="mb-10 text-center">
           <SectionEyebrow>FAQ</SectionEyebrow>
-          <h2 className="font-heading m-0 text-3xl font-semibold text-brand md:text-4xl">
+          <HeadingTag className="font-heading m-0 text-3xl font-semibold text-brand md:text-4xl">
             Frequently Asked Questions
-          </h2>
+          </HeadingTag>
         </div>
 
         <div className="flex flex-col gap-3">

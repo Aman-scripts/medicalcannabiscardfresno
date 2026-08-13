@@ -83,7 +83,7 @@ export function GET() {
     "",
     link(
       "FAQ",
-      "/#faq",
+      "/faq/",
       "Answers on telehealth evaluations, timelines, costs, documents, renewals, possession limits, and Fresno / California cannabis rules.",
     ),
     link(

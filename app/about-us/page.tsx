@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactCtaSection } from "@/components/contact-cta-section";
 import { LegalLayout, LegalSections } from "@/components/legal/legal-layout";
 import { aboutUs } from "@/lib/legal-content";
-import { buildMetadata, pages } from "@/lib/seo";
+import { aboutPageGraph, buildMetadata, pages } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata(pages.about);
 
@@ -12,6 +12,7 @@ export default function Page() {
       page={aboutUs}
       seo={pages.about}
       showLegalNav={false}
+      jsonLdGraph={aboutPageGraph()}
       belowContent={
         <ContactCtaSection
           eyebrow="Get Started"

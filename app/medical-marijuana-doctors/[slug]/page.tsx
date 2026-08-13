@@ -457,7 +457,7 @@ export default async function DoctorDetailPage({ params }: DoctorPageProps) {
               <p className="m-0 text-[15px] text-muted-foreground">
                 Specific to consultations with {doctor.name}. For general
                 questions, see our{" "}
-                <Link href="/#faq" className="font-semibold text-brand">
+                <Link href="/faq/" className="font-semibold text-brand">
                   main FAQ
                 </Link>
                 .

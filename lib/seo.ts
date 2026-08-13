@@ -119,6 +119,14 @@ export const pages: Record<string, PageSeo> = {
     published: SITE_DATES.published,
     modified: SITE_DATES.modified,
   },
+  faq: {
+    path: "/faq/",
+    title: "FAQ | Medical Cannabis Card Fresno",
+    description:
+      "Answers to common Fresno patient questions about getting and renewing a medical cannabis card online.",
+    published: SITE_DATES.published,
+    modified: SITE_DATES.modified,
+  },
   reviews: {
     path: "/reviews/",
     title: "Reviews | Medical Cannabis Card Fresno",
@@ -384,19 +392,133 @@ export function breadcrumbSchema(
   };
 }
 
+function faqMainEntity() {
+  return faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  }));
+}
+
 export function faqSchema() {
   return {
     "@type": "FAQPage",
     "@id": FAQ_ID,
-    mainEntity: faqs.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
-    })),
+    mainEntity: faqMainEntity(),
   };
+}
+
+/** Full JSON-LD @graph for `/about-us/` (Oklahoma About-page structure, Fresno data). */
+export function aboutPageGraph() {
+  const page = pages.about;
+  const pageUrl = absoluteUrl(page.path);
+  const webpageId = `${pageUrl}#webpage`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+
+  return [
+    {
+      "@type": "MedicalBusiness",
+      "@id": ORG_ID,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      description:
+        "Medical Cannabis Card Fresno connects Fresno patients with state-licensed physicians for medical marijuana evaluations, entirely by telehealth.",
+      telephone: PHONE_E164,
+      address: postalAddress,
+      openingHoursSpecification,
+      areaServed: {
+        "@type": "City",
+        name: "Fresno",
+        containedInPlace: {
+          "@type": "State",
+          name: "California",
+        },
+      },
+      medicalSpecialty: "Other",
+      sameAs: [MAPS_URL],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbId,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${SITE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About Us",
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@type": "AboutPage",
+      "@id": webpageId,
+      url: pageUrl,
+      name: page.title,
+      description: page.description,
+      isPartOf: { "@id": WEBSITE_ID },
+      about: { "@id": ORG_ID },
+      breadcrumb: { "@id": breadcrumbId },
+      inLanguage: "en-US",
+      ...(page.published ? { datePublished: page.published } : {}),
+      ...(page.modified ? { dateModified: page.modified } : {}),
+    },
+  ];
+}
+
+/** Full JSON-LD @graph for `/faq/` (Oklahoma FAQ-page structure, Fresno data). */
+export function faqPageGraph() {
+  const page = pages.faq;
+  const pageUrl = absoluteUrl(page.path);
+  const webpageId = `${pageUrl}#webpage`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+
+  return [
+    organizationSchema(),
+    logoSchema(),
+    websiteSchema(),
+    {
+      "@type": ["WebPage", "FAQPage"],
+      "@id": webpageId,
+      url: pageUrl,
+      name: page.title,
+      description: page.description,
+      isPartOf: { "@id": WEBSITE_ID },
+      about: { "@id": ORG_ID },
+      breadcrumb: { "@id": breadcrumbId },
+      inLanguage: "en-US",
+      mainEntity: faqMainEntity(),
+      ...(page.published ? { datePublished: page.published } : {}),
+      ...(page.modified ? { dateModified: page.modified } : {}),
+    },
+    serviceSchema(),
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbId,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${SITE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "FAQ",
+          item: pageUrl,
+        },
+      ],
+    },
+  ];
 }
 
 export function organizationSchema() {
@@ -682,7 +804,7 @@ export function buildAgentLlmsTxt() {
     "",
     link(
       "FAQ",
-      "/#faq",
+      "/faq/",
       "Answers on telehealth evaluations, timelines, costs, documents, renewals, possession limits, and Fresno / California cannabis rules.",
     ),
     link(

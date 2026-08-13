@@ -76,7 +76,7 @@ export function SiteFooter() {
                 Pricing Plans
               </Link>
               <Link
-                href="/#faq"
+                href="/faq/"
                 className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 FAQs

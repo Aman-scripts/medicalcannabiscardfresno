@@ -27,12 +27,15 @@ export function LegalLayout({
   children,
   showLegalNav = true,
   belowContent,
+  jsonLdGraph,
 }: {
   page: LegalPage;
   seo?: PageSeo;
   children: React.ReactNode;
   showLegalNav?: boolean;
   belowContent?: React.ReactNode;
+  /** When set, replaces the default WebPage + BreadcrumbList graph. */
+  jsonLdGraph?: Record<string, unknown>[];
 }) {
   const currentPath = withTrailingSlash(page.href);
   const publishedLabel = formatDate(seo?.published);
@@ -40,20 +43,24 @@ export function LegalLayout({
 
   return (
     <>
-      {seo ? (
+      {seo || jsonLdGraph ? (
         <JsonLd
           data={{
             "@context": "https://schema.org",
-            "@graph": [
-              webPageSchema(seo),
-              breadcrumbSchema([
-                { name: "Home", path: "/" },
-                ...(showLegalNav
-                  ? [{ name: "Legal Policies", path: "/legal/" }]
-                  : []),
-                { name: page.title, path: currentPath },
-              ]),
-            ],
+            "@graph":
+              jsonLdGraph ??
+              (seo
+                ? [
+                    webPageSchema(seo),
+                    breadcrumbSchema([
+                      { name: "Home", path: "/" },
+                      ...(showLegalNav
+                        ? [{ name: "Legal Policies", path: "/legal/" }]
+                        : []),
+                      { name: page.title, path: currentPath },
+                    ]),
+                  ]
+                : []),
           }}
         />
       ) : null}
