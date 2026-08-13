@@ -53,7 +53,7 @@ export function BenefitsSection() {
         <div className="grid items-stretch gap-8 rounded-[2rem] bg-sand p-4 lg:grid-cols-[0.9fr_1.1fr] lg:p-6">
           <div className="relative overflow-hidden rounded-[1.5rem]">
             <Image
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fm=webp&fit=crop&w=900&q=80"
               alt="Helping patients manage their conditions"
               width={900}
               height={700}

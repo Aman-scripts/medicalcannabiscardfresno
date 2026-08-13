@@ -5,15 +5,15 @@ import { cardChoices } from "@/lib/home-content";
 
 const cardImages = [
   {
-    src: "/card-choices-section-one.jpg",
+    src: "/card-choices-section-one.webp",
     alt: "Digital medical cannabis recommendation",
   },
   {
-    src: "/card-choices-section-two.jpg",
+    src: "/card-choices-section-two.webp",
     alt: "Plastic medical cannabis ID card",
   },
   {
-    src: "/card-choices-section-three.jpg",
+    src: "/card-choices-section-three.webp",
     alt: "Medical cannabis grower’s license",
   },
 ] as const;

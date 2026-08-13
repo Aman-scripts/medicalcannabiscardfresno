@@ -5,19 +5,19 @@ import { processMini, steps } from "@/lib/home-content";
 
 const stepImages = [
   {
-    src: "/process-section-one.jpg",
+    src: "/process-section-one.webp",
     alt: "Book an appointment for your medical cannabis card",
   },
   {
-    src: "/process-section-two.jpg",
+    src: "/process-section-two.webp",
     alt: "Online consultation with a licensed doctor",
   },
   {
-    src: "/process-section-three.jpg",
+    src: "/process-section-three.webp",
     alt: "Get your medical marijuana card recommendation",
   },
   {
-    src: "/process-section-four.jpg",
+    src: "/process-section-four.webp",
     alt: "Access medical cannabis from a licensed dispensary",
   },
 ] as const;
