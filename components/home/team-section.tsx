@@ -42,6 +42,7 @@ export function TeamSection() {
               We adhere to the Compassionate Use Act (Proposition 215, 1996) and
               the California Health and Safety Code §11362.5. Licensed
               professionals provide recommendations based on qualifying
+              
               conditions.
             </p>
           </div>
