@@ -63,7 +63,7 @@ export function withTrailingSlash(path: string): string {
     const [base, query] = path.split("?");
     return `${withTrailingSlash(base ?? "/")}?${query ?? ""}`;
   }
-  // Never force a trailing slash onto files (logo.webp, sitemap.xml, etc.)
+  // Never force a trailing slash onto files (fresno-logo.webp, sitemap.xml, etc.)
   if (isFilePath(path)) return path;
   return path.endsWith("/") ? path : `${path}/`;
 }
@@ -332,7 +332,7 @@ export function localBusinessSchema() {
     "@id": `${SITE_URL}/#business`,
     name: SITE_NAME,
     url: `${SITE_URL}/`,
-    image: absoluteUrl("/logo.webp"),
+    image: absoluteUrl("/fresno-logo.webp"),
     telephone: PHONE_E164,
     email: EMAIL,
     description: pages.home.description,
@@ -569,8 +569,8 @@ export function logoSchema() {
   return {
     "@type": "ImageObject",
     "@id": LOGO_ID,
-    url: absoluteUrl("/logo.webp"),
-    contentUrl: absoluteUrl("/logo.webp"),
+    url: absoluteUrl("/fresno-logo.webp"),
+    contentUrl: absoluteUrl("/fresno-logo.webp"),
     caption: `${SITE_NAME} logo`,
   };
 }

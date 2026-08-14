@@ -32,7 +32,7 @@ export function BrandMark({
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image
-        src="/logo.webp"
+        src="/fresno-logo.webp"
         alt="Medical Cannabis Card Fresno"
         width={dims.width}
         height={dims.height}
