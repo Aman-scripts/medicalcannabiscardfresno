@@ -43,7 +43,7 @@ export async function generateMetadata({
   if (!doctor) return {};
 
   return buildMetadata({
-    path: `/medical-marijuana-doctors/${doctor.slug}/`,
+    path: `/doctors/${doctor.slug}/`,
     title: `${doctor.name} | Fresno MMJ Doctor`,
     description: `${doctor.name}: California-licensed medical cannabis evaluations for Fresno patients via HIPAA-compliant telehealth.`,
     published: SITE_DATES.published,
@@ -58,7 +58,7 @@ export default async function DoctorDetailPage({ params }: DoctorPageProps) {
   if (!doctor) notFound();
 
   const profileUrl = absoluteUrl(
-    `/medical-marijuana-doctors/${doctor.slug}/`,
+    `/doctors/${doctor.slug}/`,
   );
   const physicianId = `${profileUrl}#physician`;
 
@@ -114,11 +114,11 @@ export default async function DoctorDetailPage({ params }: DoctorPageProps) {
                 { name: "Home", path: "/" },
                 {
                   name: "Our Doctors",
-                  path: "/medical-marijuana-doctors/",
+                  path: "/doctors/",
                 },
                 {
                   name: doctor.name,
-                  path: `/medical-marijuana-doctors/${doctor.slug}/`,
+                  path: `/doctors/${doctor.slug}/`,
                 },
               ]),
               "@id": `${profileUrl}#breadcrumb`,
@@ -162,7 +162,7 @@ export default async function DoctorDetailPage({ params }: DoctorPageProps) {
                 </li>
                 <li>
                   <Link
-                    href="/medical-marijuana-doctors/"
+                    href="/doctors/"
                     className="inline-flex items-center rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-cream"
                   >
                     Our Doctors
@@ -202,7 +202,7 @@ export default async function DoctorDetailPage({ params }: DoctorPageProps) {
                     Start Your Evaluation
                   </BookingCta>
                   <Link
-                    href="/medical-marijuana-doctors/"
+                    href="/doctors/"
                     className="inline-flex items-center justify-center rounded-full border border-border bg-white px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-cream"
                   >
                     View All Doctors
@@ -488,7 +488,7 @@ export default async function DoctorDetailPage({ params }: DoctorPageProps) {
             </div>
             <div className="mt-8 text-center">
               <Link
-                href="/contact/"
+                href="/contact-us/"
                 className="inline-flex items-center justify-center rounded-full border border-border bg-white px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-cream"
               >
                 Contact Our Support Team

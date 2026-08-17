@@ -88,7 +88,7 @@ export function SiteFooter() {
                 Reviews
               </Link>
               <Link
-                href="/medical-marijuana-doctors/"
+                href="/doctors/"
                 className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Our Doctors
@@ -100,7 +100,7 @@ export function SiteFooter() {
                 About Us
               </Link>
               <Link
-                href="/contact/"
+                href="/contact-us/"
                 className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Contact Us

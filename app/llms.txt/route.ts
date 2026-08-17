@@ -116,12 +116,12 @@ export function GET() {
     "",
     link(
       "Doctors Overview",
-      "/medical-marijuana-doctors/",
+      "/doctors/",
       "Directory of licensed physicians who conduct telehealth medical cannabis evaluations for Fresno patients.",
     ),
     link(
       "Cheryl Bugailiskis, MD",
-      "/medical-marijuana-doctors/cheryl-bugailiskis/",
+      "/doctors/cheryl-bugailiskis/",
       "Board-certified pediatrician providing California-compliant medical cannabis evaluations via telehealth.",
     ),
     "",
@@ -135,7 +135,7 @@ export function GET() {
     ),
     link(
       "Contact Us",
-      "/contact/",
+      "/contact-us/",
       `Phone ${PHONE_DISPLAY}, email ${EMAIL}, appointment booking, and Fresno address at ${ADDRESS}.`,
     ),
     link(

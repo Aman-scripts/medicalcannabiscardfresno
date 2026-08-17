@@ -32,7 +32,7 @@ export default function GonePage() {
             Back to Home
           </Link>
           <Link
-            href="/contact/"
+            href="/contact-us/"
             className="inline-flex items-center rounded-full border border-brand/25 bg-white px-6 py-3 text-sm font-semibold text-brand no-underline transition hover:bg-sand"
           >
             Contact Us

@@ -23,9 +23,9 @@ const BREADCRUMB_ID = `${SITE_URL}/#breadcrumb`;
 const HOWTO_ID = `${SITE_URL}/#howto`;
 const FAQ_ID = `${SITE_URL}/#faq`;
 const CONDITIONS_ID = `${SITE_URL}/#conditions`;
-const PHYSICIAN_ID = `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/#physician`;
-const PROFILE_PAGE_ID = `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/#profilepage`;
-const PHYSICIAN_URL = `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/`;
+const PHYSICIAN_ID = `${SITE_URL}/doctors/cheryl-bugailiskis/#physician`;
+const PROFILE_PAGE_ID = `${SITE_URL}/doctors/cheryl-bugailiskis/#profilepage`;
+const PHYSICIAN_URL = `${SITE_URL}/doctors/cheryl-bugailiskis/`;
 
 /** Site-wide publish / modify timestamps (ISO 8601). */
 export const SITE_DATES = {
@@ -82,7 +82,7 @@ export function absoluteUrl(path = "/") {
 
 /**
  * Canonical URL in the preferred SEO format:
- * https://medicalcannabiscardfresno.com/contact/
+ * https://medicalcannabiscardfresno.com/contact-us/
  */
 export function canonicalUrl(path = "/") {
   return absoluteUrl(path);
@@ -107,7 +107,7 @@ export const pages: Record<string, PageSeo> = {
     modified: SITE_DATES.modified,
   },
   contact: {
-    path: "/contact/",
+    path: "/contact-us/",
     title: "Contact Us | Medical Cannabis Fresno",
     description:
       "Call (559) 234-4795 or email Medical Cannabis Card Fresno anytime for MMJ card help, appointments, and support.",
@@ -147,7 +147,7 @@ export const pages: Record<string, PageSeo> = {
     modified: SITE_DATES.modified,
   },
   doctors: {
-    path: "/medical-marijuana-doctors/",
+    path: "/doctors/",
     title: "Our Doctors | Medical Cannabis Fresno",
     description:
       "Meet our California-licensed medical marijuana doctors offering HIPAA-compliant telehealth evaluations in Fresno.",
@@ -155,7 +155,7 @@ export const pages: Record<string, PageSeo> = {
     modified: SITE_DATES.modified,
   },
   doctorCheryl: {
-    path: "/medical-marijuana-doctors/cheryl-bugailiskis/",
+    path: "/doctors/cheryl-bugailiskis/",
     title: "Cheryl Bugailiskis, MD | Fresno MMJ Doctor",
     description:
       "Dr. Cheryl Bugailiskis provides California-licensed medical cannabis evaluations for Fresno patients via telehealth.",
@@ -680,7 +680,7 @@ export function homeBreadcrumbSchema() {
         "@type": "ListItem",
         position: 2,
         name: "Our Doctors",
-        item: absoluteUrl("/medical-marijuana-doctors/"),
+        item: absoluteUrl("/doctors/"),
       },
     ],
   };
@@ -1088,12 +1088,12 @@ export function buildAgentLlmsTxt() {
     "",
     link(
       "Doctors Overview",
-      "/medical-marijuana-doctors/",
+      "/doctors/",
       "Directory of licensed physicians who conduct telehealth medical cannabis evaluations for Fresno patients.",
     ),
     link(
       "Cheryl Bugailiskis, MD",
-      "/medical-marijuana-doctors/cheryl-bugailiskis/",
+      "/doctors/cheryl-bugailiskis/",
       "Board-certified pediatrician providing California-compliant medical cannabis evaluations via telehealth.",
     ),
     "",
@@ -1107,7 +1107,7 @@ export function buildAgentLlmsTxt() {
     ),
     link(
       "Contact Us",
-      "/contact/",
+      "/contact-us/",
       `Phone ${PHONE_DISPLAY}, email ${EMAIL}, appointment booking, and Fresno address at ${ADDRESS}.`,
     ),
     link(

@@ -12,14 +12,14 @@ function sitemapMeta(path: string): Pick<SitemapRow, "changefreq" | "priority"> 
   if (path === "/reviews/") return { changefreq: "weekly", priority: "0.8" };
   if (
     path === "/about-us/" ||
-    path === "/contact/" ||
+    path === "/contact-us/" ||
     path === "/faq/" ||
     path === "/policy/" ||
-    path === "/medical-marijuana-doctors/"
+    path === "/doctors/"
   ) {
     return { changefreq: "monthly", priority: "0.8" };
   }
-  if (path.startsWith("/medical-marijuana-doctors/")) {
+  if (path.startsWith("/doctors/")) {
     return { changefreq: "monthly", priority: "0.7" };
   }
   if (path.startsWith("/policy/")) {

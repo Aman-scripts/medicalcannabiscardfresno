@@ -4,6 +4,28 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
+      { source: "/contact", destination: "/contact-us/", permanent: true },
+      { source: "/contact/", destination: "/contact-us/", permanent: true },
+      {
+        source: "/medical-marijuana-doctors",
+        destination: "/doctors/",
+        permanent: true,
+      },
+      {
+        source: "/medical-marijuana-doctors/",
+        destination: "/doctors/",
+        permanent: true,
+      },
+      {
+        source: "/medical-marijuana-doctors/:slug",
+        destination: "/doctors/:slug/",
+        permanent: true,
+      },
+      {
+        source: "/medical-marijuana-doctors/:slug/",
+        destination: "/doctors/:slug/",
+        permanent: true,
+      },
       { source: "/legal", destination: "/policy/", permanent: true },
       { source: "/legal/", destination: "/policy/", permanent: true },
       { source: "/privacy", destination: "/policy/privacy-policy/", permanent: true },

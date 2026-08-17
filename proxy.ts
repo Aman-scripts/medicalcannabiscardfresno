@@ -30,7 +30,7 @@ export function proxy(request: NextRequest) {
     <p style="letter-spacing:.14em;text-transform:uppercase;font-size:.7rem;font-weight:700;color:#2a6b50">Error 410</p>
     <h1>This page has been removed</h1>
     <p>The content at this URL is permanently gone. Visit our homepage or contact page to continue.</p>
-    <p><a href="/">Back to Home</a> · <a href="/contact/">Contact Us</a></p>
+    <p><a href="/">Back to Home</a> · <a href="/contact-us/">Contact Us</a></p>
   </main>
 </body>
 </html>`;

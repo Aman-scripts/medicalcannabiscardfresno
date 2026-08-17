@@ -4,9 +4,9 @@ import { BrandMark } from "@/components/brand-mark";
 import { MobileNavSlot } from "@/components/mobile-nav-slot";
 
 const desktopNavLinks = [
-  { href: "/medical-marijuana-doctors/", label: "Our Doctors" },
+  { href: "/doctors/", label: "Our Doctors" },
   { href: "/about-us/", label: "About us" },
-  { href: "/contact/", label: "Contact us" },
+  { href: "/contact-us/", label: "Contact us" },
 ];
 
 export function SiteHeader() {
