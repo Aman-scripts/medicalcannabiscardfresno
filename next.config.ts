@@ -2,6 +2,86 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
+  async redirects() {
+    return [
+      { source: "/legal", destination: "/policy/", permanent: true },
+      { source: "/legal/", destination: "/policy/", permanent: true },
+      { source: "/privacy", destination: "/policy/privacy/", permanent: true },
+      { source: "/privacy/", destination: "/policy/privacy/", permanent: true },
+      { source: "/terms", destination: "/policy/terms/", permanent: true },
+      { source: "/terms/", destination: "/policy/terms/", permanent: true },
+      {
+        source: "/refund-policy",
+        destination: "/policy/refund-policy/",
+        permanent: true,
+      },
+      {
+        source: "/refund-policy/",
+        destination: "/policy/refund-policy/",
+        permanent: true,
+      },
+      {
+        source: "/shipment-policy",
+        destination: "/policy/shipment-policy/",
+        permanent: true,
+      },
+      {
+        source: "/shipment-policy/",
+        destination: "/policy/shipment-policy/",
+        permanent: true,
+      },
+      {
+        source: "/hipaa-compliance",
+        destination: "/policy/hipaa-compliance/",
+        permanent: true,
+      },
+      {
+        source: "/hipaa-compliance/",
+        destination: "/policy/hipaa-compliance/",
+        permanent: true,
+      },
+      {
+        source: "/consent-for-telehealth",
+        destination: "/policy/consent-for-telehealth/",
+        permanent: true,
+      },
+      {
+        source: "/consent-for-telehealth/",
+        destination: "/policy/consent-for-telehealth/",
+        permanent: true,
+      },
+      {
+        source: "/accessibility-statement",
+        destination: "/policy/accessibility-statement/",
+        permanent: true,
+      },
+      {
+        source: "/accessibility-statement/",
+        destination: "/policy/accessibility-statement/",
+        permanent: true,
+      },
+      {
+        source: "/editorial-policy",
+        destination: "/policy/editorial-policy/",
+        permanent: true,
+      },
+      {
+        source: "/editorial-policy/",
+        destination: "/policy/editorial-policy/",
+        permanent: true,
+      },
+      {
+        source: "/disclaimer",
+        destination: "/policy/disclaimer/",
+        permanent: true,
+      },
+      {
+        source: "/disclaimer/",
+        destination: "/policy/disclaimer/",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

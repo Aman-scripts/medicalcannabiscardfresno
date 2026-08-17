@@ -14,7 +14,7 @@ function sitemapMeta(path: string): Pick<SitemapRow, "changefreq" | "priority"> 
     path === "/about-us/" ||
     path === "/contact/" ||
     path === "/faq/" ||
-    path === "/legal/" ||
+    path === "/policy/" ||
     path === "/medical-marijuana-doctors/"
   ) {
     return { changefreq: "monthly", priority: "0.8" };
@@ -22,17 +22,7 @@ function sitemapMeta(path: string): Pick<SitemapRow, "changefreq" | "priority"> 
   if (path.startsWith("/medical-marijuana-doctors/")) {
     return { changefreq: "monthly", priority: "0.7" };
   }
-  if (
-    path === "/privacy/" ||
-    path === "/terms/" ||
-    path === "/hipaa-compliance/" ||
-    path === "/consent-for-telehealth/" ||
-    path === "/refund-policy/" ||
-    path === "/shipment-policy/" ||
-    path === "/accessibility-statement/" ||
-    path === "/editorial-policy/" ||
-    path === "/disclaimer/"
-  ) {
+  if (path.startsWith("/policy/")) {
     return { changefreq: "yearly", priority: "0.4" };
   }
   return { changefreq: "monthly", priority: "0.7" };

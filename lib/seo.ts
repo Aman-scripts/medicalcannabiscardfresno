@@ -139,8 +139,8 @@ export const pages: Record<string, PageSeo> = {
     modified: SITE_DATES.modified,
   },
   legal: {
-    path: "/legal/",
-    title: "Legal Policies | Medical Cannabis Fresno",
+    path: "/policy/",
+    title: "Policies | Medical Cannabis Fresno",
     description:
       "Review Privacy, HIPAA, Terms, Refund, and other policies for Medical Cannabis Card Fresno telehealth services.",
     published: SITE_DATES.published,
@@ -164,7 +164,7 @@ export const pages: Record<string, PageSeo> = {
     ogImage: "/dr-cheryl-bugailiskis.webp",
   },
   privacy: {
-    path: "/privacy/",
+    path: "/policy/privacy/",
     title: "Privacy Policy | Medical Cannabis Card Fresno",
     description:
       "Learn how Medical Cannabis Card Fresno collects, uses, and protects your personal and health information.",
@@ -172,7 +172,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   terms: {
-    path: "/terms/",
+    path: "/policy/terms/",
     title: "Terms of Use | Medical Cannabis Card Fresno",
     description:
       "Read the terms that govern use of Medical Cannabis Card Fresno's website and telehealth evaluation services.",
@@ -180,7 +180,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   refund: {
-    path: "/refund-policy/",
+    path: "/policy/refund-policy/",
     title: "Refund Policy | Medical Cannabis Card Fresno",
     description:
       "Read our refund policy, including when you qualify for a full refund and how to request one.",
@@ -188,7 +188,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   shipment: {
-    path: "/shipment-policy/",
+    path: "/policy/shipment-policy/",
     title: "Shipping Policy | Medical Cannabis Card Fresno",
     description:
       "Learn how Medical Cannabis Card Fresno ships your medical marijuana card, including delivery times and tracking.",
@@ -196,7 +196,7 @@ export const pages: Record<string, PageSeo> = {
     modified: SITE_DATES.modified,
   },
   hipaa: {
-    path: "/hipaa-compliance/",
+    path: "/policy/hipaa-compliance/",
     title: "HIPAA Compliance | Medical Cannabis Card Fresno",
     description:
       "Learn how Medical Cannabis Card Fresno protects patient health information under HIPAA privacy standards.",
@@ -204,7 +204,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   consent: {
-    path: "/consent-for-telehealth/",
+    path: "/policy/consent-for-telehealth/",
     title: "Consent to Telehealth | Medical Cannabis Card Fresno",
     description:
       "Understand how telehealth works for your medical marijuana evaluation with Medical Cannabis Card Fresno.",
@@ -212,7 +212,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   accessibility: {
-    path: "/accessibility-statement/",
+    path: "/policy/accessibility-statement/",
     title: "Accessibility Statement | Medical Cannabis Card Fresno",
     description:
       "Medical Cannabis Card Fresno is committed to making our website and telehealth services accessible to all.",
@@ -220,7 +220,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   editorial: {
-    path: "/editorial-policy/",
+    path: "/policy/editorial-policy/",
     title: "Editorial Policy | Medical Cannabis Card Fresno",
     description:
       "Learn about the standards behind Medical Cannabis Card Fresno content, from accuracy checks to review process.",
@@ -228,7 +228,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   disclaimer: {
-    path: "/disclaimer/",
+    path: "/policy/disclaimer/",
     title: "Disclaimer & Policies | Medical Cannabis Card Fresno",
     description:
       "Review the disclaimers and policies for Medical Cannabis Card Fresno's website and evaluation services.",
@@ -558,7 +558,7 @@ export function organizationSchema() {
         availableLanguage: ["English"],
       },
     ],
-    publishingPrinciples: absoluteUrl("/editorial-policy/"),
+    publishingPrinciples: absoluteUrl("/policy/editorial-policy/"),
     slogan: "Get Your Medical Cannabis Card in Fresno",
   };
 }
@@ -1116,53 +1116,53 @@ export function buildAgentLlmsTxt() {
       "Patient testimonials and review summaries for Medical Cannabis Card Fresno.",
     ),
     link(
-      "Legal Policies",
-      "/legal/",
+      "Policies",
+      "/policy/",
       "Hub page for Privacy, HIPAA, Terms, Refund, Accessibility, Editorial, and other compliance documents.",
     ),
     link(
       "Privacy Policy",
-      "/privacy/",
+      "/policy/privacy/",
       "HIPAA-aligned data handling practices including what data is collected, how it is stored, and patient rights.",
     ),
     link(
       "Terms of Use",
-      "/terms/",
+      "/policy/terms/",
       "Patient agreement, telehealth consent terms, and service limitations.",
     ),
     link(
       "Disclaimer & Policies",
-      "/disclaimer/",
+      "/policy/disclaimer/",
       "Medical and legal disclaimer covering the scope and limitations of telehealth physician recommendations.",
     ),
     link(
       "Refund Policy",
-      "/refund-policy/",
+      "/policy/refund-policy/",
       "Details on the 100% money-back guarantee for patients not approved by a physician.",
     ),
     link(
       "Shipment Policy",
-      "/shipment-policy/",
+      "/policy/shipment-policy/",
       "Policy on digital delivery of physician recommendations and physical card mailing where applicable.",
     ),
     link(
       "Editorial Policy",
-      "/editorial-policy/",
+      "/policy/editorial-policy/",
       "Standards governing medical accuracy, sourcing, and content review for all site articles.",
     ),
     link(
       "HIPAA Compliance Policy",
-      "/hipaa-compliance/",
+      "/policy/hipaa-compliance/",
       "How the platform handles protected health information in compliance with federal HIPAA requirements.",
     ),
     link(
       "Consent to Telehealth",
-      "/consent-for-telehealth/",
+      "/policy/consent-for-telehealth/",
       "Patient acknowledgment of telehealth evaluation terms, limitations, and rights under state telehealth laws.",
     ),
     link(
       "Accessibility Statement",
-      "/accessibility-statement/",
+      "/policy/accessibility-statement/",
       "Commitment to web accessibility standards for patients with disabilities.",
     ),
     "",

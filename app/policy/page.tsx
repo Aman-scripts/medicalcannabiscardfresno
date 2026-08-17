@@ -31,15 +31,15 @@ import {
 export const metadata: Metadata = buildMetadata(pages.legal);
 
 const legalIcons: Record<string, LucideIcon> = {
-  "/privacy/": EyeOff,
-  "/hipaa-compliance/": ShieldCheck,
-  "/consent-for-telehealth/": Video,
-  "/terms/": CheckCheck,
-  "/refund-policy/": HandCoins,
-  "/shipment-policy/": Package,
-  "/accessibility-statement/": Accessibility,
-  "/editorial-policy/": PenLine,
-  "/disclaimer/": TriangleAlert,
+  "/policy/privacy/": EyeOff,
+  "/policy/hipaa-compliance/": ShieldCheck,
+  "/policy/consent-for-telehealth/": Video,
+  "/policy/terms/": CheckCheck,
+  "/policy/refund-policy/": HandCoins,
+  "/policy/shipment-policy/": Package,
+  "/policy/accessibility-statement/": Accessibility,
+  "/policy/editorial-policy/": PenLine,
+  "/policy/disclaimer/": TriangleAlert,
 };
 
 const hubPages = legalPages.filter((page) => page.slug !== "about-us");
@@ -54,11 +54,11 @@ export default function LegalHubPage() {
             webPageSchema(pages.legal),
             breadcrumbSchema([
               { name: "Home", path: "/" },
-              { name: "Legal Policies", path: "/legal/" },
+              { name: "Policies", path: "/policy/" },
             ]),
             {
               "@type": "ItemList",
-              "@id": `${absoluteUrl("/legal/")}#policy-list`,
+              "@id": `${absoluteUrl("/policy/")}#policy-list`,
               name: "Legal, Compliance & Editorial Policies",
               numberOfItems: hubPages.length,
               itemListElement: hubPages.map((page, index) => ({
@@ -99,7 +99,7 @@ export default function LegalHubPage() {
                     aria-current="page"
                     className="inline-flex items-center rounded-full bg-brand px-2.5 py-1 text-[13px] font-semibold text-white"
                   >
-                    Legal Policies
+                    Policies
                   </span>
                 </li>
               </ol>
