@@ -144,7 +144,7 @@ export function GET() {
       "Patient testimonials and review summaries for Medical Cannabis Card Fresno.",
     ),
     link(
-      "Policies",
+      "Legal Policies",
       "/policy/",
       "Hub page for Privacy, HIPAA, Terms, Refund, Accessibility, Editorial, and other compliance documents.",
     ),

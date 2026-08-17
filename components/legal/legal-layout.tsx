@@ -55,7 +55,7 @@ export function LegalLayout({
                     breadcrumbSchema([
                       { name: "Home", path: "/" },
                       ...(showLegalNav
-                        ? [{ name: "Policies", path: "/policy/" }]
+                        ? [{ name: "Legal Policies", path: "/policy/" }]
                         : []),
                       { name: page.title, path: currentPath },
                     ]),
@@ -102,8 +102,8 @@ export function LegalLayout({
                         href="/policy/"
                         className="inline-flex items-center rounded-full px-2 py-1 font-medium text-brand no-underline transition hover:bg-white"
                       >
-                        <span className="sm:hidden">Policy</span>
-                        <span className="hidden sm:inline">Policies</span>
+                        <span className="sm:hidden">Legal</span>
+                        <span className="hidden sm:inline">Legal Policies</span>
                       </Link>
                     </li>
                   </>

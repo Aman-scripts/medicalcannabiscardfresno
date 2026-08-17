@@ -54,7 +54,7 @@ export default function LegalHubPage() {
             webPageSchema(pages.legal),
             breadcrumbSchema([
               { name: "Home", path: "/" },
-              { name: "Policies", path: "/policy/" },
+              { name: "Legal Policies", path: "/policy/" },
             ]),
             {
               "@type": "ItemList",
@@ -99,7 +99,7 @@ export default function LegalHubPage() {
                     aria-current="page"
                     className="inline-flex items-center rounded-full bg-brand px-2.5 py-1 text-[13px] font-semibold text-white"
                   >
-                    Policies
+                    Legal Policies
                   </span>
                 </li>
               </ol>

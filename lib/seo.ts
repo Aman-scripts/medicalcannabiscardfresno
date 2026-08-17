@@ -140,7 +140,7 @@ export const pages: Record<string, PageSeo> = {
   },
   legal: {
     path: "/policy/",
-    title: "Policies | Medical Cannabis Fresno",
+    title: "Legal Policies | Medical Cannabis Fresno",
     description:
       "Review Privacy, HIPAA, Terms, Refund, and other policies for Medical Cannabis Card Fresno telehealth services.",
     published: SITE_DATES.published,
@@ -1116,7 +1116,7 @@ export function buildAgentLlmsTxt() {
       "Patient testimonials and review summaries for Medical Cannabis Card Fresno.",
     ),
     link(
-      "Policies",
+      "Legal Policies",
       "/policy/",
       "Hub page for Privacy, HIPAA, Terms, Refund, Accessibility, Editorial, and other compliance documents.",
     ),

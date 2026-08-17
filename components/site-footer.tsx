@@ -109,13 +109,13 @@ export function SiteFooter() {
                 href="/policy/"
                 className="text-white no-underline hover:text-[#d8f0b8]"
               >
-                Policies
+                Legal Policies
               </Link>
             </div>
           </div>
 
           <div>
-            <FooterHeading>Policies</FooterHeading>
+            <FooterHeading>Legal Policies</FooterHeading>
             <div className="flex flex-col gap-2.5 text-sm">
               {legalNav.map((item) => {
                 const Icon = legalIcons[item.href];
