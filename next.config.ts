@@ -6,10 +6,40 @@ const nextConfig: NextConfig = {
     return [
       { source: "/legal", destination: "/policy/", permanent: true },
       { source: "/legal/", destination: "/policy/", permanent: true },
-      { source: "/privacy", destination: "/policy/privacy/", permanent: true },
-      { source: "/privacy/", destination: "/policy/privacy/", permanent: true },
-      { source: "/terms", destination: "/policy/terms/", permanent: true },
-      { source: "/terms/", destination: "/policy/terms/", permanent: true },
+      { source: "/privacy", destination: "/policy/privacy-policy/", permanent: true },
+      { source: "/privacy/", destination: "/policy/privacy-policy/", permanent: true },
+      {
+        source: "/policy/privacy",
+        destination: "/policy/privacy-policy/",
+        permanent: true,
+      },
+      {
+        source: "/policy/privacy/",
+        destination: "/policy/privacy-policy/",
+        permanent: true,
+      },
+      { source: "/terms", destination: "/policy/terms-of-use/", permanent: true },
+      { source: "/terms/", destination: "/policy/terms-of-use/", permanent: true },
+      {
+        source: "/terms-of-use",
+        destination: "/policy/terms-of-use/",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-use/",
+        destination: "/policy/terms-of-use/",
+        permanent: true,
+      },
+      {
+        source: "/policy/terms",
+        destination: "/policy/terms-of-use/",
+        permanent: true,
+      },
+      {
+        source: "/policy/terms/",
+        destination: "/policy/terms-of-use/",
+        permanent: true,
+      },
       {
         source: "/refund-policy",
         destination: "/policy/refund-policy/",

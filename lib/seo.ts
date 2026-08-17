@@ -164,7 +164,7 @@ export const pages: Record<string, PageSeo> = {
     ogImage: "/dr-cheryl-bugailiskis.webp",
   },
   privacy: {
-    path: "/policy/privacy/",
+    path: "/policy/privacy-policy/",
     title: "Privacy Policy | Medical Cannabis Card Fresno",
     description:
       "Learn how Medical Cannabis Card Fresno collects, uses, and protects your personal and health information.",
@@ -172,7 +172,7 @@ export const pages: Record<string, PageSeo> = {
     modified: "2025-09-16T08:00:00-07:00",
   },
   terms: {
-    path: "/policy/terms/",
+    path: "/policy/terms-of-use/",
     title: "Terms of Use | Medical Cannabis Card Fresno",
     description:
       "Read the terms that govern use of Medical Cannabis Card Fresno's website and telehealth evaluation services.",
@@ -1122,12 +1122,12 @@ export function buildAgentLlmsTxt() {
     ),
     link(
       "Privacy Policy",
-      "/policy/privacy/",
+      "/policy/privacy-policy/",
       "HIPAA-aligned data handling practices including what data is collected, how it is stored, and patient rights.",
     ),
     link(
       "Terms of Use",
-      "/policy/terms/",
+      "/policy/terms-of-use/",
       "Patient agreement, telehealth consent terms, and service limitations.",
     ),
     link(

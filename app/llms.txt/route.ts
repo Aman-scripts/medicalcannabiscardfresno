@@ -150,12 +150,12 @@ export function GET() {
     ),
     link(
       "Privacy Policy",
-      "/policy/privacy/",
+      "/policy/privacy-policy/",
       "HIPAA-aligned data handling practices including what data is collected, how it is stored, and patient rights.",
     ),
     link(
       "Terms of Use",
-      "/policy/terms/",
+      "/policy/terms-of-use/",
       "Patient agreement, telehealth consent terms, and service limitations.",
     ),
     link(

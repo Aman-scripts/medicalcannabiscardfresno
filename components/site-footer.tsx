@@ -22,10 +22,10 @@ import {
 import { legalNav } from "@/lib/legal-content";
 
 const legalIcons: Record<string, LucideIcon> = {
-  "/policy/privacy/": EyeOff,
+  "/policy/privacy-policy/": EyeOff,
   "/policy/hipaa-compliance/": ShieldCheck,
   "/policy/consent-for-telehealth/": Video,
-  "/policy/terms/": CheckCheck,
+  "/policy/terms-of-use/": CheckCheck,
   "/policy/refund-policy/": HandCoins,
   "/policy/shipment-policy/": Package,
   "/policy/accessibility-statement/": Accessibility,

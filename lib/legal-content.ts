@@ -15,10 +15,10 @@ export type LegalPage = {
 };
 
 export const legalNav: { href: string; label: string }[] = [
-  { href: "/policy/privacy/", label: "Privacy Policy" },
+  { href: "/policy/privacy-policy/", label: "Privacy Policy" },
   { href: "/policy/hipaa-compliance/", label: "HIPAA Compliance" },
   { href: "/policy/consent-for-telehealth/", label: "Consent to Telehealth" },
-  { href: "/policy/terms/", label: "Terms of Use" },
+  { href: "/policy/terms-of-use/", label: "Terms of Use" },
   { href: "/policy/refund-policy/", label: "Refund Policy" },
   { href: "/policy/shipment-policy/", label: "Shipment Policy" },
   { href: "/policy/accessibility-statement/", label: "Accessibility Statement" },
@@ -27,8 +27,8 @@ export const legalNav: { href: string; label: string }[] = [
 ];
 
 export const privacyPolicy: LegalPage = {
-  slug: "privacy",
-  href: "/policy/privacy/",
+  slug: "privacy-policy",
+  href: "/policy/privacy-policy/",
   navLabel: "Privacy Policy",
   title: "Privacy Policy",
   lastUpdated: null,
@@ -142,8 +142,8 @@ export const privacyPolicy: LegalPage = {
 };
 
 export const termsOfUse: LegalPage = {
-  slug: "terms",
-  href: "/policy/terms/",
+  slug: "terms-of-use",
+  href: "/policy/terms-of-use/",
   navLabel: "Terms of Use",
   title: "Terms of Use",
   lastUpdated: null,
