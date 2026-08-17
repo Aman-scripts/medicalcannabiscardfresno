@@ -5,7 +5,6 @@ import {
   PHONE_DISPLAY,
   conditions,
   faqs,
-  steps,
 } from "@/lib/home-content";
 
 export const SITE_URL = "https://medicalcannabiscardfresno.com";
@@ -16,6 +15,7 @@ const PHONE_E164 = "+1-559-234-4795";
 const MAPS_URL = "https://maps.google.com/?q=1510+C+St+Fresno+CA+93706";
 const ORG_ID = `${SITE_URL}/#organization`;
 const LOGO_ID = `${SITE_URL}/#logo`;
+const HERO_IMAGE_ID = `${SITE_URL}/#hero-image`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 const WEBPAGE_ID = `${SITE_URL}/#webpage`;
 const SERVICE_ID = `${SITE_URL}/#service`;
@@ -23,6 +23,9 @@ const BREADCRUMB_ID = `${SITE_URL}/#breadcrumb`;
 const HOWTO_ID = `${SITE_URL}/#howto`;
 const FAQ_ID = `${SITE_URL}/#faq`;
 const CONDITIONS_ID = `${SITE_URL}/#conditions`;
+const PHYSICIAN_ID = `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/#physician`;
+const PROFILE_PAGE_ID = `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/#profilepage`;
+const PHYSICIAN_URL = `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/`;
 
 /** Site-wide publish / modify timestamps (ISO 8601). */
 export const SITE_DATES = {
@@ -320,7 +323,7 @@ const openingHoursSpecification = [
   },
   {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: "Sunday",
+    dayOfWeek: ["Sunday"],
     opens: "09:00",
     closes: "18:00",
   },
@@ -355,9 +358,8 @@ export function websiteSchema() {
   return {
     "@type": "WebSite",
     "@id": WEBSITE_ID,
-    name: SITE_NAME,
     url: `${SITE_URL}/`,
-    description: SITE_TAGLINE,
+    name: SITE_NAME,
     publisher: { "@id": ORG_ID },
     inLanguage: "en-US",
   };
@@ -401,14 +403,6 @@ function faqMainEntity() {
       text: item.a,
     },
   }));
-}
-
-export function faqSchema() {
-  return {
-    "@type": "FAQPage",
-    "@id": FAQ_ID,
-    mainEntity: faqMainEntity(),
-  };
 }
 
 /** Full JSON-LD @graph for `/about-us/` (Oklahoma About-page structure, Fresno data). */
@@ -530,8 +524,12 @@ export function organizationSchema() {
     logo: { "@id": LOGO_ID },
     image: { "@id": LOGO_ID },
     description:
-      "Medical Cannabis Card Fresno is a telehealth platform connecting Fresno patients with licensed physicians for California-compliant medical marijuana evaluations via secure, HIPAA-compliant video consultations.",
-    knowsAbout: ["Cannabis Medicine", "Telemedicine"],
+      "Medical Cannabis Card Fresno is a licensed telehealth network connecting Fresno, California patients with state-licensed physicians for medical cannabis evaluations and recommendations under Proposition 215 and MAUCRSA.",
+    knowsAbout: [
+      "Cannabis Medicine",
+      "Telemedicine",
+      "California Medical Marijuana Law",
+    ],
     areaServed: {
       "@type": "City",
       name: "Fresno",
@@ -560,8 +558,8 @@ export function organizationSchema() {
         availableLanguage: ["English"],
       },
     ],
-    sameAs: [MAPS_URL],
     publishingPrinciples: absoluteUrl("/editorial-policy/"),
+    slogan: "Get Your Medical Cannabis Card in Fresno",
   };
 }
 
@@ -571,7 +569,69 @@ export function logoSchema() {
     "@id": LOGO_ID,
     url: absoluteUrl("/fresno-logo.webp"),
     contentUrl: absoluteUrl("/fresno-logo.webp"),
+    width: 512,
+    height: 512,
     caption: `${SITE_NAME} logo`,
+  };
+}
+
+export function heroImageSchema() {
+  return {
+    "@type": "ImageObject",
+    "@id": HERO_IMAGE_ID,
+    url: absoluteUrl("/team-section_two.webp"),
+    contentUrl: absoluteUrl("/team-section_two.webp"),
+    width: 1200,
+    height: 630,
+    caption: `${SITE_NAME} care team`,
+  };
+}
+
+export function physicianSchema() {
+  return {
+    "@type": ["Physician", "Person"],
+    "@id": PHYSICIAN_ID,
+    name: "Cheryl Bugailiskis, MD",
+    honorificPrefix: "Dr.",
+    honorificSuffix: "MD",
+    givenName: "Cheryl",
+    familyName: "Bugailiskis",
+    jobTitle: "Medical Cannabis Evaluating Physician (California)",
+    description:
+      "Board-certified pediatrician with over 15 years of clinical experience, providing California-licensed medical cannabis evaluations for qualifying Fresno patients under Proposition 215 and MAUCRSA.",
+    medicalSpecialty: ["Pediatric"],
+    knowsAbout: [
+      "Cannabis Medicine",
+      "Pediatric Care",
+      "Chronic Condition Management",
+    ],
+    url: PHYSICIAN_URL,
+    telephone: PHONE_E164,
+    memberOf: { "@id": ORG_ID },
+    worksFor: { "@id": ORG_ID },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "certification",
+        name: "Board Certification in Pediatrics",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "California Medical License",
+      },
+    ],
+  };
+}
+
+export function physicianProfilePageSchema() {
+  return {
+    "@type": "ProfilePage",
+    "@id": PROFILE_PAGE_ID,
+    url: PHYSICIAN_URL,
+    name: "Dr. Cheryl Bugailiskis, MD — Fresno Medical Cannabis Doctor",
+    mainEntity: { "@id": PHYSICIAN_ID },
+    isPartOf: { "@id": WEBSITE_ID },
   };
 }
 
@@ -584,7 +644,10 @@ export function medicalWebPageSchema() {
     description: pages.home.description,
     inLanguage: "en-US",
     isPartOf: { "@id": WEBSITE_ID },
+    primaryImageOfPage: { "@id": HERO_IMAGE_ID },
     about: { "@id": SERVICE_ID },
+    mainEntity: { "@id": SERVICE_ID },
+    breadcrumb: { "@id": BREADCRUMB_ID },
     audience: {
       "@type": "MedicalAudience",
       audienceType: "Patient",
@@ -597,8 +660,6 @@ export function medicalWebPageSchema() {
         },
       },
     },
-    breadcrumb: { "@id": BREADCRUMB_ID },
-    mainEntity: { "@id": SERVICE_ID },
     ...(pages.home.published ? { datePublished: pages.home.published } : {}),
     ...(pages.home.modified ? { dateModified: pages.home.modified } : {}),
   };
@@ -618,8 +679,8 @@ export function homeBreadcrumbSchema() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Contact",
-        item: absoluteUrl("/contact/"),
+        name: "Our Doctors",
+        item: absoluteUrl("/medical-marijuana-doctors/"),
       },
     ],
   };
@@ -631,15 +692,10 @@ export function serviceSchema() {
     "@id": SERVICE_ID,
     name: "Fresno Medical Cannabis Card Evaluation",
     description:
-      "Online medical marijuana evaluation by a California-licensed physician via HIPAA-compliant telehealth, with same-day digital recommendation when approved.",
-    serviceType: "Medical Marijuana Evaluation",
+      "Online medical cannabis evaluation by a California-licensed physician via HIPAA-compliant telehealth, resulting in a signed recommendation for qualifying Fresno patients.",
+    serviceType: "Medical Cannabis Evaluation",
     category: "Telemedicine",
-    provider: [
-      { "@id": ORG_ID },
-      {
-        "@id": `${SITE_URL}/medical-marijuana-doctors/cheryl-bugailiskis/#physician`,
-      },
-    ],
+    provider: [{ "@id": ORG_ID }, { "@id": PHYSICIAN_ID }],
     areaServed: {
       "@type": "City",
       name: "Fresno",
@@ -651,22 +707,59 @@ export function serviceSchema() {
     availableChannel: {
       "@type": "ServiceChannel",
       availableLanguage: ["English"],
+      serviceUrl: `${SITE_URL}/#book`,
     },
     hoursAvailable: openingHoursSpecification,
-    offers: {
-      "@type": "Offer",
-      name: "Medical Cannabis Card Evaluation",
-      description:
-        "Digital recommendation evaluation fee with full refund guarantee if not approved.",
-      price: "55.00",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/`,
-      seller: { "@id": ORG_ID },
-      eligibleRegion: {
-        "@type": "State",
-        name: "California",
-      },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Fresno Medical Cannabis Card Plans",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Basic Plan — Digital Recommendation",
+          description:
+            "Digital recommendation signed by a board-licensed doctor, access to medical cannabis products, and 24/7 customer assistance. Valid for one year.",
+          price: "55.00",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/#price`,
+          seller: { "@id": ORG_ID },
+          eligibleRegion: {
+            "@type": "State",
+            name: "California",
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Gold Plan — Plastic ID Card",
+          description:
+            "Includes everything in the Basic plan plus a wallet-size plastic card and printed doctor's recommendation. Valid for one year.",
+          price: "99.00",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/#price`,
+          seller: { "@id": ORG_ID },
+          eligibleRegion: {
+            "@type": "State",
+            name: "California",
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Platinum Plan — Grower's License",
+          description:
+            "Includes everything in the Gold plan plus a grower license to cultivate up to 99 marijuana plants. Valid for one year.",
+          price: "199.00",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/#price`,
+          seller: { "@id": ORG_ID },
+          eligibleRegion: {
+            "@type": "State",
+            name: "California",
+          },
+        },
+      ],
     },
   };
 }
@@ -675,19 +768,41 @@ export function howToSchema() {
   return {
     "@type": "HowTo",
     "@id": HOWTO_ID,
-    name: "How to Get a Medical Cannabis Card in Fresno Online",
-    description: "Get your Fresno medical cannabis card in 4 simple steps.",
+    name: "How to Get Your Medical Cannabis Card in Fresno",
+    description:
+      "Getting a medical cannabis card in Fresno in a quick 4-step process.",
+    totalTime: "PT15M",
     estimatedCost: {
       "@type": "MonetaryAmount",
       currency: "USD",
       value: "55",
     },
-    step: steps.map((step, index) => ({
-      "@type": "HowToStep",
-      position: index + 1,
-      name: step.title,
-      text: step.body,
-    })),
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Book an Appointment",
+        text: "Fill out the application form, which requires basic details and your medical history.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Online Consultation",
+        text: "Through a secure video or audio consultation, a doctor evaluates your medical condition and guides you on whether you're eligible for an MMJ card.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Get Your Medical Marijuana Card",
+        text: "If you're qualified, you receive a recommendation just after approval.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Access Medical Cannabis",
+        text: "A valid MMJ card lets you buy medical marijuana from any licensed dispensary legally.",
+      },
+    ],
   };
 }
 
@@ -697,7 +812,7 @@ export function conditionsSchema() {
     "@id": CONDITIONS_ID,
     name: "Qualifying Medical Conditions for a Fresno Medical Cannabis Card",
     description:
-      "Common conditions evaluated for a California medical cannabis recommendation in Fresno. Your physician may approve additional conditions based on your health needs.",
+      "California allows physicians to recommend medical cannabis for any condition they believe could benefit from treatment. These are commonly evaluated qualifying conditions.",
     numberOfItems: conditions.length,
     itemListOrder: "https://schema.org/ItemListUnordered",
     itemListElement: conditions.map((condition, index) => ({
@@ -706,9 +821,142 @@ export function conditionsSchema() {
       item: {
         "@type": "MedicalCondition",
         name: condition.title,
-        description: condition.body,
       },
     })),
+  };
+}
+
+/** Home FAQ entities (matches home-page schema document). */
+function homeFaqMainEntity() {
+  return [
+    {
+      "@type": "Question",
+      name: "Do I Have to Visit a Clinic to Apply for a Fresno MMJ Card?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, you don't need to visit a clinic. You can apply for your Fresno medical marijuana card online through telehealth. Licensed doctors will evaluate your condition via video or audio call, and you can receive your MMJ recommendation from home.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How Long Does It Take to Get a Medical Marijuana Card in Fresno?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Complete the online form in 2 to 3 minutes, have a brief consultation with a licensed doctor in 5 to 10 minutes, and once approved, you can receive your MMJ recommendation the same day.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How Much Does It Cost to Get a Medical Marijuana Card in Fresno?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The cost depends on the format you choose. A digital recommendation is available for $55, while a physical plastic card costs $99.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which Documents Do I Need to Get or Renew a Medical Marijuana Card?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You'll need a valid photo ID and proof of Fresno County residency. Fill out the online application form, upload your documents, and a licensed doctor will review your medical condition.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I Still Use Medical Marijuana While Waiting for My Card to Be Renewed?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, it is illegal to use medical marijuana once your card has expired. Renew your card before it expires to maintain legal access.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I Apply for a Medical Marijuana Grower License in Fresno?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, provided you meet all state and county requirements, including permits, zoning rules, and compliance with California's Medical and Adult-Use Cannabis Regulation and Safety Act (MAUCRSA).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Cannabis Still Illegal on a Federal Level?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, cannabis remains illegal at the federal level. State laws vary, and eligibility for legal access depends on specific state and county regulations.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How Do Purchase and Tax Rules Differ for MMJ and Recreational Users?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Valid cardholders are exempt from state sales and use tax on medical cannabis purchases, saving up to 8.35%. Cardholders can also legally possess up to 8 ounces of dried cannabis, compared to 1 ounce for non-cardholders.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How Do I Renew My Medical Marijuana Card in Fresno?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Fill out the online form, submit the required documents, and complete a review with a licensed doctor to renew your card.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What Happens if I Don't Renew My Medical Marijuana Card?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Without a valid card, you lose the legal right to purchase, possess, or use medical cannabis, which may result in legal consequences.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I Still Get Fired or Denied a Job for Testing Positive for Marijuana?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Under California employment law (AB2188), employers cannot legally discriminate against or punish employees for off-duty marijuana use.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What Is the Legal Status of Cannabis in Fresno?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Both medical and recreational marijuana are legal under California law for individuals aged 18 (medical) and 21 (recreational). Local ordinances may differ from state law.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can Minors Under 18 Apply for a Medical Marijuana Card in Fresno?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, if they have a qualifying condition and a doctor's recommendation. A parent, legal guardian, or approved caregiver must apply on their behalf and manage their use.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What Are the Possession and Cultivation Limits for Medical vs. Recreational Users?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cardholders can possess up to 8 ounces of dried cannabis and cultivate up to 6 mature and 12 immature plants. Recreational users may possess up to 1 ounce and cultivate 6 plants per residence.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How Do I Choose the Right Medical Cannabis Clinic or Doctor in Fresno?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Check for state certifications, medical expertise, and patient reviews, and prioritize providers with state-licensed doctors who offer patient education and support.",
+      },
+    },
+  ];
+}
+
+export function faqSchema() {
+  return {
+    "@type": "FAQPage",
+    "@id": FAQ_ID,
+    mainEntity: homeFaqMainEntity(),
   };
 }
 
@@ -717,9 +965,12 @@ export function homePageGraph() {
   return [
     organizationSchema(),
     logoSchema(),
+    heroImageSchema(),
     websiteSchema(),
-    medicalWebPageSchema(),
+    physicianSchema(),
+    physicianProfilePageSchema(),
     homeBreadcrumbSchema(),
+    medicalWebPageSchema(),
     serviceSchema(),
     howToSchema(),
     faqSchema(),
