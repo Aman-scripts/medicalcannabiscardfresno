@@ -13,6 +13,7 @@ export function FaqSection({
   className,
 }: FaqSectionProps) {
   const HeadingTag = headingAs;
+  const ItemHeadingTag = headingAs === "h1" ? "h2" : "h3";
 
   return (
     <section
@@ -37,9 +38,9 @@ export function FaqSection({
               className="group rounded-[1.25rem] border border-border bg-white px-5 py-3 open:shadow-[0_10px_30px_rgba(28,80,60,0.06)]"
             >
               <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-1 text-brand">
-                <h3 className="font-heading m-0 text-base font-semibold">
+                <ItemHeadingTag className="font-heading m-0 text-base font-semibold">
                   {item.q}
-                </h3>
+                </ItemHeadingTag>
                 <span
                   className="flex size-11 shrink-0 items-center justify-center rounded-full bg-sand text-brand ring-1 ring-border transition group-open:rotate-45 group-open:bg-lime"
                   aria-hidden
