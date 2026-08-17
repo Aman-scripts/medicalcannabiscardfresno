@@ -20,17 +20,18 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-dm-sans",
-  display: "optional",
+  display: "swap",
   preload: true,
+  fallback: ["system-ui", "Segoe UI", "Arial", "sans-serif"],
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["600"],
   variable: "--font-playfair",
-  // optional: avoid late LCP when the heading font swaps in after first paint
-  display: "optional",
+  display: "swap",
   preload: false,
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = {
