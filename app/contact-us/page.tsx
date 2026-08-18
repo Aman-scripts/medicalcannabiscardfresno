@@ -64,7 +64,7 @@ export default function ContactPage() {
             webPageSchema(pages.contact),
             breadcrumbSchema([
               { name: "Home", path: "/" },
-              { name: "Contact", path: "/contact/" },
+              { name: "Contact", path: "/contact-us/" },
             ]),
           ],
         }}

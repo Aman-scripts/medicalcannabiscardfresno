@@ -37,7 +37,7 @@ export default function NotFound() {
             Back to Home
           </Link>
           <Link
-            href="/contact/"
+            href="/contact-us/"
             className="inline-flex items-center rounded-full border border-[#1c503c]/25 bg-white px-7 py-3.5 text-base font-semibold text-[#1c503c] no-underline transition hover:bg-[#e6eee6]"
           >
             Contact Us

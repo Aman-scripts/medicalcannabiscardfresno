@@ -22,15 +22,15 @@ import {
 import { legalNav } from "@/lib/legal-content";
 
 const legalIcons: Record<string, LucideIcon> = {
-  "/privacy/": EyeOff,
-  "/hipaa-compliance/": ShieldCheck,
-  "/consent-for-telehealth/": Video,
-  "/terms/": CheckCheck,
-  "/refund-policy/": HandCoins,
-  "/shipment-policy/": Package,
-  "/accessibility-statement/": Accessibility,
-  "/editorial-policy/": PenLine,
-  "/disclaimer/": TriangleAlert,
+  "/policy/privacy-policy/": EyeOff,
+  "/policy/hipaa-compliance/": ShieldCheck,
+  "/policy/consent-for-telehealth/": Video,
+  "/policy/terms-of-use/": CheckCheck,
+  "/policy/refund-policy/": HandCoins,
+  "/policy/shipment-policy/": Package,
+  "/policy/accessibility-statement/": Accessibility,
+  "/policy/editorial-policy/": PenLine,
+  "/policy/disclaimer/": TriangleAlert,
 };
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
@@ -88,7 +88,7 @@ export function SiteFooter() {
                 Reviews
               </Link>
               <Link
-                href="/medical-marijuana-doctors/"
+                href="/doctors/"
                 className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Our Doctors
@@ -100,13 +100,13 @@ export function SiteFooter() {
                 About Us
               </Link>
               <Link
-                href="/contact/"
+                href="/contact-us/"
                 className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Contact Us
               </Link>
               <Link
-                href="/legal/"
+                href="/policy/"
                 className="text-white no-underline hover:text-[#d8f0b8]"
               >
                 Legal Policies
@@ -115,7 +115,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <FooterHeading>Legal, Compliance &amp; Editorial</FooterHeading>
+            <FooterHeading>Legal Policies</FooterHeading>
             <div className="flex flex-col gap-2.5 text-sm">
               {legalNav.map((item) => {
                 const Icon = legalIcons[item.href];

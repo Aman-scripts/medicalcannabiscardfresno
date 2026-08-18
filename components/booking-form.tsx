@@ -216,7 +216,7 @@ export function BookingForm({
             <span>
               I accept the{" "}
               <Link
-                href="/terms/"
+                href="/policy/terms-of-use/"
                 className="inline-flex min-h-11 items-center font-semibold text-brand underline underline-offset-2 hover:text-brand-soft"
               >
                 Terms and Conditions*

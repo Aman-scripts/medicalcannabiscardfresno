@@ -7,6 +7,8 @@ import {
 import { BookingEnhancer } from "@/components/booking-enhancer";
 import { BookingModalRoot } from "@/components/booking-modal-root";
 import { DeferHydrate } from "@/components/defer-hydrate";
+import { DeferThirdParty } from "@/components/defer-third-party";
+import { IframeA11yPatch } from "@/components/iframe-a11y-patch";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SITE_NAME, SITE_URL, pages } from "@/lib/seo";
 import "./globals.css";
@@ -20,17 +22,18 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-dm-sans",
-  display: "optional",
+  display: "swap",
   preload: true,
+  fallback: ["system-ui", "Segoe UI", "Arial", "sans-serif"],
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["600"],
   variable: "--font-playfair",
-  // optional: avoid late LCP when the heading font swaps in after first paint
   display: "optional",
   preload: false,
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = {
@@ -90,7 +93,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
-        <GoogleTagManager gtmId={GTM_ID} />
+        <DeferThirdParty>
+          <GoogleTagManager gtmId={GTM_ID} />
+        </DeferThirdParty>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[200] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
@@ -101,9 +106,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <ScrollToTop />
           <BookingEnhancer />
           <BookingModalRoot />
+          <IframeA11yPatch />
         </DeferHydrate>
         {children}
-        <GoogleAnalytics gaId={GA4_ID} />
+        <DeferThirdParty>
+          <GoogleAnalytics gaId={GA4_ID} />
+        </DeferThirdParty>
       </body>
     </html>
   );

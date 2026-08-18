@@ -116,12 +116,12 @@ export function GET() {
     "",
     link(
       "Doctors Overview",
-      "/medical-marijuana-doctors/",
+      "/doctors/",
       "Directory of licensed physicians who conduct telehealth medical cannabis evaluations for Fresno patients.",
     ),
     link(
       "Cheryl Bugailiskis, MD",
-      "/medical-marijuana-doctors/cheryl-bugailiskis/",
+      "/doctors/cheryl-bugailiskis/",
       "Board-certified pediatrician providing California-compliant medical cannabis evaluations via telehealth.",
     ),
     "",
@@ -135,7 +135,7 @@ export function GET() {
     ),
     link(
       "Contact Us",
-      "/contact/",
+      "/contact-us/",
       `Phone ${PHONE_DISPLAY}, email ${EMAIL}, appointment booking, and Fresno address at ${ADDRESS}.`,
     ),
     link(
@@ -145,52 +145,52 @@ export function GET() {
     ),
     link(
       "Legal Policies",
-      "/legal/",
+      "/policy/",
       "Hub page for Privacy, HIPAA, Terms, Refund, Accessibility, Editorial, and other compliance documents.",
     ),
     link(
       "Privacy Policy",
-      "/privacy/",
+      "/policy/privacy-policy/",
       "HIPAA-aligned data handling practices including what data is collected, how it is stored, and patient rights.",
     ),
     link(
       "Terms of Use",
-      "/terms/",
+      "/policy/terms-of-use/",
       "Patient agreement, telehealth consent terms, and service limitations.",
     ),
     link(
       "Disclaimer & Policies",
-      "/disclaimer/",
+      "/policy/disclaimer/",
       "Medical and legal disclaimer covering the scope and limitations of telehealth physician recommendations.",
     ),
     link(
       "Refund Policy",
-      "/refund-policy/",
+      "/policy/refund-policy/",
       "Details on the 100% money-back guarantee for patients not approved by a physician.",
     ),
     link(
       "Shipment Policy",
-      "/shipment-policy/",
+      "/policy/shipment-policy/",
       "Policy on digital delivery of physician recommendations and physical card mailing where applicable.",
     ),
     link(
       "Editorial Policy",
-      "/editorial-policy/",
+      "/policy/editorial-policy/",
       "Standards governing medical accuracy, sourcing, and content review for all site articles.",
     ),
     link(
       "HIPAA Compliance Policy",
-      "/hipaa-compliance/",
+      "/policy/hipaa-compliance/",
       "How the platform handles protected health information in compliance with federal HIPAA requirements.",
     ),
     link(
       "Consent to Telehealth",
-      "/consent-for-telehealth/",
+      "/policy/consent-for-telehealth/",
       "Patient acknowledgment of telehealth evaluation terms, limitations, and rights under state telehealth laws.",
     ),
     link(
       "Accessibility Statement",
-      "/accessibility-statement/",
+      "/policy/accessibility-statement/",
       "Commitment to web accessibility standards for patients with disabilities.",
     ),
     "",

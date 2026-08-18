@@ -15,20 +15,20 @@ export type LegalPage = {
 };
 
 export const legalNav: { href: string; label: string }[] = [
-  { href: "/privacy/", label: "Privacy Policy" },
-  { href: "/hipaa-compliance/", label: "HIPAA Compliance" },
-  { href: "/consent-for-telehealth/", label: "Consent to Telehealth" },
-  { href: "/terms/", label: "Terms of Use" },
-  { href: "/refund-policy/", label: "Refund Policy" },
-  { href: "/shipment-policy/", label: "Shipment Policy" },
-  { href: "/accessibility-statement/", label: "Accessibility Statement" },
-  { href: "/editorial-policy/", label: "Editorial Policy" },
-  { href: "/disclaimer/", label: "Disclaimer & Policies" },
+  { href: "/policy/privacy-policy/", label: "Privacy Policy" },
+  { href: "/policy/hipaa-compliance/", label: "HIPAA Compliance" },
+  { href: "/policy/consent-for-telehealth/", label: "Consent to Telehealth" },
+  { href: "/policy/terms-of-use/", label: "Terms of Use" },
+  { href: "/policy/refund-policy/", label: "Refund Policy" },
+  { href: "/policy/shipment-policy/", label: "Shipment Policy" },
+  { href: "/policy/accessibility-statement/", label: "Accessibility Statement" },
+  { href: "/policy/editorial-policy/", label: "Editorial Policy" },
+  { href: "/policy/disclaimer/", label: "Disclaimer & Policies" },
 ];
 
 export const privacyPolicy: LegalPage = {
-  slug: "privacy",
-  href: "/privacy/",
+  slug: "privacy-policy",
+  href: "/policy/privacy-policy/",
   navLabel: "Privacy Policy",
   title: "Privacy Policy",
   lastUpdated: null,
@@ -142,8 +142,8 @@ export const privacyPolicy: LegalPage = {
 };
 
 export const termsOfUse: LegalPage = {
-  slug: "terms",
-  href: "/terms/",
+  slug: "terms-of-use",
+  href: "/policy/terms-of-use/",
   navLabel: "Terms of Use",
   title: "Terms of Use",
   lastUpdated: null,
@@ -297,7 +297,7 @@ export const termsOfUse: LegalPage = {
 
 export const refundPolicy: LegalPage = {
   slug: "refund-policy",
-  href: "/refund-policy/",
+  href: "/policy/refund-policy/",
   navLabel: "Refund Policy",
   title: "Refund Policy",
   lastUpdated: null,
@@ -371,7 +371,7 @@ export const refundPolicy: LegalPage = {
 
 export const hipaaCompliance: LegalPage = {
   slug: "hipaa-compliance",
-  href: "/hipaa-compliance/",
+  href: "/policy/hipaa-compliance/",
   navLabel: "HIPAA Compliance",
   title: "HIPAA Compliance and Health Information Privacy",
   lastUpdated: null,
@@ -504,7 +504,7 @@ export const hipaaCompliance: LegalPage = {
 
 export const consentForTelehealth: LegalPage = {
   slug: "consent-for-telehealth",
-  href: "/consent-for-telehealth/",
+  href: "/policy/consent-for-telehealth/",
   navLabel: "Consent to Telehealth",
   title: "Consent to Telehealth",
   lastUpdated: null,
@@ -624,7 +624,7 @@ export const consentForTelehealth: LegalPage = {
 
 export const accessibilityStatement: LegalPage = {
   slug: "accessibility-statement",
-  href: "/accessibility-statement/",
+  href: "/policy/accessibility-statement/",
   navLabel: "Accessibility Statement",
   title: "Accessibility Statement",
   lastUpdated: null,
@@ -714,7 +714,7 @@ export const accessibilityStatement: LegalPage = {
 
 export const editorialPolicy: LegalPage = {
   slug: "editorial-policy",
-  href: "/editorial-policy/",
+  href: "/policy/editorial-policy/",
   navLabel: "Editorial Policy",
   title: "Editorial Policy",
   lastUpdated: null,
@@ -789,7 +789,7 @@ export const editorialPolicy: LegalPage = {
 
 export const shipmentPolicy: LegalPage = {
   slug: "shipment-policy",
-  href: "/shipment-policy/",
+  href: "/policy/shipment-policy/",
   navLabel: "Shipment Policy",
   title: "Shipment Policy",
   lastUpdated: null,
@@ -853,7 +853,7 @@ export const shipmentPolicy: LegalPage = {
 
 export const disclaimer: LegalPage = {
   slug: "disclaimer",
-  href: "/disclaimer/",
+  href: "/policy/disclaimer/",
   navLabel: "Disclaimer & Policies",
   title: "Disclaimer & Policies",
   lastUpdated: null,

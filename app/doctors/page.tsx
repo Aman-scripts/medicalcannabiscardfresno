@@ -45,16 +45,16 @@ export default function DoctorsHubPage() {
             webPageSchema(pages.doctors),
             breadcrumbSchema([
               { name: "Home", path: "/" },
-              { name: "Our Doctors", path: "/medical-marijuana-doctors/" },
+              { name: "Our Doctors", path: "/doctors/" },
             ]),
             {
               "@type": "ItemList",
-              "@id": `${absoluteUrl("/medical-marijuana-doctors/")}#doctor-list`,
+              "@id": `${absoluteUrl("/doctors/")}#doctor-list`,
               name: "Medical Cannabis Card Fresno Doctors",
               itemListElement: doctors.map((doctor, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
-                url: absoluteUrl(`/medical-marijuana-doctors/${doctor.slug}/`),
+                url: absoluteUrl(`/doctors/${doctor.slug}/`),
                 name: doctor.name,
               })),
             },
@@ -146,7 +146,7 @@ export default function DoctorsHubPage() {
               {doctors.map((doctor) => (
                 <Link
                   key={doctor.slug}
-                  href={`/medical-marijuana-doctors/${doctor.slug}/`}
+                  href={`/doctors/${doctor.slug}/`}
                   className="group flex flex-col overflow-hidden rounded-[1.75rem] border border-border bg-cream/40 no-underline transition hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-[0_16px_40px_rgba(28,80,60,0.1)]"
                 >
                   <div className="relative aspect-[4/3] bg-sand">
@@ -307,7 +307,7 @@ export default function DoctorsHubPage() {
 
             <div className="mt-8 text-center">
               <Link
-                href="/contact/"
+                href="/contact-us/"
                 className="inline-flex items-center justify-center rounded-full border border-border bg-white px-6 py-3.5 text-sm font-semibold text-brand no-underline transition hover:bg-cream"
               >
                 Contact Our Support Team
@@ -369,7 +369,7 @@ export default function DoctorsHubPage() {
                   </span>
                 </a>
                 <Link
-                  href="/contact/"
+                  href="/contact-us/"
                   className="flex items-start gap-3 rounded-[1.5rem] border border-border bg-white p-5 no-underline transition hover:bg-cream"
                 >
                   <MessageCircle
