@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
+
 const MobileNav = dynamic(
   () => import("@/components/mobile-nav").then((mod) => mod.MobileNav),
   { ssr: false },
